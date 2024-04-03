@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:gems/hureaulite"
   },
-  "value": 1,
+  "material": "tinkers_reforged:hureaulite",
   "needed": 1,
-  "material": "tinkers_reforged:hureaulite"
+  "value": 1
 }

@@ -25,7 +25,7 @@ apply plugin: 'io.freefair.lombok'
 
 version = mod_version
 group = 'mrthomas20121.tinkers_reforged'
-archivesBaseName = 'Tinkers Reforged 1.18.2'
+archivesBaseName = "Tinkers Reforged ${mc_version}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -119,6 +119,9 @@ dependencies {
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
+
+    implementation fg.deobf("mezz.jei:jei-${mc_version}-common:${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 	
 	implementation fg.deobf("slimeknights.tconstruct:TConstruct:${mc_version}-${tcon_version}")
     implementation fg.deobf("slimeknights.mantle:Mantle:${mc_version}-${mantle_version}")

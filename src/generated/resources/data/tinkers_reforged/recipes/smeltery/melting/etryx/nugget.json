@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/etryx"
   },
   "result": {
-    "fluid": "tinkers_reforged:etryx",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:etryx"
   },
   "temperature": 1000,
   "time": 22

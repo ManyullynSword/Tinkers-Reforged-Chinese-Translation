@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:gems/epidote"
   },
-  "value": 1,
+  "material": "tinkers_reforged:epidote",
   "needed": 1,
-  "material": "tinkers_reforged:epidote"
+  "value": 1
 }

@@ -1,23 +1,23 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:plates/blazium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/plate"
   },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/blazium"
+      }
+    }
+  ],
+  "cooling_time": 78,
   "fluid": {
-    "tag": "tinkers_reforged:blazium",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:blazium"
   },
   "result": {
     "tag": "forge:plates/blazium"
-  },
-  "cooling_time": 78
+  }
 }

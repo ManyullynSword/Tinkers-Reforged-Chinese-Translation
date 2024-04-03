@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:gears/etryx",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/etryx"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:gears/etryx"
   },
   "result": {
-    "fluid": "tinkers_reforged:etryx",
-    "amount": 360
+    "amount": 360,
+    "fluid": "tinkers_reforged:etryx"
   },
   "temperature": 1000,
   "time": 133

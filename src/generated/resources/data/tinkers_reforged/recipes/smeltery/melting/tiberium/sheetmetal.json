@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:sheetmetals/tiberium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:sheetmetals/tiberium"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:sheetmetals/tiberium"
   },
   "result": {
-    "fluid": "tinkers_reforged:tiberium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:tiberium"
   },
   "temperature": 1500,
   "time": 80

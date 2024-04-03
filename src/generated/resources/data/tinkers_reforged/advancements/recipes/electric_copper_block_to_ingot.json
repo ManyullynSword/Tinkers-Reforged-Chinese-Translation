@@ -1,21 +1,10 @@
 {
   "advancements": [
     {
-      "conditions": [
-        {
-          "type": "forge:true"
-        }
-      ],
       "advancement": {
         "parent": "minecraft:recipes/root",
-        "rewards": {
-          "recipes": [
-            "tinkers_reforged:electric_copper_ingot"
-          ]
-        },
         "criteria": {
           "has_block": {
-            "trigger": "minecraft:inventory_changed",
             "conditions": {
               "items": [
                 {
@@ -24,13 +13,14 @@
                   ]
                 }
               ]
-            }
+            },
+            "trigger": "minecraft:inventory_changed"
           },
           "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
             "conditions": {
               "recipe": "tinkers_reforged:electric_copper_ingot"
-            }
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
@@ -38,8 +28,18 @@
             "has_block",
             "has_the_recipe"
           ]
-        ]
-      }
+        ],
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:electric_copper_ingot"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ]
     }
   ]
 }

@@ -15,8 +15,8 @@
           }
         ],
         "result": {
-          "item": "tinkers_reforged:etryx_ingot",
-          "count": 9
+          "count": 9,
+          "item": "tinkers_reforged:etryx_ingot"
         }
       }
     }

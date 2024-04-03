@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:ingots/durasteel"
   },
-  "value": 1,
+  "material": "tinkers_reforged:durasteel",
   "needed": 1,
-  "material": "tinkers_reforged:durasteel"
+  "value": 1
 }

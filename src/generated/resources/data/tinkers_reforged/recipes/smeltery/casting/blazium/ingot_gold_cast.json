@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
+  "cooling_time": 78,
   "fluid": {
-    "tag": "tinkers_reforged:blazium",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:blazium"
   },
-  "result": "tinkers_reforged:blazium_ingot",
-  "cooling_time": 78
+  "result": "tinkers_reforged:blazium_ingot"
 }

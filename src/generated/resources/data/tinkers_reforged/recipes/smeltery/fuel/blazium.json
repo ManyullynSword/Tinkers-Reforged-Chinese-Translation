@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:melting_fuel",
-  "fluid": {
-    "name": "tinkers_reforged:blazium",
-    "amount": 50
-  },
   "duration": 150,
+  "fluid": {
+    "amount": 50,
+    "fluid": "tinkers_reforged:blazium"
+  },
   "temperature": 1800
 }

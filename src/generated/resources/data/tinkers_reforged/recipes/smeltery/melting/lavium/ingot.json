@@ -4,8 +4,8 @@
     "tag": "forge:ingots/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:lavium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:lavium"
   },
   "temperature": 1100,
   "time": 69

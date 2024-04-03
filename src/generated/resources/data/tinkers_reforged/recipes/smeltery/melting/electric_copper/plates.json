@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:plates/electric_copper",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/electric_copper"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:plates/electric_copper"
   },
   "result": {
-    "fluid": "tinkers_reforged:electric_copper",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:electric_copper"
   },
   "temperature": 800,
   "time": 60

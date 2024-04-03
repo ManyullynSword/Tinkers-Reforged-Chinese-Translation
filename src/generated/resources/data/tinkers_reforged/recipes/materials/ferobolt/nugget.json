@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/ferobolt"
   },
-  "value": 1,
+  "material": "tinkers_reforged:ferobolt",
   "needed": 9,
-  "material": "tinkers_reforged:ferobolt"
+  "value": 1
 }

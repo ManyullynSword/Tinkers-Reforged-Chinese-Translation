@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/etryx"
   },
   "result": {
-    "fluid": "tinkers_reforged:etryx",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:etryx"
   },
   "temperature": 1000,
   "time": 199

@@ -4,8 +4,8 @@
     "tag": "forge:ingots/gallium"
   },
   "result": {
-    "fluid": "tinkers_reforged:gallium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:gallium"
   },
   "temperature": 1200,
   "time": 72

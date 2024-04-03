@@ -1,4 +1,31 @@
 {
+  "harvest": {
+    "logic": {
+      "type": "tconstruct:modified_tag",
+      "effective": "forge:mineable/sword",
+      "modifiers": [
+        {
+          "modifier": 7.5,
+          "predicate": {
+            "type": "mantle:set",
+            "blocks": [
+              "minecraft:cobweb"
+            ]
+          }
+        },
+        {
+          "modifier": 100.0,
+          "predicate": {
+            "type": "mantle:set",
+            "blocks": [
+              "minecraft:bamboo",
+              "minecraft:bamboo_sapling"
+            ]
+          }
+        }
+      ]
+    }
+  },
   "parts": [
     {
       "item": "tinkers_reforged:great_blade"
@@ -10,51 +37,24 @@
       "item": "tconstruct:tool_handle"
     }
   ],
+  "slots": {
+    "abilities": 1,
+    "upgrades": 2
+  },
   "stats": {
     "base": {
       "tconstruct:attack_damage": 4.0,
       "tconstruct:attack_speed": 0.75
     },
     "multipliers": {
-      "tconstruct:mining_speed": 0.5,
-      "tconstruct:durability": 1.1
+      "tconstruct:durability": 1.1,
+      "tconstruct:mining_speed": 0.5
     }
-  },
-  "slots": {
-    "upgrades": 2,
-    "abilities": 1
   },
   "traits": [
     {
-      "name": "tinkers_reforged:returning",
-      "level": 1
+      "level": 1,
+      "name": "tinkers_reforged:returning"
     }
-  ],
-  "harvest": {
-    "logic": {
-      "type": "tconstruct:modified_tag",
-      "effective": "forge:mineable/sword",
-      "modifiers": [
-        {
-          "modifier": 7.5,
-          "predicate": {
-            "type": "tconstruct:set",
-            "blocks": [
-              "minecraft:cobweb"
-            ]
-          }
-        },
-        {
-          "modifier": 100.0,
-          "predicate": {
-            "type": "tconstruct:set",
-            "blocks": [
-              "minecraft:bamboo",
-              "minecraft:bamboo_sapling"
-            ]
-          }
-        }
-      ]
-    }
-  }
+  ]
 }

@@ -4,8 +4,8 @@
     "tag": "forge:ingots/blazium"
   },
   "result": {
-    "fluid": "tinkers_reforged:blazium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:blazium"
   },
   "temperature": 1400,
   "time": 78

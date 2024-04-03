@@ -1,15 +1,14 @@
 {
-  "replace": false,
   "values": [
-    "tinkers_reforged:proto_lava",
     "tinkers_reforged:flowing_proto_lava",
-    "tinkers_reforged:blazium",
+    "tinkers_reforged:proto_lava",
     "tinkers_reforged:flowing_blazium",
-    "tinkers_reforged:gallium",
+    "tinkers_reforged:blazium",
     "tinkers_reforged:flowing_gallium",
-    "tinkers_reforged:tiberium",
+    "tinkers_reforged:gallium",
     "tinkers_reforged:flowing_tiberium",
-    "tinkers_reforged:titanium",
-    "tinkers_reforged:flowing_titanium"
+    "tinkers_reforged:tiberium",
+    "tinkers_reforged:flowing_titanium",
+    "tinkers_reforged:titanium"
   ]
 }

@@ -1,8 +1,8 @@
 {
   "default": [
     {
-      "name": "tinkers_reforged:mythical_push",
-      "level": 1
+      "level": 1,
+      "name": "tinkers_reforged:mythical_push"
     }
   ]
 }

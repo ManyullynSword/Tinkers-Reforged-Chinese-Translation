@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
+  "cooling_time": 60,
   "fluid": {
-    "tag": "tinkers_reforged:electric_copper",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:electric_copper"
   },
-  "result": "tinkers_reforged:electric_copper_ingot",
-  "cooling_time": 60
+  "result": "tinkers_reforged:electric_copper_ingot"
 }

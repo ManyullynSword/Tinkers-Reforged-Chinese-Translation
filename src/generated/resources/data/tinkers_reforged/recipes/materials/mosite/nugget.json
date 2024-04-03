@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/mosite"
   },
-  "value": 1,
+  "material": "tinkers_reforged:mosite",
   "needed": 9,
-  "material": "tinkers_reforged:mosite"
+  "value": 1
 }

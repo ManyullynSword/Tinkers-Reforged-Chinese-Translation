@@ -3,10 +3,10 @@
   "ingredient": {
     "tag": "forge:storage_blocks/etryx"
   },
-  "value": 9,
-  "needed": 1,
-  "material": "tinkers_reforged:etryx",
   "leftover": {
     "tag": "forge:ingots/etryx"
-  }
+  },
+  "material": "tinkers_reforged:etryx",
+  "needed": 1,
+  "value": 9
 }

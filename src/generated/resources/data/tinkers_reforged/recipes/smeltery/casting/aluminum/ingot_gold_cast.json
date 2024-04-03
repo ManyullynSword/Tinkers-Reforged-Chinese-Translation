@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
+  "cooling_time": 47,
   "fluid": {
-    "tag": "tconstruct:molten_aluminum",
-    "amount": 90
+    "amount": 90,
+    "tag": "tconstruct:molten_aluminum"
   },
-  "result": "tinkers_reforged:aluminum_ingot",
-  "cooling_time": 47
+  "result": "tinkers_reforged:aluminum_ingot"
 }

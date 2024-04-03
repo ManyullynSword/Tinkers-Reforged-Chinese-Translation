@@ -2,16 +2,15 @@
   "type": "tconstruct:ore_melting",
   "conditions": [
     {
-      "registry": "minecraft:item",
+      "type": "tconstruct:tag_difference_present",
       "base": "forge:ores/titanium",
+      "registry": "minecraft:item",
       "subtracted": [
         "forge:ore_rates/sparse",
         "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_difference_present"
+      ]
     }
   ],
-  "rate": "metal",
   "ingredient": {
     "type": "forge:difference",
     "base": {
@@ -26,9 +25,10 @@
       }
     ]
   },
+  "rate": "metal",
   "result": {
-    "fluid": "tinkers_reforged:titanium",
-    "amount": 180
+    "amount": 180,
+    "fluid": "tinkers_reforged:titanium"
   },
   "temperature": 1300,
   "time": 187

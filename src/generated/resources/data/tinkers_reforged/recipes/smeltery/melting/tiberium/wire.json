@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:wires/tiberium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/tiberium"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:wires/tiberium"
   },
   "result": {
-    "fluid": "tinkers_reforged:tiberium",
-    "amount": 45
+    "amount": 45,
+    "fluid": "tinkers_reforged:tiberium"
   },
   "temperature": 1500,
   "time": 16

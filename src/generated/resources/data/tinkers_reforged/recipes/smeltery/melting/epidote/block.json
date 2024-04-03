@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/epidote"
   },
   "result": {
-    "fluid": "tinkers_reforged:epidote",
-    "amount": 900
+    "amount": 900,
+    "fluid": "tinkers_reforged:epidote"
   },
   "temperature": 800,
   "time": 180

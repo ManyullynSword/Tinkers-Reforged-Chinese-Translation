@@ -2,16 +2,16 @@
   "stats": {
     "tconstruct:extra": {},
     "tconstruct:handle": {
-      "durability": 1.0,
-      "miningSpeed": 1.0,
+      "attackDamage": 1.0,
       "attackSpeed": 1.0,
-      "attackDamage": 1.0
+      "durability": 1.0,
+      "miningSpeed": 1.0
     },
     "tconstruct:head": {
+      "attack": 2.5,
       "durability": 500,
-      "miningSpeed": 5.9,
       "harvestTier": "tinkers_reforged:kepu",
-      "attack": 2.5
+      "miningSpeed": 5.9
     }
   }
 }

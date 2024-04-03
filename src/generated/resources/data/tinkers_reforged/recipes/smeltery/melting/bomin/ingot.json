@@ -4,8 +4,8 @@
     "tag": "forge:ingots/bomin"
   },
   "result": {
-    "fluid": "tinkers_reforged:bomin",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:bomin"
   },
   "temperature": 1200,
   "time": 72

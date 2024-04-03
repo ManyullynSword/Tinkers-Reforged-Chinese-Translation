@@ -1,13 +1,14 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.cast.CastType;
+import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.api.material.EnumFluid;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
 import mrthomas20121.tinkers_reforged.api.material.EnumMaterial;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import mrthomas20121.tinkers_reforged.block.IOreBlock;
 import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
-import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
@@ -15,7 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
-import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
 
@@ -39,7 +40,7 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.GREATSWORD, "Greatsword");
         addItem(TinkersReforgedItems.LONG_BLADE, "Long blade");
         addItem(TinkersReforgedItems.LONGSWORD, "Longsword");
-        add("item.tinkers_reforged.great_sword.description", "A Giant Sword with knockback.");
+        add("item.tinkers_reforged.greatsword.description", "A Giant Sword with knockback.");
         add("item.tinkers_reforged.longsword.description", "A Giant thin Sword with Increased range.");
 
         for(EnumMetal metal: EnumMetal.values()) {
@@ -62,7 +63,7 @@ public class ReforgedLang extends LanguageProvider {
         }
 
         for(EnumFluid enumFluid: EnumFluid.values()) {
-            FluidObject<ForgeFlowingFluid> fluid = TinkersReforgedFluids.ALL_FLUIDS.get(enumFluid);
+            FlowingFluidObject<ForgeFlowingFluid> fluid = TinkersReforgedFluids.ALL_FLUIDS.get(enumFluid);
             addFluid(fluid, "Molten " + capitalize(enumFluid.getName()));
             add(fluid.get().getBucket(), "Molten %s Bucket".formatted(capitalize(enumFluid.getName())));
         }
@@ -85,7 +86,14 @@ public class ReforgedLang extends LanguageProvider {
 
         for(CastType type: CastType.values()) {
             Item item = TinkersReforgedItems.ALU_CASTS.get(type).get();
-            add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
+            add(item, String.format("%s Aluminum Cast", capitalize(type.getName())));
+        }
+
+        for(TinkerCastType tinkerCastType: TinkerCastType.values()) {
+            for(TinkerCastType.Type type: TinkerCastType.Type.values()) {
+                Item item = TinkersReforgedItems.CASTS.get(tinkerCastType).get(type).get();
+                add(item, String.format("%s %s Cast", capitalize(type.getName()), tinkerCastType.getName()));
+            }
         }
 
         for(EnumMaterial material: EnumMaterial.values()) {
@@ -132,8 +140,8 @@ public class ReforgedLang extends LanguageProvider {
         add("modifier.tinkers_reforged." + id + ".description", desc);
     }
 
-    public void addFluid(FluidObject<ForgeFlowingFluid> supplier, String name) {
-        add(String.format("fluid.%s.%s", TinkersReforged.MOD_ID, supplier.getId().getPath().replace("_flowing", "")), name);
+    public void addFluid(FlowingFluidObject<ForgeFlowingFluid> supplier, String name) {
+        add(String.format("fluid_type.%s.%s", TinkersReforged.MOD_ID, supplier.getId().getPath().replace("_flowing", "")), name);
     }
 
     public String capitalize(String input) {

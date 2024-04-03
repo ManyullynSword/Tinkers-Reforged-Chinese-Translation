@@ -9,11 +9,6 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "XXX",
-          "XYX",
-          "XXX"
-        ],
         "key": {
           "X": {
             "tag": "forge:gems/red_beryl"
@@ -22,6 +17,11 @@
             "item": "tinkers_reforged:red_beryl_gem"
           }
         },
+        "pattern": [
+          "XXX",
+          "XYX",
+          "XXX"
+        ],
         "result": {
           "item": "tinkers_reforged:red_beryl_block"
         }

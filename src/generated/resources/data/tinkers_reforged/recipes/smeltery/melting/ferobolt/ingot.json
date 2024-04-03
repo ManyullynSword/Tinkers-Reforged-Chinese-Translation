@@ -4,8 +4,8 @@
     "tag": "forge:ingots/ferobolt"
   },
   "result": {
-    "fluid": "tinkers_reforged:ferobolt",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:ferobolt"
   },
   "temperature": 1000,
   "time": 66

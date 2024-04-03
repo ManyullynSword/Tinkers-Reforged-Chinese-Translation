@@ -4,8 +4,8 @@
     "tag": "forge:ingots/tiberium"
   },
   "result": {
-    "fluid": "tinkers_reforged:tiberium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:tiberium"
   },
   "temperature": 1500,
   "time": 80

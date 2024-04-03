@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:casting_basin",
+  "cooling_time": 171,
   "fluid": {
-    "tag": "tinkers_reforged:duralumin",
-    "amount": 810
+    "amount": 810,
+    "tag": "tinkers_reforged:duralumin"
   },
-  "result": "tinkers_reforged:duralumin_block",
-  "cooling_time": 171
+  "result": "tinkers_reforged:duralumin_block"
 }

@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:ingots/electric_copper"
   },
-  "value": 1,
+  "material": "tinkers_reforged:electric_copper",
   "needed": 1,
-  "material": "tinkers_reforged:electric_copper"
+  "value": 1
 }

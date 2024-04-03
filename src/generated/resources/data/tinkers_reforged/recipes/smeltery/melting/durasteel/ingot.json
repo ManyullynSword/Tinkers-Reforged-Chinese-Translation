@@ -4,8 +4,8 @@
     "tag": "forge:ingots/durasteel"
   },
   "result": {
-    "fluid": "tinkers_reforged:durasteel",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:durasteel"
   },
   "temperature": 1500,
   "time": 80

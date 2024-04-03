@@ -4,10 +4,10 @@
     "tag": "tconstruct:casts/single_use/ingot"
   },
   "cast_consumed": true,
+  "cooling_time": 75,
   "fluid": {
-    "tag": "tinkers_reforged:titanium",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:titanium"
   },
-  "result": "tinkers_reforged:titanium_ingot",
-  "cooling_time": 75
+  "result": "tinkers_reforged:titanium_ingot"
 }

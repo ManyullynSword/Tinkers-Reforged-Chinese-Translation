@@ -3,10 +3,10 @@
   "ingredient": {
     "tag": "forge:storage_blocks/kepu"
   },
-  "value": 9,
-  "needed": 1,
-  "material": "tinkers_reforged:kepu",
   "leftover": {
     "tag": "forge:ingots/kepu"
-  }
+  },
+  "material": "tinkers_reforged:kepu",
+  "needed": 1,
+  "value": 9
 }

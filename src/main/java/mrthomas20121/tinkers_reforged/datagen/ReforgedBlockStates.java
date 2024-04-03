@@ -16,8 +16,12 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
+
+import java.util.Objects;
 
 public class ReforgedBlockStates extends BlockStateProvider {
 
@@ -80,11 +84,11 @@ public class ReforgedBlockStates extends BlockStateProvider {
     }
 
     private String name(Block block) {
-        return block.getRegistryName().getPath();
+        return Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();
     }
 
-    public void fluid(FluidObject<ForgeFlowingFluid> fluid) {
-        ResourceLocation name = fluid.getBlock().getRegistryName();
+    public void fluid(FlowingFluidObject<ForgeFlowingFluid> fluid) {
+        ResourceLocation name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(fluid.getBlock()));
         simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath().replace("_fluid", ""), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"/still")));
         itemModels().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"/still"));
     }

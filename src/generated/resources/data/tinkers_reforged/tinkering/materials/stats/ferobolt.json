@@ -1,15 +1,15 @@
 {
   "stats": {
-    "tconstruct:limb": {
-      "durability": 600,
-      "drawSpeed": 0.15,
-      "velocity": -0.1,
-      "accuracy": 0.2
-    },
     "tconstruct:grip": {
-      "durability": 0.8,
       "accuracy": 0.2,
+      "durability": 0.8,
       "meleeAttack": 0.11
+    },
+    "tconstruct:limb": {
+      "accuracy": 0.2,
+      "drawSpeed": 0.15,
+      "durability": 600,
+      "velocity": -0.1
     }
   }
 }

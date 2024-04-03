@@ -4,8 +4,8 @@
     "tag": "forge:ingots/etryx"
   },
   "result": {
-    "fluid": "tinkers_reforged:etryx",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:etryx"
   },
   "temperature": 1000,
   "time": 66

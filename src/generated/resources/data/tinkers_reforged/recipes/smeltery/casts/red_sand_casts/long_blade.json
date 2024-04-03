@@ -4,8 +4,8 @@
     "item": "tconstruct:blank_red_sand_cast"
   },
   "pattern": {
-    "item": "tinkers_reforged:long_blade",
-    "type": "tconstruct:material"
+    "type": "tconstruct:material",
+    "item": "tinkers_reforged:long_blade"
   },
   "result": "tinkers_reforged:long_blade_red_sand_cast"
 }

@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/red_beryl"
   },
   "result": {
-    "fluid": "tinkers_reforged:red_beryl",
-    "amount": 900
+    "amount": 900,
+    "fluid": "tinkers_reforged:red_beryl"
   },
   "temperature": 800,
   "time": 180

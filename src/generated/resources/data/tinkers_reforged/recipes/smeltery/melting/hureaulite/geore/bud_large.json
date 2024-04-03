@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:geore_large_buds/hureaulite",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:geore_large_buds/hureaulite"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:geore_large_buds/hureaulite"
   },
   "result": {
-    "fluid": "tinkers_reforged:hureaulite",
-    "amount": 300
+    "amount": 300,
+    "fluid": "tinkers_reforged:hureaulite"
   },
   "temperature": 800,
   "time": 120

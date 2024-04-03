@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/duralumin"
   },
-  "value": 1,
+  "material": "tinkers_reforged:duralumin",
   "needed": 9,
-  "material": "tinkers_reforged:duralumin"
+  "value": 1
 }

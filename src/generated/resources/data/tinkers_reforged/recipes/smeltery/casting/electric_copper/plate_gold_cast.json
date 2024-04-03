@@ -1,23 +1,23 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:plates/electric_copper",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/plate"
   },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/electric_copper"
+      }
+    }
+  ],
+  "cooling_time": 60,
   "fluid": {
-    "tag": "tinkers_reforged:electric_copper",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:electric_copper"
   },
   "result": {
     "tag": "forge:plates/electric_copper"
-  },
-  "cooling_time": 60
+  }
 }

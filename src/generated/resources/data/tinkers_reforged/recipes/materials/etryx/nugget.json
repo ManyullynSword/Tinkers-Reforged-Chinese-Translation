@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/etryx"
   },
-  "value": 1,
+  "material": "tinkers_reforged:etryx",
   "needed": 9,
-  "material": "tinkers_reforged:etryx"
+  "value": 1
 }

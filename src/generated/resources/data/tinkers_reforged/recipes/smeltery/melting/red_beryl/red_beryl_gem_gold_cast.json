@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/gem"
   },
+  "cooling_time": 63,
   "fluid": {
-    "tag": "tinkers_reforged:red_beryl",
-    "amount": 100
+    "amount": 100,
+    "tag": "tinkers_reforged:red_beryl"
   },
-  "result": "tinkers_reforged:red_beryl_gem",
-  "cooling_time": 63
+  "result": "tinkers_reforged:red_beryl_gem"
 }

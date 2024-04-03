@@ -1,24 +1,24 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:gears/blazium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/single_use/gear"
   },
   "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/blazium"
+      }
+    }
+  ],
+  "cooling_time": 155,
   "fluid": {
-    "tag": "tinkers_reforged:blazium",
-    "amount": 360
+    "amount": 360,
+    "tag": "tinkers_reforged:blazium"
   },
   "result": {
     "tag": "forge:gears/blazium"
-  },
-  "cooling_time": 155
+  }
 }

@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/electric_copper"
   },
-  "value": 1,
+  "material": "tinkers_reforged:electric_copper",
   "needed": 9,
-  "material": "tinkers_reforged:electric_copper"
+  "value": 1
 }

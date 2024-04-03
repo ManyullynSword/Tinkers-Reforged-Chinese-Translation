@@ -10,6 +10,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 
 import javax.annotation.Nullable;
@@ -30,8 +31,8 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         for(EnumFluid fluid: EnumFluid.values()) {
             for(TagKey<Fluid> t: fluid.getFluid()) {
                 tag(t).add(
-                        TinkersReforgedFluids.ALL_FLUIDS.get(fluid).getStill(),
-                        TinkersReforgedFluids.ALL_FLUIDS.get(fluid).getFlowing()
+                        TinkersReforgedFluids.ALL_FLUIDS.get(fluid).getFlowing(),
+                        TinkersReforgedFluids.ALL_FLUIDS.get(fluid).getStill()
                 );
 
                 tagAll(TinkersReforgedFluids.ALL_FLUIDS.get(fluid));
@@ -40,12 +41,12 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     }
 
     /** Tags this fluid using local tags */
-    private void tagLocal(FluidObject<?> fluid) {
+    private void tagLocal(FlowingFluidObject<?> fluid) {
         tag(fluid.getLocalTag()).add(fluid.getStill(), fluid.getFlowing());
     }
 
     /** Tags this fluid with local and forge tags */
-    private void tagAll(FluidObject<?> fluid) {
+    private void tagAll(FlowingFluidObject<?> fluid) {
         tagLocal(fluid);
         tag(fluid.getForgeTag()).addTag(fluid.getLocalTag());
     }

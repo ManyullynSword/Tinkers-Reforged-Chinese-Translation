@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/hornium"
   },
   "result": {
-    "fluid": "tinkers_reforged:hornium",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:hornium"
   },
   "temperature": 1500,
   "time": 241

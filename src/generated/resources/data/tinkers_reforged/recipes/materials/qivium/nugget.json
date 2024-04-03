@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/qivium"
   },
-  "value": 1,
+  "material": "tinkers_reforged:qivium",
   "needed": 9,
-  "material": "tinkers_reforged:qivium"
+  "value": 1
 }

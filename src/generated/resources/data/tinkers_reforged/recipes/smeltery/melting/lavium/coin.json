@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:coins/lavium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/lavium"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:coins/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:lavium",
-    "amount": 30
+    "amount": 30,
+    "fluid": "tinkers_reforged:lavium"
   },
   "temperature": 1100,
   "time": 46

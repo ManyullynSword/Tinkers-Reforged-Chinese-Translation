@@ -3,9 +3,8 @@ package mrthomas20121.tinkers_reforged.api.material;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.util.EnumData;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidType;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 
@@ -53,22 +52,22 @@ public enum EnumFluidAlloy implements EnumData {
             () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.RED_BERYL).get(), FluidValues.GEM)
     ),
     BLAZIUM(1500, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.BLAZIUM).get(), FluidValues.INGOT*4),
-            () -> fs(TinkerFluids.blazingBlood.get(), FluidAttributes.BUCKET_VOLUME / 2),
+            () -> fs(TinkerFluids.blazingBlood.get(), FluidType.BUCKET_VOLUME / 2),
             () -> fs(TinkerFluids.moltenAmethyst.get(), FluidValues.GEM)
     ),
     BOMIN(1000, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.BOMIN).get(), FluidValues.INGOT),
             () -> fs(TinkerFluids.magma.get(), FluidValues.SLIMEBALL*4),
             () -> fs(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT)
     ),
-    PROTO_LAVA_FROM_KEPU(1700, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.PROTO_LAVA).get(), FluidAttributes.BUCKET_VOLUME),
+    PROTO_LAVA_FROM_KEPU(1700, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.PROTO_LAVA).get(), FluidType.BUCKET_VOLUME),
             () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.KEPU).get(), FluidValues.INGOT),
             () -> fs(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL*4),
-            () -> fs(TinkerFluids.blazingBlood.get(), FluidAttributes.BUCKET_VOLUME)
+            () -> fs(TinkerFluids.blazingBlood.get(), FluidType.BUCKET_VOLUME)
     ),
-    PROTO_LAVA_FROM_TITANIUM(1700, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.PROTO_LAVA).get(), FluidAttributes.BUCKET_VOLUME*2),
+    PROTO_LAVA_FROM_TITANIUM(1700, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.PROTO_LAVA).get(), FluidType.BUCKET_VOLUME*2),
             () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.TITANIUM).get(), FluidValues.INGOT),
             () -> fs(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL*6),
-            () -> fs(TinkerFluids.blazingBlood.get(), FluidAttributes.BUCKET_VOLUME)
+            () -> fs(TinkerFluids.blazingBlood.get(), FluidType.BUCKET_VOLUME)
     ),
     TIBERIUM(2000, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.TIBERIUM).get(), FluidValues.INGOT),
             () -> fs(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL),

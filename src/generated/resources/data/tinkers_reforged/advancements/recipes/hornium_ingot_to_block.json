@@ -1,21 +1,10 @@
 {
   "advancements": [
     {
-      "conditions": [
-        {
-          "type": "forge:true"
-        }
-      ],
       "advancement": {
         "parent": "minecraft:recipes/root",
-        "rewards": {
-          "recipes": [
-            "tinkers_reforged:hornium_block"
-          ]
-        },
         "criteria": {
           "has_ingot": {
-            "trigger": "minecraft:inventory_changed",
             "conditions": {
               "items": [
                 {
@@ -24,13 +13,14 @@
                   ]
                 }
               ]
-            }
+            },
+            "trigger": "minecraft:inventory_changed"
           },
           "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
             "conditions": {
               "recipe": "tinkers_reforged:hornium_block"
-            }
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
@@ -38,8 +28,18 @@
             "has_ingot",
             "has_the_recipe"
           ]
-        ]
-      }
+        ],
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:hornium_block"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ]
     }
   ]
 }

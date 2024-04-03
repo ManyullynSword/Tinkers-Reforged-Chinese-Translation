@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/electric_copper"
   },
   "result": {
-    "fluid": "tinkers_reforged:electric_copper",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:electric_copper"
   },
   "temperature": 800,
   "time": 180

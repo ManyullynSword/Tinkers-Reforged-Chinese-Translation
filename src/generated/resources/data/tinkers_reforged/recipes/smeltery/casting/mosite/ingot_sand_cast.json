@@ -4,10 +4,10 @@
     "tag": "tconstruct:casts/single_use/ingot"
   },
   "cast_consumed": true,
+  "cooling_time": 69,
   "fluid": {
-    "tag": "tinkers_reforged:mosite",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:mosite"
   },
-  "result": "tinkers_reforged:mosite_ingot",
-  "cooling_time": 69
+  "result": "tinkers_reforged:mosite_ingot"
 }

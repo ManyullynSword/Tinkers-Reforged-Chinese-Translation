@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:qivium",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:qivium"
   },
   "temperature": 1100,
   "time": 23

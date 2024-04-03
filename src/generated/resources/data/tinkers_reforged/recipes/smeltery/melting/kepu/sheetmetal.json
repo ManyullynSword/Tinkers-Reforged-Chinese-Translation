@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:sheetmetals/kepu",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:sheetmetals/kepu"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:sheetmetals/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:kepu",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:kepu"
   },
   "temperature": 1300,
   "time": 75

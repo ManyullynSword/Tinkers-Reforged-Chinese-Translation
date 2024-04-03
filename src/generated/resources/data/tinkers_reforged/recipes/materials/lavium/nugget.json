@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/lavium"
   },
-  "value": 1,
+  "material": "tinkers_reforged:lavium",
   "needed": 9,
-  "material": "tinkers_reforged:lavium"
+  "value": 1
 }

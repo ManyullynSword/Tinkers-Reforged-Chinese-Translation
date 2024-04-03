@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:sheetmetals/durasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:sheetmetals/durasteel"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:sheetmetals/durasteel"
   },
   "result": {
-    "fluid": "tinkers_reforged:durasteel",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:durasteel"
   },
   "temperature": 1500,
   "time": 80

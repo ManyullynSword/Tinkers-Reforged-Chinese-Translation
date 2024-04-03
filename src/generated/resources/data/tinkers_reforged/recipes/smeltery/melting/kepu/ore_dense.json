@@ -2,15 +2,14 @@
   "type": "tconstruct:ore_melting",
   "conditions": [
     {
+      "type": "tconstruct:tag_intersection_present",
       "registry": "minecraft:item",
       "tags": [
         "forge:ores/kepu",
         "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+      ]
     }
   ],
-  "rate": "metal",
   "ingredient": {
     "type": "forge:intersection",
     "children": [
@@ -22,9 +21,10 @@
       }
     ]
   },
+  "rate": "metal",
   "result": {
-    "fluid": "tinkers_reforged:kepu",
-    "amount": 540
+    "amount": 540,
+    "fluid": "tinkers_reforged:kepu"
   },
   "temperature": 1300,
   "time": 337

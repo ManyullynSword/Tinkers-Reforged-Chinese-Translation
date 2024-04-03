@@ -1,5 +1,6 @@
 {
   "type": "tconstruct:part_builder",
+  "cost": 4,
   "pattern": "tinkers_reforged:great_blade",
   "pattern_item": [
     {
@@ -9,7 +10,6 @@
       "item": "tinkers_reforged:great_blade_gold_cast"
     }
   ],
-  "cost": 4,
   "result": {
     "item": "tinkers_reforged:great_blade"
   }

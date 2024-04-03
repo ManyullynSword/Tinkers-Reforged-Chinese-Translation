@@ -4,15 +4,15 @@ import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.api.material.*;
-import mrthomas20121.tinkers_reforged.datagen.ReforgedByproduct;
-import mrthomas20121.tinkers_reforged.datagen.tcon.ReforgedMaterialIds;
-import mrthomas20121.tinkers_reforged.init.*;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
 import mrthomas20121.tinkers_reforged.item.CastObject;
-import net.minecraft.data.*;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
@@ -21,7 +21,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
@@ -30,6 +29,7 @@ import net.minecraftforge.common.crafting.conditions.NotCondition;
 import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.mantle.recipe.ingredient.EntityIngredient;
@@ -37,7 +37,10 @@ import slimeknights.mantle.recipe.ingredient.FluidIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
-import slimeknights.tconstruct.library.data.recipe.*;
+import slimeknights.tconstruct.library.data.recipe.IByproduct;
+import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
+import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
+import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
@@ -53,14 +56,10 @@ import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifier
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
-import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
-import slimeknights.tconstruct.smeltery.data.Byproduct;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.TinkerTools;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
-import slimeknights.tconstruct.world.TinkerWorld;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
@@ -282,7 +281,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
                 .setCast(input, true)
                 .setSwitchSlots()
-                .save(consumer, modResource(folder + "aluminum_casts/" + cast.getRegistryName().getPath()));
+                .save(consumer, modResource(folder + "aluminum_casts/" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(cast)).getPath()));
     }
 
     public void gemBlock(Consumer<FinishedRecipe> consumer, String name, Item block, Item gem) {
@@ -298,7 +297,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                                 ::save
                 )
                 .generateAdvancement()
-                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, gem.getRegistryName().getPath() + "_to_block"));
+                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(gem)).getPath() + "_to_block"));
     }
 
     public void blockIngotNuggetCompression(Consumer<FinishedRecipe> consumer, String name, Item block, Item ingot, Item nugget) {
@@ -314,7 +313,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                                 ::save
                 )
                 .generateAdvancement()
-                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, ingot.getRegistryName().getPath() + "_to_block"));
+                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(ingot)).getPath() + "_to_block"));
 
         ConditionalRecipe.builder().addCondition(this.TRUE()).addRecipe(
                         ShapelessRecipeBuilder.shapeless(ingot, 9)
@@ -324,7 +323,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                                 ::save
                 )
                 .generateAdvancement()
-                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, block.getRegistryName().getPath() + "_to_ingot"));
+                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block)).getPath() + "_to_ingot"));
 
         ConditionalRecipe.builder().addCondition(this.TRUE()).addRecipe(
                         ShapedRecipeBuilder.shaped(ingot, 1)
@@ -338,7 +337,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                                 ::save
                 )
                 .generateAdvancement()
-                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, nugget.getRegistryName().getPath() + "_to_ingot"));
+                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(nugget)).getPath() + "_to_ingot"));
 
         ConditionalRecipe.builder().addCondition(this.TRUE()).addRecipe(
                         ShapelessRecipeBuilder.shapeless(nugget, 9)
@@ -348,11 +347,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                                 ::save
                 )
                 .generateAdvancement()
-                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, ingot.getRegistryName().getPath() + "_to_nugget"));
+                .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(ingot)).getPath() + "_to_nugget"));
     }
 
     private void partRecipes(Consumer<FinishedRecipe> consumer, IMaterialItem part, TinkerCastType.Type cast, int cost, String partFolder, String castFolder) {
-        String name = Objects.requireNonNull(part.asItem().getRegistryName()).getPath();
+        String name = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(part.asItem())).getPath();
         CastObject object = new CastObject(cast.getName());
 
         // Part Builder
@@ -377,7 +376,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         // Cast Casting
         MaterialIngredient ingredient = MaterialIngredient.fromItem(part);
-        castCreation(consumer, ingredient, cast, castFolder, Objects.requireNonNull(part.asItem().getRegistryName()).getPath());
+        castCreation(consumer, ingredient, cast, castFolder, name);
     }
 
     private void castCreation(Consumer<FinishedRecipe> consumer, Ingredient input, TinkerCastType.Type cast, String folder, String name) {
@@ -441,5 +440,9 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .setFluidAndTime(fluid, true, FluidValues.LARGE_GEM_BLOCK)
                 .setSwitchSlots()
                 .save(consumer, modResource(folder));
+    }
+
+    private ResourceLocation modResource(String path) {
+        return new ResourceLocation(this.getModId(), path);
     }
 }

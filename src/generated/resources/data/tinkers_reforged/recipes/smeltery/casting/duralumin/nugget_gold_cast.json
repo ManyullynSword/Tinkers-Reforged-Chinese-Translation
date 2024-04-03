@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
+  "cooling_time": 19,
   "fluid": {
-    "tag": "tinkers_reforged:duralumin",
-    "amount": 10
+    "amount": 10,
+    "tag": "tinkers_reforged:duralumin"
   },
-  "result": "tinkers_reforged:duralumin_nugget",
-  "cooling_time": 19
+  "result": "tinkers_reforged:duralumin_nugget"
 }

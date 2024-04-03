@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/hornium"
   },
-  "value": 1,
+  "material": "tinkers_reforged:hornium",
   "needed": 9,
-  "material": "tinkers_reforged:hornium"
+  "value": 1
 }

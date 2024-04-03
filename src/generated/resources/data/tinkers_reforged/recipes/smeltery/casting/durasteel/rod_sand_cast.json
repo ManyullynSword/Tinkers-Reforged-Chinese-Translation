@@ -1,24 +1,24 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:rods/durasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/single_use/rod"
   },
   "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/durasteel"
+      }
+    }
+  ],
+  "cooling_time": 57,
   "fluid": {
-    "tag": "tinkers_reforged:durasteel",
-    "amount": 45
+    "amount": 45,
+    "tag": "tinkers_reforged:durasteel"
   },
   "result": {
     "tag": "forge:rods/durasteel"
-  },
-  "cooling_time": 57
+  }
 }

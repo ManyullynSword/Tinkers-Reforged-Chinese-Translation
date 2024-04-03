@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/bomin"
   },
   "result": {
-    "fluid": "tinkers_reforged:bomin",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:bomin"
   },
   "temperature": 1200,
   "time": 216

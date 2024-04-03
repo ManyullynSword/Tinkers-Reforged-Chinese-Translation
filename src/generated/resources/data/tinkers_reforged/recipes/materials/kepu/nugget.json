@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/kepu"
   },
-  "value": 1,
+  "material": "tinkers_reforged:kepu",
   "needed": 9,
-  "material": "tinkers_reforged:kepu"
+  "value": 1
 }

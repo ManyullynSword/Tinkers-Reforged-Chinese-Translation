@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:coins/kepu",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/kepu"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:coins/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:kepu",
-    "amount": 30
+    "amount": 30,
+    "fluid": "tinkers_reforged:kepu"
   },
   "temperature": 1300,
   "time": 50

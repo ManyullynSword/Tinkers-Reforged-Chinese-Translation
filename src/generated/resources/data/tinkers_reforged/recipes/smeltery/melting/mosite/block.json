@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/mosite"
   },
   "result": {
-    "fluid": "tinkers_reforged:mosite",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:mosite"
   },
   "temperature": 1100,
   "time": 208

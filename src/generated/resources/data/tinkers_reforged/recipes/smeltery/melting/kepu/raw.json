@@ -1,12 +1,12 @@
 {
   "type": "tconstruct:ore_melting",
-  "rate": "metal",
   "ingredient": {
     "tag": "forge:raw_materials/kepu"
   },
+  "rate": "metal",
   "result": {
-    "fluid": "tinkers_reforged:kepu",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:kepu"
   },
   "temperature": 1300,
   "time": 112

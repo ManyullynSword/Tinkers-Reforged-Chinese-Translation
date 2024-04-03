@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:kepu",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:kepu"
   },
   "temperature": 1300,
   "time": 225

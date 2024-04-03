@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/blazium"
   },
   "result": {
-    "fluid": "tinkers_reforged:blazium",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:blazium"
   },
   "temperature": 1400,
   "time": 26

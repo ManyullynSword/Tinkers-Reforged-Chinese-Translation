@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/gallium"
   },
   "result": {
-    "fluid": "tinkers_reforged:gallium",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:gallium"
   },
   "temperature": 1200,
   "time": 216

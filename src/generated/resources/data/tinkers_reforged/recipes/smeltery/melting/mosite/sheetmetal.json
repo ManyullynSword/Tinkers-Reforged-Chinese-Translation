@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:sheetmetals/mosite",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:sheetmetals/mosite"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:sheetmetals/mosite"
   },
   "result": {
-    "fluid": "tinkers_reforged:mosite",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:mosite"
   },
   "temperature": 1100,
   "time": 69

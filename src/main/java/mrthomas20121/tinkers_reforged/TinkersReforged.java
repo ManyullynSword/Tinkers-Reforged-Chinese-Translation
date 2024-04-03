@@ -67,7 +67,7 @@ public class TinkersReforged {
 		gen.addProvider(event.includeServer(), new ReforgedFluidTags(gen, fileHelper));
 		gen.addProvider(event.includeServer(), new ReforgedItemsTags(gen, tags, fileHelper));
 		gen.addProvider(event.includeServer(), new ReforgedEntityTags(gen, fileHelper));
-		gen.addProvider(event.includeServer(), ReforgedBiomeModifiers.getProvider(gen, fileHelper));
+		//gen.addProvider(event.includeServer(), ReforgedBiomeModifiers.getProvider(gen, fileHelper));
 		//gen.addProvider(new ReforgedModifiers(gen));
 		gen.addProvider(event.includeClient(), new ReforgedItemModels(gen, fileHelper));
 		gen.addProvider(event.includeClient(), new ReforgedBlockStates(gen, fileHelper));

@@ -1,5 +1,5 @@
 {
   "type": "tconstruct:table_casting_composite",
-  "result": "tinkers_reforged:long_blade",
-  "item_cost": 3
+  "item_cost": 3,
+  "result": "tinkers_reforged:long_blade"
 }

@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:casting_basin",
+  "cooling_time": 241,
   "fluid": {
-    "tag": "tinkers_reforged:durasteel",
-    "amount": 810
+    "amount": 810,
+    "tag": "tinkers_reforged:durasteel"
   },
-  "result": "tinkers_reforged:durasteel_block",
-  "cooling_time": 241
+  "result": "tinkers_reforged:durasteel_block"
 }

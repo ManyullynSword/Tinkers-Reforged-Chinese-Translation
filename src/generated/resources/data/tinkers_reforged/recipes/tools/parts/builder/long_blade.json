@@ -1,5 +1,6 @@
 {
   "type": "tconstruct:part_builder",
+  "cost": 3,
   "pattern": "tinkers_reforged:long_blade",
   "pattern_item": [
     {
@@ -9,7 +10,6 @@
       "item": "tinkers_reforged:long_blade_gold_cast"
     }
   ],
-  "cost": 3,
   "result": {
     "item": "tinkers_reforged:long_blade"
   }

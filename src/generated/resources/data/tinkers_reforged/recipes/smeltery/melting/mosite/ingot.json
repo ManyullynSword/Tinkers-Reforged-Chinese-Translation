@@ -4,8 +4,8 @@
     "tag": "forge:ingots/mosite"
   },
   "result": {
-    "fluid": "tinkers_reforged:mosite",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:mosite"
   },
   "temperature": 1100,
   "time": 69

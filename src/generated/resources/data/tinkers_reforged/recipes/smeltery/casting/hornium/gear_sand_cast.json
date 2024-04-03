@@ -1,24 +1,24 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:gears/hornium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/single_use/gear"
   },
   "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/hornium"
+      }
+    }
+  ],
+  "cooling_time": 160,
   "fluid": {
-    "tag": "tinkers_reforged:hornium",
-    "amount": 360
+    "amount": 360,
+    "tag": "tinkers_reforged:hornium"
   },
   "result": {
     "tag": "forge:gears/hornium"
-  },
-  "cooling_time": 160
+  }
 }

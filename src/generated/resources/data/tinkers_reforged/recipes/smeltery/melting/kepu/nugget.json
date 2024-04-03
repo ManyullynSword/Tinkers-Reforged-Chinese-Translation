@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:kepu",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:kepu"
   },
   "temperature": 1300,
   "time": 25

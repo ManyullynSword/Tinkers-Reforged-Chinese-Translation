@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:ingots/duralumin"
   },
-  "value": 1,
+  "material": "tinkers_reforged:duralumin",
   "needed": 1,
-  "material": "tinkers_reforged:duralumin"
+  "value": 1
 }

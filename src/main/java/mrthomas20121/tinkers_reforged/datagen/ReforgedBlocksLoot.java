@@ -21,7 +21,7 @@ public class ReforgedBlocksLoot extends BlockLoot {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ForgeRegistries.BLOCKS.getValues().stream()
-                .filter((block) -> TinkersReforged.MOD_ID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace())).toList();
+                .filter((block) -> TinkersReforged.MOD_ID.equals(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getNamespace())).toList();
     }
 
     @Override

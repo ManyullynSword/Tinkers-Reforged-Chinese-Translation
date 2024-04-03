@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/bomin"
   },
-  "value": 1,
+  "material": "tinkers_reforged:bomin",
   "needed": 9,
-  "material": "tinkers_reforged:bomin"
+  "value": 1
 }

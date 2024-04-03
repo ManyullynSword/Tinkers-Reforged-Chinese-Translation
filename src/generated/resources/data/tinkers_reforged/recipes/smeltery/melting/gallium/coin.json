@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:coins/gallium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/gallium"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:coins/gallium"
   },
   "result": {
-    "fluid": "tinkers_reforged:gallium",
-    "amount": 30
+    "amount": 30,
+    "fluid": "tinkers_reforged:gallium"
   },
   "temperature": 1200,
   "time": 48

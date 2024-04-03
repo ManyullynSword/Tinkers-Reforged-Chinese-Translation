@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:gears/blazium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/blazium"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:gears/blazium"
   },
   "result": {
-    "fluid": "tinkers_reforged:blazium",
-    "amount": 360
+    "amount": 360,
+    "fluid": "tinkers_reforged:blazium"
   },
   "temperature": 1400,
   "time": 155

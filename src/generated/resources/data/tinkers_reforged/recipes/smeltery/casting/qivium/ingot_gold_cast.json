@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
+  "cooling_time": 69,
   "fluid": {
-    "tag": "tinkers_reforged:qivium",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:qivium"
   },
-  "result": "tinkers_reforged:qivium_ingot",
-  "cooling_time": 69
+  "result": "tinkers_reforged:qivium_ingot"
 }

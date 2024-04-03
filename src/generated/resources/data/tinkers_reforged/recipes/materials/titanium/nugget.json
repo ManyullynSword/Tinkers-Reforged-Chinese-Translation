@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/titanium"
   },
-  "value": 1,
+  "material": "tinkers_reforged:titanium",
   "needed": 9,
-  "material": "tinkers_reforged:titanium"
+  "value": 1
 }

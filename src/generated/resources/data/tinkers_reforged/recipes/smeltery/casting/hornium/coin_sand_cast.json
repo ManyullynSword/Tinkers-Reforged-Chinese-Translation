@@ -1,24 +1,24 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:coins/hornium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/single_use/coin"
   },
   "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/hornium"
+      }
+    }
+  ],
+  "cooling_time": 46,
   "fluid": {
-    "tag": "tinkers_reforged:hornium",
-    "amount": 30
+    "amount": 30,
+    "tag": "tinkers_reforged:hornium"
   },
   "result": {
     "tag": "forge:coins/hornium"
-  },
-  "cooling_time": 46
+  }
 }

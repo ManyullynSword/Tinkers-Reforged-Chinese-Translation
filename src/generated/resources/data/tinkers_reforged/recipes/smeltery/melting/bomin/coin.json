@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:coins/bomin",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/bomin"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:coins/bomin"
   },
   "result": {
-    "fluid": "tinkers_reforged:bomin",
-    "amount": 30
+    "amount": 30,
+    "fluid": "tinkers_reforged:bomin"
   },
   "temperature": 1200,
   "time": 48

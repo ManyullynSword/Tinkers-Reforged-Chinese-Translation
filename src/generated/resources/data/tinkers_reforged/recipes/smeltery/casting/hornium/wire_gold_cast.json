@@ -1,23 +1,23 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
-    {
-      "value": {
-        "tag": "forge:wires/hornium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/hornium"
+      }
+    }
+  ],
+  "cooling_time": 57,
   "fluid": {
-    "tag": "tinkers_reforged:hornium",
-    "amount": 45
+    "amount": 45,
+    "tag": "tinkers_reforged:hornium"
   },
   "result": {
     "tag": "forge:wires/hornium"
-  },
-  "cooling_time": 57
+  }
 }

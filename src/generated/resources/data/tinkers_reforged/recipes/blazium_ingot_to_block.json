@@ -9,11 +9,6 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "XXX",
-          "XYX",
-          "XXX"
-        ],
         "key": {
           "X": {
             "tag": "forge:ingots/blazium"
@@ -22,6 +17,11 @@
             "item": "tinkers_reforged:blazium_ingot"
           }
         },
+        "pattern": [
+          "XXX",
+          "XYX",
+          "XXX"
+        ],
         "result": {
           "item": "tinkers_reforged:blazium_block"
         }

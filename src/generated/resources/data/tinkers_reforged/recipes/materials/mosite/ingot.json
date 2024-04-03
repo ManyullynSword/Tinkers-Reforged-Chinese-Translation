@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:ingots/mosite"
   },
-  "value": 1,
+  "material": "tinkers_reforged:mosite",
   "needed": 1,
-  "material": "tinkers_reforged:mosite"
+  "value": 1
 }

@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:ingots/ferobolt"
   },
-  "value": 1,
+  "material": "tinkers_reforged:ferobolt",
   "needed": 1,
-  "material": "tinkers_reforged:ferobolt"
+  "value": 1
 }

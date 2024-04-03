@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:geore_clusters/epidote",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:geore_clusters/epidote"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:geore_clusters/epidote"
   },
   "result": {
-    "fluid": "tinkers_reforged:epidote",
-    "amount": 400
+    "amount": 400,
+    "fluid": "tinkers_reforged:epidote"
   },
   "temperature": 800,
   "time": 150

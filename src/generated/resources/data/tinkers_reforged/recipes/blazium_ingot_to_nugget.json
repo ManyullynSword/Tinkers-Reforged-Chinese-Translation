@@ -15,8 +15,8 @@
           }
         ],
         "result": {
-          "item": "tinkers_reforged:blazium_nugget",
-          "count": 9
+          "count": 9,
+          "item": "tinkers_reforged:blazium_nugget"
         }
       }
     }

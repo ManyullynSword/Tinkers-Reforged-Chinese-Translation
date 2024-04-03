@@ -4,8 +4,8 @@
     "tag": "forge:ingots/electric_copper"
   },
   "result": {
-    "fluid": "tinkers_reforged:electric_copper",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:electric_copper"
   },
   "temperature": 800,
   "time": 60

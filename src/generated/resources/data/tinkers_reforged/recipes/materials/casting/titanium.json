@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:material_fluid",
   "fluid": {
-    "tag": "tinkers_reforged:titanium",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:titanium"
   },
-  "temperature": 1300,
-  "output": "tinkers_reforged:titanium"
+  "output": "tinkers_reforged:titanium",
+  "temperature": 1300
 }

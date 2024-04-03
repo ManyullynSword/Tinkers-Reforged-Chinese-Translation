@@ -4,8 +4,8 @@
     "tag": "forge:ingots/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:qivium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:qivium"
   },
   "temperature": 1100,
   "time": 69

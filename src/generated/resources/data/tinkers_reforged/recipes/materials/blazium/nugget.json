@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:nuggets/blazium"
   },
-  "value": 1,
+  "material": "tinkers_reforged:blazium",
   "needed": 9,
-  "material": "tinkers_reforged:blazium"
+  "value": 1
 }

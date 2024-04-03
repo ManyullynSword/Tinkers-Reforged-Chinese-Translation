@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:coins/mosite",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/mosite"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:coins/mosite"
   },
   "result": {
-    "fluid": "tinkers_reforged:mosite",
-    "amount": 30
+    "amount": 30,
+    "fluid": "tinkers_reforged:mosite"
   },
   "temperature": 1100,
   "time": 46

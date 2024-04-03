@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:dusts/lavium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/lavium"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:dusts/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:lavium",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:lavium"
   },
   "temperature": 1100,
   "time": 52

@@ -3,10 +3,10 @@
   "ingredient": {
     "tag": "forge:storage_blocks/lavium"
   },
-  "value": 9,
-  "needed": 1,
-  "material": "tinkers_reforged:lavium",
   "leftover": {
     "tag": "forge:ingots/lavium"
-  }
+  },
+  "material": "tinkers_reforged:lavium",
+  "needed": 1,
+  "value": 9
 }

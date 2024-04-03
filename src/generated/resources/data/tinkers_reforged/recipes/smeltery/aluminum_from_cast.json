@@ -4,8 +4,8 @@
     "tag": "tinkers_reforged:casts/aluminum"
   },
   "result": {
-    "fluid": "tconstruct:molten_aluminum",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tconstruct:molten_aluminum"
   },
   "temperature": 700,
   "time": 50

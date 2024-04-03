@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/gallium"
   },
   "result": {
-    "fluid": "tinkers_reforged:gallium",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:gallium"
   },
   "temperature": 1200,
   "time": 24

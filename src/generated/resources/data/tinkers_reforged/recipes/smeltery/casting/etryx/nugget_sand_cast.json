@@ -4,10 +4,10 @@
     "tag": "tconstruct:casts/single_use/nugget"
   },
   "cast_consumed": true,
+  "cooling_time": 22,
   "fluid": {
-    "tag": "tinkers_reforged:etryx",
-    "amount": 10
+    "amount": 10,
+    "tag": "tinkers_reforged:etryx"
   },
-  "result": "tinkers_reforged:etryx_nugget",
-  "cooling_time": 22
+  "result": "tinkers_reforged:etryx_nugget"
 }

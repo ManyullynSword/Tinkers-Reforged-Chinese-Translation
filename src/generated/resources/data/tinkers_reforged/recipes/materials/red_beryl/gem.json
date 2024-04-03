@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:gems/red_beryl"
   },
-  "value": 1,
+  "material": "tinkers_reforged:red_beryl",
   "needed": 1,
-  "material": "tinkers_reforged:red_beryl"
+  "value": 1
 }

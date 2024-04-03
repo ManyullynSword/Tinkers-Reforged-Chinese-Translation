@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "tinkers_reforged:ender_bone"
   },
-  "value": 1,
+  "material": "tinkers_reforged:ender_bone",
   "needed": 1,
-  "material": "tinkers_reforged:ender_bone"
+  "value": 1
 }

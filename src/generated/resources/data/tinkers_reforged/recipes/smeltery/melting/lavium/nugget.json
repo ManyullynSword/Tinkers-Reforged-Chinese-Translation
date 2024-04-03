@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:lavium",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:lavium"
   },
   "temperature": 1100,
   "time": 23

@@ -4,8 +4,8 @@
     "tag": "forge:nuggets/hornium"
   },
   "result": {
-    "fluid": "tinkers_reforged:hornium",
-    "amount": 10
+    "amount": 10,
+    "fluid": "tinkers_reforged:hornium"
   },
   "temperature": 1500,
   "time": 27

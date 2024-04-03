@@ -3,10 +3,10 @@
   "cast": {
     "item": "minecraft:bone"
   },
+  "cooling_time": 82,
   "fluid": {
-    "tag": "forge:ender",
-    "amount": 250
+    "amount": 250,
+    "tag": "forge:ender"
   },
-  "result": "tinkers_reforged:ender_bone",
-  "cooling_time": 82
+  "result": "tinkers_reforged:ender_bone"
 }

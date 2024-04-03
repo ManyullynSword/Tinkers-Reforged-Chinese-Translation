@@ -2,19 +2,19 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "forge:not",
       "value": {
-        "tag": "forge:wires/bomin",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/bomin"
+      }
     }
   ],
   "ingredient": {
     "tag": "forge:wires/bomin"
   },
   "result": {
-    "fluid": "tinkers_reforged:bomin",
-    "amount": 45
+    "amount": 45,
+    "fluid": "tinkers_reforged:bomin"
   },
   "temperature": 1200,
   "time": 14

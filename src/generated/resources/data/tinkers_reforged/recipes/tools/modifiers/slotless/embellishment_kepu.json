@@ -1,5 +1,6 @@
 {
   "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
   "inputs": [
     {
       "tag": "forge:ingots/kepu"
@@ -11,6 +12,10 @@
       "tag": "forge:ingots/kepu"
     }
   ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tinkers_reforged:kepu"
+  },
   "tools": [
     {
       "item": "tconstruct:plate_boots"
@@ -24,10 +29,5 @@
     {
       "item": "tconstruct:plate_helmet"
     }
-  ],
-  "allow_crystal": false,
-  "result": {
-    "name": "tconstruct:embellishment",
-    "value": "tinkers_reforged:kepu"
-  }
+  ]
 }

@@ -2,17 +2,17 @@
   "type": "tconstruct:alloy",
   "inputs": [
     {
-      "name": "tconstruct:molten_amethyst",
-      "amount": 100
+      "amount": 100,
+      "fluid": "tconstruct:molten_amethyst"
     },
     {
-      "name": "tinkers_reforged:titanium",
-      "amount": 100
+      "amount": 100,
+      "fluid": "tinkers_reforged:titanium"
     }
   ],
   "result": {
-    "fluid": "tinkers_reforged:etryx",
-    "amount": 90
+    "amount": 90,
+    "fluid": "tinkers_reforged:etryx"
   },
   "temperature": 1500
 }

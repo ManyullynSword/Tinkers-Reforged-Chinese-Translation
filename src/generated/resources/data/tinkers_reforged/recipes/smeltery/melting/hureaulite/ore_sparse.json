@@ -1,16 +1,21 @@
 {
   "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 45,
+      "fluid": "tconstruct:molten_aluminum"
+    }
+  ],
   "conditions": [
     {
+      "type": "tconstruct:tag_intersection_present",
       "registry": "minecraft:item",
       "tags": [
         "forge:ores/hureaulite",
         "forge:ore_rates/sparse"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+      ]
     }
   ],
-  "rate": "gem",
   "ingredient": {
     "type": "forge:intersection",
     "children": [
@@ -22,16 +27,11 @@
       }
     ]
   },
+  "rate": "gem",
   "result": {
-    "fluid": "tinkers_reforged:hureaulite",
-    "amount": 50
+    "amount": 50,
+    "fluid": "tinkers_reforged:hureaulite"
   },
   "temperature": 800,
-  "time": 60,
-  "byproducts": [
-    {
-      "fluid": "tconstruct:molten_aluminum",
-      "amount": 45
-    }
-  ]
+  "time": 60
 }

@@ -4,8 +4,8 @@
     "tag": "forge:storage_blocks/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:qivium",
-    "amount": 810
+    "amount": 810,
+    "fluid": "tinkers_reforged:qivium"
   },
   "temperature": 1100,
   "time": 208

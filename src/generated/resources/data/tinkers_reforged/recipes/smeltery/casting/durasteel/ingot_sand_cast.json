@@ -4,10 +4,10 @@
     "tag": "tconstruct:casts/single_use/ingot"
   },
   "cast_consumed": true,
+  "cooling_time": 80,
   "fluid": {
-    "tag": "tinkers_reforged:durasteel",
-    "amount": 90
+    "amount": 90,
+    "tag": "tinkers_reforged:durasteel"
   },
-  "result": "tinkers_reforged:durasteel_ingot",
-  "cooling_time": 80
+  "result": "tinkers_reforged:durasteel_ingot"
 }
