@@ -4,6 +4,7 @@
     "tag": "forge:storage_blocks/qivium"
   },
   "leftover": {
+    "count": 1,
     "tag": "forge:ingots/qivium"
   },
   "material": "tinkers_reforged:qivium",

@@ -4,6 +4,7 @@
     "tag": "forge:storage_blocks/durasteel"
   },
   "leftover": {
+    "count": 1,
     "tag": "forge:ingots/durasteel"
   },
   "material": "tinkers_reforged:durasteel",

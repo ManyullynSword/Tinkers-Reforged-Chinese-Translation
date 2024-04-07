@@ -4,6 +4,7 @@
     "tag": "forge:storage_blocks/titanium"
   },
   "leftover": {
+    "count": 1,
     "tag": "forge:ingots/titanium"
   },
   "material": "tinkers_reforged:titanium",

@@ -4,6 +4,7 @@
     "tag": "forge:storage_blocks/blazium"
   },
   "leftover": {
+    "count": 1,
     "tag": "forge:ingots/blazium"
   },
   "material": "tinkers_reforged:blazium",
