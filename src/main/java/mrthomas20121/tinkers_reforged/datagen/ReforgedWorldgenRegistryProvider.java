@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
 
 import static net.minecraft.core.HolderSet.direct;
 
-public class ReforgedWorldgenRegistryProvider extends WorldgenDatapackRegistryProvider {
+public class ReforgedWorldgenRegistryProvider implements DataProvider {
 
     private final DataGenerator generator;
     private final ExistingFileHelper existingFileHelper;
@@ -49,7 +49,6 @@ public class ReforgedWorldgenRegistryProvider extends WorldgenDatapackRegistryPr
     private final RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
 
     public ReforgedWorldgenRegistryProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, existingFileHelper);
         this.generator = generator;
         this.existingFileHelper = existingFileHelper;
     }
@@ -63,15 +62,25 @@ public class ReforgedWorldgenRegistryProvider extends WorldgenDatapackRegistryPr
 
         for(EnumMetal metal: EnumMetal.values()) {
             if(metal.isThisOre()) {
-                biomeModifiers.put("cobalt_ore", new ForgeBiomeModifiers.AddFeaturesBiomeModifier(nether, direct(reference(TinkersReforgedWorldGen.PLACED_METAL_ORES.get(metal).getKey())), GenerationStep.Decoration.UNDERGROUND_DECORATION));
+                if(metal.isThisOtherOre()) {
+                    biomeModifiers.put(metal.getName()+"_ore", new ForgeBiomeModifiers.AddFeaturesBiomeModifier(end, direct(reference(TinkersReforgedWorldGen.PLACED_METAL_ORES.get(metal).getKey())), GenerationStep.Decoration.UNDERGROUND_DECORATION));
+                }
+                else {
+                    biomeModifiers.put(metal.getName()+"_ore", new ForgeBiomeModifiers.AddFeaturesBiomeModifier(overworld, direct(reference(TinkersReforgedWorldGen.PLACED_METAL_ORES.get(metal).getKey())), GenerationStep.Decoration.UNDERGROUND_DECORATION));
+                }
             }
         }
 
         for(EnumGem gem: EnumGem.values()) {
-            biomeModifiers.put("cobalt_ore", new ForgeBiomeModifiers.AddFeaturesBiomeModifier(nether, direct(reference(TinkersReforgedWorldGen.PLACED_GEM_ORES.get(gem).getKey())), GenerationStep.Decoration.UNDERGROUND_DECORATION));
+            biomeModifiers.put(gem.getName()+"ore", new ForgeBiomeModifiers.AddFeaturesBiomeModifier(overworld, direct(reference(TinkersReforgedWorldGen.PLACED_GEM_ORES.get(gem).getKey())), GenerationStep.Decoration.UNDERGROUND_DECORATION));
         }
 
         registryName(ForgeRegistries.Keys.BIOME_MODIFIERS, biomeModifiers).run(cache);
+    }
+
+    @Override
+    public String getName() {
+        return "Tinkers Reforged Biome Modifiers";
     }
 
     private <T> Holder<T> reference(ResourceKey<T> key) {
