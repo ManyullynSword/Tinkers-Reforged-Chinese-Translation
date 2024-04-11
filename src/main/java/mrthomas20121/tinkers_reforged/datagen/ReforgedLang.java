@@ -33,7 +33,7 @@ public class ReforgedLang extends LanguageProvider {
         add("itemGroup.tinkers_reforged.tools", "Tinkers Reforged Tools");
         add("itemGroup.tinkers_reforged.tool_parts", "Tinkers Reforged Tool Parts");
         add("pattern.tinkers_reforged.great_blade", "Great Blade Pattern");
-        add("pattern.tinkers_reforged.large_round_plate", "Large Round Plate Pattern");
+        add("pattern.tinkers_reforged.long_sword", "Longsword Pattern");
         addItem(TinkersReforgedItems.book, "Reforging Guide");
         addItem(TinkersReforgedItems.ender_bone, "Ender Bone");
         addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");

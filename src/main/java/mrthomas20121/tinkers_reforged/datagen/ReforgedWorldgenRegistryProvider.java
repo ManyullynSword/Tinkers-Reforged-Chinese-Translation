@@ -28,6 +28,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.holdersets.AndHolderSet;
 import net.minecraftforge.registries.holdersets.NotHolderSet;
 import net.minecraftforge.registries.holdersets.OrHolderSet;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.world.data.WorldgenDatapackRegistryProvider;
 
@@ -79,8 +80,8 @@ public class ReforgedWorldgenRegistryProvider implements DataProvider {
     }
 
     @Override
-    public String getName() {
-        return "Tinkers Reforged Biome Modifiers";
+    public @NotNull String getName() {
+        return "Tinkers Reforged Biomes Modifiers";
     }
 
     private <T> Holder<T> reference(ResourceKey<T> key) {

@@ -44,6 +44,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
 
             TagKey<Block> BLOCK = TinkersReforgedTags.Blocks.create("forge:storage_blocks/%s".formatted(gem.getName()));
             tag(BLOCK).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get());
             tag(gem.getBlockTag()).add(
                     TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get(),
                     TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get(),
@@ -60,6 +61,10 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
             if(metal.isThisOre()) {
                 tag(tags.rawBlock).add(TinkersReforgedBlocks.RAW_ORES.get(metal).get());
                 tag(tags.oreBlock).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
+                if(metal.isThisOverworldOre()) {
+                    tag(BlockTags.MINEABLE_WITH_PICKAXE).add(((OverworldOreBlock)TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get());
+                }
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
                 TagsProvider.TagAppender<Block> oreTag = tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
                 TagsProvider.TagAppender<Block> miningTag = tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
                 TagsProvider.TagAppender<Block> oresTag = tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
@@ -68,7 +73,6 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                     oreTag.add(overworldBlock);
                     oresTag.add(overworldBlock);
                     miningTag.add(overworldBlock);
-
                 }
             }
 

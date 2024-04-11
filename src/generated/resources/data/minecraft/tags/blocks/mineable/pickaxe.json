@@ -3,6 +3,8 @@
     "tinkers_reforged:epidote_block",
     "tinkers_reforged:hureaulite_block",
     "tinkers_reforged:red_beryl_block",
+    "tinkers_reforged:deepslate_aluminum_ore",
+    "tinkers_reforged:aluminum_ore",
     "tinkers_reforged:aluminum_block",
     "tinkers_reforged:aluminum_platform",
     "tinkers_reforged:blazium_block",
@@ -23,6 +25,7 @@
     "tinkers_reforged:gallium_platform",
     "tinkers_reforged:hornium_block",
     "tinkers_reforged:hornium_platform",
+    "tinkers_reforged:kepu_ore",
     "tinkers_reforged:kepu_block",
     "tinkers_reforged:kepu_platform",
     "tinkers_reforged:lavium_block",
@@ -33,6 +36,7 @@
     "tinkers_reforged:qivium_platform",
     "tinkers_reforged:tiberium_block",
     "tinkers_reforged:tiberium_platform",
+    "tinkers_reforged:titanium_ore",
     "tinkers_reforged:titanium_block",
     "tinkers_reforged:titanium_platform"
   ]
