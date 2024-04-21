@@ -11,8 +11,10 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class MushModifier extends Modifier implements ToolStatsModifierHook {
 
-    public MushModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.TOOL_STATS));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.TOOL_STATS);
     }
 
     @Override

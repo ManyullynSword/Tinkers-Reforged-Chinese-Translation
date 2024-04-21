@@ -6,11 +6,14 @@ import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedToolDefinitions;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.ToolActions;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.tools.definition.harvest.IHarvestLogic;
 import slimeknights.tconstruct.library.tools.definition.harvest.ModifiedHarvestLogic;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import javax.annotation.Nonnull;
 
@@ -43,8 +46,9 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                 .multiplier(ToolStats.DURABILITY, 1.1f)
                 .largeToolStartingSlots()
                 .harvestLogic(swordLogic)
+                .action(ToolActions.SWORD_DIG)
                 // traits
-                .trait(TinkersReforgedModifiers.returning);
+                .trait(TinkerModifiers.knockback);
 
         define(TinkersReforgedToolDefinitions.LONGSWORD)
                 // parts
@@ -58,6 +62,7 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                 .multiplier(ToolStats.DURABILITY, 1.1f)
                 .largeToolStartingSlots()
                 .harvestLogic(swordLogic)
+                .action(ToolActions.SWORD_DIG)
                 // traits
                 .trait(TinkersReforgedModifiers.long_range);
     }

@@ -26,8 +26,12 @@ public class ExcavationModifier extends Modifier implements BreakSpeedModifierHo
     private static final ResourceLocation VALUE = new ResourceLocation(TinkersReforged.MOD_ID, "block_mined");
     private static final ResourceLocation LEVEL = new ResourceLocation(TinkersReforged.MOD_ID, "level");
 
-    public ExcavationModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.BREAK_SPEED).addHook(this, TinkerHooks.TOOLTIP));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder
+                .addHook(this, TinkerHooks.BREAK_SPEED)
+                .addHook(this, TinkerHooks.TOOLTIP);
     }
 
     @Override

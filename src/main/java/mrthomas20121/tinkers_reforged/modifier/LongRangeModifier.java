@@ -24,8 +24,10 @@ public class LongRangeModifier extends Modifier implements ToolStatsModifierHook
     private static final UUID attackRange = AttributeModule.getUUID("tinkers_reforged.attack_range_buff", EquipmentSlot.MAINHAND);
     private static final UUID reach = AttributeModule.getUUID("tinkers_reforged.reach_distance_buff", EquipmentSlot.MAINHAND);
 
-    public LongRangeModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.ATTRIBUTES));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.ATTRIBUTES);
     }
 
     @Override

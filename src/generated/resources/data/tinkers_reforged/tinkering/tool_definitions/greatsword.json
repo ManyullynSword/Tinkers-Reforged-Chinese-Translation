@@ -1,4 +1,7 @@
 {
+  "actions": [
+    "sword_dig"
+  ],
   "harvest": {
     "logic": {
       "type": "tconstruct:modified_tag",
@@ -54,7 +57,7 @@
   "traits": [
     {
       "level": 1,
-      "name": "tinkers_reforged:returning"
+      "name": "tconstruct:knockback"
     }
   ]
 }

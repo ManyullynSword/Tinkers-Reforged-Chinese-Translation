@@ -11,8 +11,10 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class RockSolidModifier extends Modifier implements ToolStatsModifierHook {
 
-    public RockSolidModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.TOOL_STATS));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.TOOL_STATS);
     }
 
     @Override

@@ -11,8 +11,10 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class HeadshotModifier extends Modifier implements MeleeDamageModifierHook {
 
-    public HeadshotModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.MELEE_DAMAGE));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.MELEE_DAMAGE);
     }
 
     @Override

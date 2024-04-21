@@ -31,12 +31,13 @@ import java.util.List;
 // Increase mining speed and damage in hot/dry area, decreases a bit in wet area
 public class BiomeEffectModifier extends Modifier implements BreakSpeedModifierHook, MeleeDamageModifierHook, TooltipModifierHook {
 
-    public BiomeEffectModifier() {
-        this.registerHooks(ModifierHookMap.builder()
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder
                 .addHook(this, TinkerHooks.TOOLTIP)
                 .addHook(this, TinkerHooks.BREAK_SPEED)
-                .addHook(TinkerHooks.MELEE_DAMAGE)
-        );
+                .addHook(TinkerHooks.MELEE_DAMAGE);
     }
 
     @Override

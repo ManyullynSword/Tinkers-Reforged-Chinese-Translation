@@ -20,8 +20,10 @@ public class SeasonedModifier extends Modifier implements EntityLootModifierHook
 
     private static final ResourceLocation netherStar = new ResourceLocation("minecraft:nether_star");
 
-    public SeasonedModifier() {
-        registerHooks(ModifierHookMap.builder().addHook(this, TinkersReforgedHooks.ENTITY_LOOT_MODIFIER));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkersReforgedHooks.ENTITY_LOOT_MODIFIER);
     }
 
     @Override

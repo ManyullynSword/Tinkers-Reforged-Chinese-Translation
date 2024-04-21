@@ -16,8 +16,10 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 public class WitherArrowModifier extends Modifier implements ProjectileHitModifierHook {
 
-    public WitherArrowModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.PROJECTILE_HIT));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.PROJECTILE_HIT);
     }
 
     @Override
