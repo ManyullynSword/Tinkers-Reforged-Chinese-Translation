@@ -14,8 +14,10 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class ForceCannonModifier extends Modifier implements ToolStatsModifierHook, MeleeDamageModifierHook {
 
-    public ForceCannonModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.MELEE_DAMAGE));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.MELEE_DAMAGE);
     }
 
     @Override

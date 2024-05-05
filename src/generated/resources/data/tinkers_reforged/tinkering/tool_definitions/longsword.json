@@ -1,4 +1,7 @@
 {
+  "actions": [
+    "sword_dig"
+  ],
   "harvest": {
     "logic": {
       "type": "tconstruct:modified_tag",

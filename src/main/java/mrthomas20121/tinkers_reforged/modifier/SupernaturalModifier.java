@@ -11,8 +11,10 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class SupernaturalModifier extends Modifier implements MeleeHitModifierHook {
 
-    public SupernaturalModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.MELEE_HIT));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.MELEE_HIT);
     }
 
     @Override

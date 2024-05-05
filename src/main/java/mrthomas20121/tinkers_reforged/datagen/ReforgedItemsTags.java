@@ -42,6 +42,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     protected void addTags() {
 
         tag(TinkerTags.Items.MODIFIABLE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.MELEE_WEAPON).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.MELEE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.SWORD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.MELEE_PRIMARY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
@@ -51,6 +52,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.BROAD_TOOLS).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LONG_BLADE.get());
+        tag(TinkerTags.Items.INTERACTABLE_RIGHT).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LONG_BLADE.get());
 
         // gem tags
         for(EnumGem gem: EnumGem.values()) {

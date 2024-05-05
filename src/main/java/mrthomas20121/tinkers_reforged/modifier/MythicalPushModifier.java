@@ -13,8 +13,10 @@ import slimeknights.tconstruct.tools.data.ModifierIds;
 
 public class MythicalPushModifier extends Modifier implements BreakSpeedModifierHook {
 
-    public MythicalPushModifier() {
-        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.BREAK_SPEED));
+    @Override
+    protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, TinkerHooks.BREAK_SPEED);
     }
 
     @Override
