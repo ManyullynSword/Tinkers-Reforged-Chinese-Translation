@@ -1,26 +1,26 @@
 {
   "stats": {
-    "tconstruct:extra": {},
+    "tconstruct:binding": {},
     "tconstruct:grip": {
       "accuracy": -0.2,
       "durability": 0.9,
-      "meleeAttack": 0.1
+      "melee_damage": 0.1
     },
     "tconstruct:handle": {
-      "attackDamage": 1.0,
-      "attackSpeed": 1.0,
-      "durability": 1.0,
-      "miningSpeed": 1.0
+      "durability": 0.0,
+      "melee_damage": 0.0,
+      "melee_speed": 0.2,
+      "mining_speed": 0.0
     },
     "tconstruct:head": {
-      "attack": 3.0,
       "durability": 555,
-      "harvestTier": "tinkers_reforged:kepu",
-      "miningSpeed": 6.7
+      "melee_attack": 3.0,
+      "mining_speed": 6.7,
+      "mining_tier": "tinkers_reforged:kepu"
     },
     "tconstruct:limb": {
       "accuracy": -0.2,
-      "drawSpeed": 0.15,
+      "draw_speed": 0.15,
       "durability": 555,
       "velocity": 0.15
     }

@@ -264,7 +264,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, IMaterialItem part, String folder) {
         Item cast = TinkersReforgedItems.ALU_CASTS.get(type).get();
-        this.createCast(consumer, cast, MaterialIngredient.fromItem(part), folder);
+        this.createCast(consumer, cast, MaterialIngredient.of(part), folder);
     }
 
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, String input, String folder) {
@@ -375,7 +375,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .save(consumer, modResource(castingFolder + name + "_composite"));
 
         // Cast Casting
-        MaterialIngredient ingredient = MaterialIngredient.fromItem(part);
+        MaterialIngredient ingredient = MaterialIngredient.of(part);
         castCreation(consumer, ingredient, cast, castFolder, name);
     }
 

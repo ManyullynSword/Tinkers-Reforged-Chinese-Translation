@@ -17,16 +17,5 @@ public class ReforgedEntityTags extends EntityTypeTagsProvider {
 
     @Override
     protected void addTags() {
-
-        tag(TinkersReforgedTags.Entities.NETHER_MOBS).add(
-                EntityType.BLAZE,
-                EntityType.GHAST,
-                EntityType.ZOGLIN,
-                EntityType.PIGLIN,
-                EntityType.PIGLIN_BRUTE,
-                EntityType.ZOMBIFIED_PIGLIN,
-                EntityType.WITHER_SKELETON,
-                EntityType.WITHER
-        );
     }
 }

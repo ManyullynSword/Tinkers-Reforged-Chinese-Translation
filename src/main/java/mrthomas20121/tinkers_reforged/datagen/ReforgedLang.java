@@ -101,7 +101,7 @@ public class ReforgedLang extends LanguageProvider {
             addModifier(material.mod, capitalize(material.mod.getId().getPath()),capitalize(material.mod.getId().getPath()), material.modifierDesc);
         }
 
-        addModifier(TinkersReforgedModifiers.long_range, "Long Range", "Long Range.", "Increases Attack and Entity Range.");
+        //addModifier(TinkersReforgedModifiers.long_range, "Long Range", "Long Range.", "Increases Attack and Entity Range.");
 
         // kepu harvest tier
         add("stat.tconstruct.harvest_tier.tinkers_reforged.kepu", "Kepu");

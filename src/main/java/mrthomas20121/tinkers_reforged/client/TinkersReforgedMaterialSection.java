@@ -7,16 +7,16 @@ import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
-import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import javax.annotation.Nonnull;
 import java.util.Set;
 
 public class TinkersReforgedMaterialSection extends AbstractMaterialSectionTransformer {
 
-    private static final Set<MaterialStatsId> VISIBLE_STATS = ImmutableSet.of(HeadMaterialStats.ID, HandleMaterialStats.ID, ExtraMaterialStats.ID);
+    private static final Set<MaterialStatsId> VISIBLE_STATS = ImmutableSet.of(HeadMaterialStats.ID, HandleMaterialStats.ID, StatlessMaterialStats.BINDING.getIdentifier());
 
     public TinkersReforgedMaterialSection() {
         super("tinkers_reforged_materials", false);

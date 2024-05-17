@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.util;
+package mrthomas20121.tinkers_reforged.util.modifier_hooks;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;

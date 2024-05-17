@@ -2,22 +2,28 @@ package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedToolDefinitions;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolActions;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
-import slimeknights.tconstruct.library.tools.definition.harvest.IHarvestLogic;
-import slimeknights.tconstruct.library.tools.definition.harvest.ModifiedHarvestLogic;
+import slimeknights.tconstruct.library.materials.RandomMaterial;
+import slimeknights.tconstruct.library.tools.definition.module.ToolModule;
+import slimeknights.tconstruct.library.tools.definition.module.build.MultiplyStatsModule;
+import slimeknights.tconstruct.library.tools.definition.module.build.SetStatsModule;
+import slimeknights.tconstruct.library.tools.definition.module.build.ToolActionsModule;
+import slimeknights.tconstruct.library.tools.definition.module.material.DefaultMaterialsModule;
+import slimeknights.tconstruct.library.tools.definition.module.material.PartStatsModule;
+import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveModule;
+import slimeknights.tconstruct.library.tools.definition.module.mining.MiningSpeedModifierModule;
+import slimeknights.tconstruct.library.tools.nbt.MultiplierNBT;
+import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import javax.annotation.Nonnull;
 
-import static slimeknights.tconstruct.tools.TinkerToolParts.*;
+import static slimeknights.tconstruct.tools.TinkerToolParts.toolHandle;
 
 public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDataProvider {
 
@@ -27,44 +33,53 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
 
     @Override
     protected void addToolDefinitions() {
+        RandomMaterial tier1Material = RandomMaterial.random().tier(1).build();
+        DefaultMaterialsModule defaultThreeParts = DefaultMaterialsModule.builder().material(tier1Material, tier1Material, tier1Material).build();
+        DefaultMaterialsModule defaultFourParts = DefaultMaterialsModule.builder().material(tier1Material, tier1Material, tier1Material, tier1Material).build();
 
-        IHarvestLogic swordLogic = ModifiedHarvestLogic
-                .builder(TinkerTags.Blocks.MINABLE_WITH_SWORD)
-                .blockModifier(7.5f, Blocks.COBWEB)
-                .blockModifier(100f, Blocks.BAMBOO, Blocks.BAMBOO_SAPLING)
-                .build();
+        ToolModule[] swordHarvest = {
+                IsEffectiveModule.tag(TinkerTags.Blocks.MINABLE_WITH_SWORD),
+                MiningSpeedModifierModule.blocks(7.5f, Blocks.COBWEB),
+                MiningSpeedModifierModule.blocks(100f, Blocks.BAMBOO, Blocks.BAMBOO_SAPLING)
+        };
 
         define(TinkersReforgedToolDefinitions.GREATSWORD)
                 // parts
-                .part(TinkersReforgedItems.GREAT_BLADE)
-                .part(toolHandle)
-                .part(toolHandle)
-                // stats
-                .stat(ToolStats.ATTACK_DAMAGE, 4f)
-                .stat(ToolStats.ATTACK_SPEED, 0.75f)
-                .multiplier(ToolStats.MINING_SPEED, 0.5f)
-                .multiplier(ToolStats.DURABILITY, 1.1f)
+                .module(PartStatsModule.parts()
+                        .part(TinkersReforgedItems.GREAT_BLADE)
+                        .part(toolHandle)
+                        .part(toolHandle).build())
+                .module(defaultThreeParts)
+                .module(new SetStatsModule(StatsNBT.builder()
+                        .set(ToolStats.ATTACK_DAMAGE, 4f)
+                        .set(ToolStats.ATTACK_SPEED, 0.75f)
+                        .build()))
+                .module(new MultiplyStatsModule(MultiplierNBT.builder()
+                        .set(ToolStats.MINING_SPEED, 0.5f)
+                        .set(ToolStats.DURABILITY, 1.1f)
+                        .build()))
                 .largeToolStartingSlots()
-                .harvestLogic(swordLogic)
-                .action(ToolActions.SWORD_DIG)
-                // traits
-                .trait(TinkerModifiers.knockback);
+                .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
+                .module(swordHarvest);
 
         define(TinkersReforgedToolDefinitions.LONGSWORD)
                 // parts
-                .part(TinkersReforgedItems.LONG_BLADE)
-                .part(toolHandle)
-                .part(toolHandle)
-                // stats
-                .stat(ToolStats.ATTACK_DAMAGE, 3f)
-                .stat(ToolStats.ATTACK_SPEED, 1.6f)
-                .multiplier(ToolStats.MINING_SPEED, 0.5f)
-                .multiplier(ToolStats.DURABILITY, 1.1f)
+                .module(PartStatsModule.parts()
+                        .part(TinkersReforgedItems.LONG_BLADE)
+                        .part(toolHandle)
+                        .part(toolHandle).build())
+                .module(defaultThreeParts)
+                .module(new SetStatsModule(StatsNBT.builder()
+                        .set(ToolStats.ATTACK_DAMAGE, 3f)
+                        .set(ToolStats.ATTACK_SPEED, 1.6f)
+                        .build()))
+                .module(new MultiplyStatsModule(MultiplierNBT.builder()
+                        .set(ToolStats.MINING_SPEED, 0.5f)
+                        .set(ToolStats.DURABILITY, 1.1f)
+                        .build()))
                 .largeToolStartingSlots()
-                .harvestLogic(swordLogic)
-                .action(ToolActions.SWORD_DIG)
-                // traits
-                .trait(TinkersReforgedModifiers.long_range);
+                .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
+                .module(swordHarvest);
     }
 
     @Nonnull
