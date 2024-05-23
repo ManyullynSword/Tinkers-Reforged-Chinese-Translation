@@ -1,10 +1,9 @@
 {
   "values": [
-    "tinkers_reforged:kepu_ore",
-    "tinkers_reforged:kepu_ore",
+    "tinkers_reforged:kepu_block",
+    "tinkers_reforged:kepu_platform",
     "tinkers_reforged:tiberium_block",
     "tinkers_reforged:tiberium_platform",
-    "tinkers_reforged:titanium_ore",
     "tinkers_reforged:titanium_ore",
     "tinkers_reforged:titanium_block",
     "tinkers_reforged:titanium_platform"

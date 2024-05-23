@@ -29,7 +29,7 @@ public enum EnumMetal implements EnumData {
     FEROBOLT(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.FEROBOLT),
     GALLIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.GALLIUM),
     HORNIUM(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.HORNIUM),
-    KEPU(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.KEPU),
+    KEPU(true, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.KEPU),
     LAVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.LAVIUM),
     MOSITE(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.MOSITE),
     QIVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.QIVIUM),

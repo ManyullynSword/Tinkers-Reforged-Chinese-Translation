@@ -14,8 +14,8 @@
     },
     "tconstruct:head": {
       "durability": 333,
-      "melee_attack": 2.0,
-      "mining_speed": 5.3,
+      "melee_attack": 2.7,
+      "mining_speed": 6.0,
       "mining_tier": "tinkers_reforged:kepu"
     },
     "tconstruct:limb": {

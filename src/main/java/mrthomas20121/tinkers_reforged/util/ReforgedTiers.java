@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.util;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
@@ -21,7 +22,7 @@ import java.util.function.Supplier;
 
 public enum ReforgedTiers implements Tier {
 
-    KEPU(5, 2031, 10.0F, 5.0F, 15, () -> Ingredient.of(TinkersReforgedItems.METALS.get(EnumMetal.KEPU).get(EnumMetal.ItemType.INGOT).get()), null);
+    KEPU(5, 2030, 10.0F, 5.0F, 15, () -> Ingredient.of(TinkersReforgedItems.METALS.get(EnumMetal.KEPU).get(EnumMetal.ItemType.INGOT).get()), TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS);
 
     private final int level;
     private final int uses;
@@ -31,7 +32,7 @@ public enum ReforgedTiers implements Tier {
     private final Lazy<Ingredient> repairIngredient;
     private final TagKey<Block> tag;
 
-    private ReforgedTiers(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> supplier, TagKey<Block> tag) {
+    ReforgedTiers(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> supplier, TagKey<Block> tag) {
         this.level = level;
         this.uses = uses;
         this.speed = speed;
@@ -40,7 +41,7 @@ public enum ReforgedTiers implements Tier {
         this.repairIngredient = Lazy.of(supplier);
         this.tag = tag;
 
-        TierSortingRegistry.registerTier(this, new ResourceLocation(TinkersReforged.MOD_ID, "kepu"), List.of(), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(this, new ResourceLocation(TinkersReforged.MOD_ID, "kepu"), List.of(Tiers.NETHERITE), List.of());
     }
 
     public int getUses() {

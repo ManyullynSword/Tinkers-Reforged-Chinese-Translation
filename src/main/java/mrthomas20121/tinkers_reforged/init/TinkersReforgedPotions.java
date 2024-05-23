@@ -15,6 +15,7 @@ public class TinkersReforgedPotions {
     public static DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, TinkersReforged.MOD_ID);
 
     public static RegistryObject<MobEffect> FROZEN = MOB_EFFECTS.register("frozen", EffectFrozen::new);
+    public static RegistryObject<MobEffect> ARMOR_TOUGHNESS_BUFF = MOB_EFFECTS.register("toughness", EffectFrozen::new);
 
     public static RegistryObject<Potion> FREEZE_POTION = POTIONS.register("frozen_potion", () -> new Potion("frozen", new MobEffectInstance(FROZEN.get(), 500)));
 

@@ -33,6 +33,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
         super(gen, TinkersReforged.MOD_ID, existingFileHelper);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     protected void addTags() {
 
@@ -55,6 +56,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
             tag(BlockTags.BEACON_BASE_BLOCKS).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
         }
 
+        //tag(NEED_KEPU_TOOLS).addTags(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
         for(EnumMetal metal: EnumMetal.values()) {
             MetalTags tags = RTags.getTagsForMetal(metal);
             if(metal.isThisOre()) {
@@ -64,12 +67,10 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                     tag(BlockTags.MINEABLE_WITH_PICKAXE).add(((OverworldOreBlock)TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get());
                 }
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
-                TagsProvider.TagAppender<Block> oreTag = tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
                 TagsProvider.TagAppender<Block> miningTag = tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
                 TagsProvider.TagAppender<Block> oresTag = tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
                 if(metal.isThisOverworldOre()) {
                     Block overworldBlock = ((OverworldOreBlock)TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get();
-                    oreTag.add(overworldBlock);
                     oresTag.add(overworldBlock);
                     miningTag.add(overworldBlock);
                 }

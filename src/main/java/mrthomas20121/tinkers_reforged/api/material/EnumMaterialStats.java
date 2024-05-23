@@ -82,7 +82,7 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.3f)
     ),
     KEPU(
-            new HeadMaterialStats(333, 5.3f, ReforgedTiers.KEPU, 2f),
+            new HeadMaterialStats(333, 6f, ReforgedTiers.KEPU, 2.7f),
             HandleMaterialStats.multipliers().durability(1.1f).attackSpeed(1.1f).build(),
             StatlessMaterialStats.BINDING,
             new LimbMaterialStats(333, -0.15f, 0.2f, 0.2f),
