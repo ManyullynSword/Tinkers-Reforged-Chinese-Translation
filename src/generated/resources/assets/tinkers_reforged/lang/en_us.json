@@ -252,7 +252,7 @@
   "modifier.tinkers_reforged.amplitude.flavor": "Amplitude",
   "modifier.tinkers_reforged.diffusing": "Diffusing",
   "modifier.tinkers_reforged.diffusing.compatible": "Not Compatible with the following traits: Weight Ratio.",
-  "modifier.tinkers_reforged.diffusing.description": "Distribute your mining speed stat to other stats(dmg, atk speed and durability).",
+  "modifier.tinkers_reforged.diffusing.description": "Set your mining speed and attack to the highest of the two stats.",
   "modifier.tinkers_reforged.diffusing.flavor": "Diffusing",
   "modifier.tinkers_reforged.draconic_scale": "Draconic Scale",
   "modifier.tinkers_reforged.draconic_scale.description": "Exp drop scale with looting.",

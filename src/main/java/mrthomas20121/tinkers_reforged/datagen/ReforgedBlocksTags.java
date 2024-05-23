@@ -33,7 +33,6 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
         super(gen, TinkersReforged.MOD_ID, existingFileHelper);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     protected void addTags() {
 
@@ -44,7 +43,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
 
             TagKey<Block> BLOCK = TinkersReforgedTags.Blocks.create("forge:storage_blocks/%s".formatted(gem.getName()));
             tag(BLOCK).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get());
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get(), TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get());
             tag(gem.getBlockTag()).add(
                     TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get(),
                     TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get(),
