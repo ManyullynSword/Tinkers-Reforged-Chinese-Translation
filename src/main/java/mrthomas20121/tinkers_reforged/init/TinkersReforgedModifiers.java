@@ -13,7 +13,7 @@ public class TinkersReforgedModifiers {
     // traits
     public static StaticModifier<AdaptabilityModifier> adaptability = MODIFIERS.register("adaptability", AdaptabilityModifier::new);
     public static StaticModifier<AmplitudeModifier> amplitude = MODIFIERS.register("amplitude", AmplitudeModifier::new);
-    public static StaticModifier<VitalModifier> vital = MODIFIERS.register("anti_effects", VitalModifier::new);
+    public static StaticModifier<VitalModifier> vital = MODIFIERS.register("vital", VitalModifier::new);
     public static StaticModifier<DraconicScaleModifier> draconic_scale = MODIFIERS.register("draconic_scale", DraconicScaleModifier::new);
     public static StaticModifier<FrozenArrowModifier> frozen_arrow = MODIFIERS.register("frozen_arrow", FrozenArrowModifier::new);
     public static StaticModifier<GiganticModifier> gigantic = MODIFIERS.register("gigantic", GiganticModifier::new);
@@ -21,7 +21,7 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<InfernalModifier> infernal = MODIFIERS.register("infernal", InfernalModifier::new);
     public static StaticModifier<MidasTouchModifier> midas_touch = MODIFIERS.register("midas_touch", MidasTouchModifier::new);
     public static StaticModifier<MuffledModifier> muffled = MODIFIERS.register("muffled", MuffledModifier::new);
-    public static StaticModifier<OtherworldlyModifier> otherworldy = MODIFIERS.register("otherworldly", OtherworldlyModifier::new);
+    public static StaticModifier<DiffusingModifier> diffusing = MODIFIERS.register("diffusing", DiffusingModifier::new);
     public static StaticModifier<RadiantBeamModifier> radiant_beam = MODIFIERS.register("radiant_beam", RadiantBeamModifier::new);
     public static StaticModifier<RockSolidModifier> rock_solid = MODIFIERS.register("rock_solid", RockSolidModifier::new);
     public static StaticModifier<SizzlingModifier> sizzling = MODIFIERS.register("sizzling", SizzlingModifier::new);

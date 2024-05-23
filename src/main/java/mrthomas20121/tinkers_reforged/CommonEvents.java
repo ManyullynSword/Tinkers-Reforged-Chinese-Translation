@@ -5,6 +5,7 @@ import mrthomas20121.tinkers_reforged.util.TinkersReforgedHooks;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -41,11 +42,13 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void itemAttributeEvent(ItemAttributeModifierEvent event) {
-        if(event.getItemStack().is(TinkersReforgedItems.LONGSWORD.get())) {
-            event.addModifier(ForgeMod.ATTACK_RANGE.get(), ATTACK_RANGE_MOD);
-        }
-        else if(event.getItemStack().is(TinkersReforgedItems.GREATSWORD.get())) {
-            event.addModifier(Attributes.ATTACK_SPEED, ATTACK_SPEED_MOD);
+        if(event.getSlotType().equals(EquipmentSlot.MAINHAND)) {
+            if(event.getItemStack().is(TinkersReforgedItems.LONGSWORD.get())) {
+                event.addModifier(ForgeMod.ATTACK_RANGE.get(), ATTACK_RANGE_MOD);
+            }
+            else if(event.getItemStack().is(TinkersReforgedItems.GREATSWORD.get())) {
+                event.addModifier(Attributes.ATTACK_SPEED, ATTACK_SPEED_MOD);
+            }
         }
     }
 
@@ -57,7 +60,7 @@ public class CommonEvents {
                 if(entity instanceof LivingEntity e) {
                     if(e.getMainHandItem().is(TinkerTags.Items.MODIFIABLE)) {
                         IToolStackView toolStack = ToolStack.from(e.getMainHandItem());
-                        toolStack.getDefinitionData().getHook(TinkersReforgedHooks.DEATH_MODIFIER).onDeath(toolStack, e, source, event.getEntity());
+                        toolStack.getModifierList().forEach(mod -> mod.getHook(TinkersReforgedHooks.DEATH_MODIFIER).onDeath(toolStack, e, source, event.getEntity()));
                     }
                 }
             }
@@ -68,14 +71,13 @@ public class CommonEvents {
     public static void critEvent(CriticalHitEvent event) {
         if(event.getEntity() != null) {
             if(event.getEntity().getMainHandItem().is(TinkersReforgedItems.GREATSWORD.get())) {
-                event.setResult(Event.Result.ALLOW);
-                event.setDamageModifier(1.7f);
+                event.setDamageModifier(4f);
             }
             else {
                 ItemStack stack = event.getEntity().getMainHandItem();
                 if (stack.is(TinkerTags.Items.MODIFIABLE)) {
                     IToolStackView toolstack = ToolStack.from(stack);
-                    toolstack.getDefinitionData().getHook(TinkersReforgedHooks.CRIT_MODIFIER).onCrit(toolstack, event.getEntity(), event);
+                    toolstack.getModifierList().forEach(mod -> mod.getHook(TinkersReforgedHooks.CRIT_MODIFIER).onCrit(toolstack, event.getEntity(), event));
                 }
             }
         }
@@ -92,7 +94,7 @@ public class CommonEvents {
             ItemStack stack = attacker.getMainHandItem();
             if (stack.is(TinkerTags.Items.MODIFIABLE)) {
                 IToolStackView toolstack = ToolStack.from(stack);
-                toolstack.getDefinitionData().getHook(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onLootDrop(toolstack, attacker, event.getDrops(), looting, source, entity, isRecentlyHit, event);
+                toolstack.getModifierList().forEach(mod -> mod.getHook(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onLootDrop(toolstack, attacker, event.getDrops(), looting, source, entity, isRecentlyHit, event));
             }
         }
     }
@@ -104,7 +106,7 @@ public class CommonEvents {
             ItemStack stack = player.getMainHandItem();
             if (stack.is(TinkerTags.Items.MODIFIABLE)) {
                 IToolStackView toolstack = ToolStack.from(stack);
-                toolstack.getDefinitionData().getHook(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onExperienceDrop(toolstack, player, event);
+                toolstack.getModifierList().forEach(mod -> mod.getHook(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onExperienceDrop(toolstack, player, event));
             }
         }
     }

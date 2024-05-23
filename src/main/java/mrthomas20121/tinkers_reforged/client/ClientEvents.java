@@ -15,8 +15,18 @@ import slimeknights.tconstruct.shared.CommonsClientEvents;
 @Mod.EventBusSubscriber(modid = TinkersReforged.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientEvents {
 
+    @SuppressWarnings("removal")
     @SubscribeEvent
     static void clientSetup(final FMLClientSetupEvent event) {
         TinkersReforgedBook.REFORGING_GUIDE.fontRenderer = CommonsClientEvents.unicodeFontRender();
+
+        event.enqueueWork(
+                () -> {
+                    RenderType cutout = RenderType.cutout();
+                    for(EnumMetal metal: EnumMetal.values()) {
+                        ItemBlockRenderTypes.setRenderLayer(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.PLATFORM).get(), cutout);
+                    }
+                }
+        );
     }
 }

@@ -1,0 +1,42 @@
+{
+  "material.tinkers_reforged": {
+    "blazium": "#ed8a4e",
+    "bomin": "#706348",
+    "duralumin": "#9bb879",
+    "durasteel": "#9a6fad",
+    "electric_copper": "#a46d27",
+    "ender_bone": "#349988",
+    "epidote": "#a3b157",
+    "etryx": "#6a4b99",
+    "ferobolt": "#c5a58f",
+    "hornium": "#fdc4af",
+    "hureaulite": "#cf7b4b",
+    "kepu": "#16749b",
+    "lavium": "#6db156",
+    "mosite": "#9aa49a",
+    "qivium": "#ec5541",
+    "red_beryl": "#da3a6d",
+    "tiberium": "#839a26",
+    "titanium": "#a7b4bd"
+  },
+  "modifier.tinkers_reforged": {
+    "adaptability": "#9A6FAD",
+    "amplitude": "#706348",
+    "diffusing": "#6A4B99",
+    "draconic_scale": "#16749B",
+    "frozen_arrow": "#C5A58F",
+    "gigantic": "#839A26",
+    "headshot": "#DA3A6D",
+    "infernal": "#6DB156",
+    "midas_touch": "#A46D27",
+    "muffled": "#FDC4AF",
+    "radiant_beam": "#CF7B4B",
+    "rock_solid": "#9BB879",
+    "sizzling": "#ED8A4E",
+    "slashing": "#349988",
+    "under_the_sea": "#9AA49A",
+    "vital": "#A3B157",
+    "voracious": "#EC5541",
+    "weight_ratio": "#A7B4BD"
+  }
+}

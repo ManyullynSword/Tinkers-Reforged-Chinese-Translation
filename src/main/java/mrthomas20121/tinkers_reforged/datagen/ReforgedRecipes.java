@@ -188,6 +188,17 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         for(EnumMetal metal: EnumMetal.values()) {
 
+            ShapedRecipeBuilder
+                    .shaped(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.PLATFORM).get(), 4)
+                    .define('I', TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get())
+                    .define('N', TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get())
+                    .pattern("INI")
+                    .pattern("N N")
+                    .pattern("INI")
+                    .unlockedBy(getHasName(TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get()), has(TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get()))
+                    .unlockedBy(getHasName(TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get()), has(TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get()))
+                    .save(consumer, modResource("common/"+metal.getName()+"_platform"));
+
             if(metal.isThisOre()) {
                 Supplier<Item> ingot = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT);
                 oreFurnace(consumer, TinkersReforgedTags.Items.METAL_ORES.get(metal), ingot, metal.getName(), false);
@@ -201,11 +212,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
             }
 
             if(metal.equals(EnumMetal.ALUMINUM)) {
-                metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false, ReforgedByproduct.GALLIUM);
+                // do nothing for aluminum because tinkers already add melting/casting recipes for it
+                continue;
             }
-            else {
-                metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false);
-            }
+            metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false);
+
             metalCasting(consumer, metal.fluid, TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get(), TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get(), TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get(), castingFolder, metal.getName());
 
             Item ingot = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get();

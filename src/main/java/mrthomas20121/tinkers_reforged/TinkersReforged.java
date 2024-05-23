@@ -69,6 +69,7 @@ public class TinkersReforged {
 		gen.addProvider(event.includeServer(), new ReforgedEntityTags(gen, fileHelper));
 		gen.addProvider(event.includeServer(), new ReforgedWorldgenRegistryProvider(gen, fileHelper));
 		//gen.addProvider(new ReforgedModifiers(gen));
+		gen.addProvider(event.includeClient(), new ReforgedColorDataProvider(gen));
 		gen.addProvider(event.includeClient(), new ReforgedItemModels(gen, fileHelper));
 		gen.addProvider(event.includeClient(), new ReforgedBlockStates(gen, fileHelper));
 		gen.addProvider(event.includeClient(), new ReforgedLang(gen));
@@ -77,7 +78,7 @@ public class TinkersReforged {
 		gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
 		gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(gen, fileHelper, new ReforgedPartSprite(), provider));
 		gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(gen, fileHelper, new ReforgedPartSprite(), tinkersProvider));
-		gen.addProvider(event.includeClient(), new ReforgedRenderInfo(gen, provider));
+		gen.addProvider(event.includeClient(), new ReforgedRenderInfo(gen, provider, fileHelper));
 		gen.addProvider(event.includeClient(), new ReforgedLootTables(gen));
 	}
 

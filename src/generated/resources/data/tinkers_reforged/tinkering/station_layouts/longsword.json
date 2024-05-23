@@ -6,10 +6,10 @@
   "input_slots": [
     {
       "filter": {
-        "item": "tinkers_reforged:great_blade"
+        "item": "tinkers_reforged:long_blade"
       },
-      "icon": "tinkers_reforged:great_blade",
-      "translation_key": "item.tinkers_reforged.great_blade",
+      "icon": "tinkers_reforged:long_blade",
+      "translation_key": "item.tinkers_reforged.long_blade",
       "x": 48,
       "y": 26
     },

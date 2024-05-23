@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.datagen.tcon;
 
+import com.google.common.collect.ImmutableMap;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedToolDefinitions;
@@ -9,10 +10,12 @@ import net.minecraftforge.common.ToolActions;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.materials.RandomMaterial;
+import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.definition.module.ToolModule;
 import slimeknights.tconstruct.library.tools.definition.module.build.MultiplyStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.build.SetStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.build.ToolActionsModule;
+import slimeknights.tconstruct.library.tools.definition.module.build.ToolSlotsModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.DefaultMaterialsModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.PartStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveModule;
@@ -52,13 +55,14 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                 .module(defaultThreeParts)
                 .module(new SetStatsModule(StatsNBT.builder()
                         .set(ToolStats.ATTACK_DAMAGE, 4f)
-                        .set(ToolStats.ATTACK_SPEED, 0.75f)
+                        .set(ToolStats.ATTACK_SPEED, 1.1f)
                         .build()))
                 .module(new MultiplyStatsModule(MultiplierNBT.builder()
+                        .set(ToolStats.ATTACK_SPEED, 0.4f)
                         .set(ToolStats.MINING_SPEED, 0.5f)
                         .set(ToolStats.DURABILITY, 1.1f)
                         .build()))
-                .largeToolStartingSlots()
+                .module(new ToolSlotsModule(ImmutableMap.of(SlotType.UPGRADE, 2, SlotType.ABILITY, 2)))
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest);
 
@@ -77,7 +81,7 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                         .set(ToolStats.MINING_SPEED, 0.5f)
                         .set(ToolStats.DURABILITY, 1.1f)
                         .build()))
-                .largeToolStartingSlots()
+                .module(new ToolSlotsModule(ImmutableMap.of(SlotType.UPGRADE, 2, SlotType.ABILITY, 2)))
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest);
     }

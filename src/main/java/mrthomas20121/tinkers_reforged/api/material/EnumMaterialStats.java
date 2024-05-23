@@ -57,10 +57,10 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.5f)
     ),
     ETRYX(
-            new HeadMaterialStats(555, 4.9f, NETHERITE, 3.4f),
+            new HeadMaterialStats(666, 7f, NETHERITE, 2.8f),
             HandleMaterialStats.multipliers().attackSpeed(1.1f).miningSpeed(0.9f).build(),
             StatlessMaterialStats.BINDING,
-            new LimbMaterialStats(555, -0.15f, 0.15f, -0.1f),
+            new LimbMaterialStats(666, -0.15f, 0.15f, -0.1f),
             new GripMaterialStats(0.9f, -0.1f, 0.8f)
     ),
     FEROBOLT(
@@ -124,7 +124,7 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.2f, 1.1f)
     ),
     TITANIUM(
-            new HeadMaterialStats(500, 5.9f, ReforgedTiers.KEPU, 2.5f),
+            new HeadMaterialStats(500, 2.5f, ReforgedTiers.KEPU, 5f),
             HandleMaterialStats.multipliers().attackSpeed(0.9f).build(),
             StatlessMaterialStats.BINDING
     );
