@@ -26,6 +26,7 @@ public class SlashingModifier extends Modifier implements CritModifierHook {
     public void onCrit(IToolStackView tool, Player player, CriticalHitEvent event) {
         if(event.getResult() != Event.Result.ALLOW) {
             event.setResult(Event.Result.ALLOW);
+            event.setDamageModifier(1f+0.9f*tool.getModifierLevel(this));
         }
     }
 }

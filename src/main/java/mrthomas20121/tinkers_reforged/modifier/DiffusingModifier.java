@@ -51,7 +51,7 @@ public class DiffusingModifier extends Modifier implements ToolStatsModifierHook
         float mining_speed = builder.getStat(ToolStats.MINING_SPEED);
         float atk_dmg = builder.getStat(ToolStats.ATTACK_DAMAGE);
 
-        float max = Math.max(mining_speed, atk_dmg);
+        float max = Math.max(mining_speed+modifier.getLevel(), atk_dmg+modifier.getLevel())*0.9f;
 
         ToolStats.ATTACK_DAMAGE.update(builder, 0f);
         ToolStats.MINING_SPEED.update(builder, 0f);
