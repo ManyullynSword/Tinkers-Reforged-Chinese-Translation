@@ -22,6 +22,7 @@ import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tools.item.ModifiableSwordItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import java.util.ArrayList;
@@ -74,9 +75,9 @@ public class TinkersReforgedItems {
 
     public static final RegistryObject<ToolPartItem> LONG_BLADE = ITEMS.register("long_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
 
-    public static final RegistryObject<ModifiableItem> LONGSWORD = ITEMS.register("longsword", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.LONGSWORD));
+    public static final RegistryObject<ModifiableSwordItem> LONGSWORD = ITEMS.register("longsword", () -> new ModifiableSwordItem(TOOL, TinkersReforgedToolDefinitions.LONGSWORD));
 
-    public static final RegistryObject<ModifiableItem> GREATSWORD = ITEMS.register("greatsword", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.GREATSWORD));
+    public static final RegistryObject<ModifiableSwordItem> GREATSWORD = ITEMS.register("greatsword", () -> new ModifiableSwordItem(TOOL, TinkersReforgedToolDefinitions.GREATSWORD));
 
     public static CastObject great_blade_cast = new CastObject("great_blade");
 

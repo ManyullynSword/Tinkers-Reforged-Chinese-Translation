@@ -35,6 +35,6 @@ Add new materials to Tinkers Construct
 [[dependencies.tinkers_reforged]]
     modId="tconstruct"
     mandatory=true
-    versionRange="[3.8.0.14,)"
+    versionRange="[3.8.2.32,)"
     ordering="NONE"
     side="BOTH"

@@ -29,11 +29,11 @@ public class TinkersReforgedBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TinkersReforged.MOD_ID);
 
     // block properties
-    private static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(5F, 1200f).sound(SoundType.METAL);
-    private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE);
+    private static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(5F, 1200f).sound(SoundType.METAL).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties END_ORE = Block.Properties.of(Material.STONE).strength(3F, 5.5f).sound(SoundType.STONE);
-    private static final BlockBehaviour.Properties DEEPSLATE_ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.DEEPSLATE);
-    private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK);
+    private static final BlockBehaviour.Properties DEEPSLATE_ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK).requiresCorrectToolForDrops();
 
     public static Map<EnumMetal, IOreBlock> ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal -> {
             if(metal.isThisOverworldOre()) {

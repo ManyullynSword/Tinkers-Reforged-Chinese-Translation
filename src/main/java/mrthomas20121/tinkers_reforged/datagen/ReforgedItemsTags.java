@@ -18,15 +18,18 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import javax.annotation.Nullable;
 
 import static mrthomas20121.tinkers_reforged.init.TinkersReforgedTags.Items.*;
 import static net.minecraftforge.common.Tags.Items.*;
+import static slimeknights.tconstruct.common.TinkerTags.Items.*;
 
 public class ReforgedItemsTags extends ItemTagsProvider {
 
@@ -41,6 +44,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     @Override
     protected void addTags() {
 
+        //tag(TinkerTags.Items.BROAD_TOOLS)
+        addToolTags(TinkersReforgedItems.GREATSWORD.get(), MULTIPART_TOOL, DURABILITY, HARVEST, MELEE_PRIMARY, INTERACTABLE_RIGHT, SWORD, SMALL_TOOLS, BONUS_SLOTS, AOE);
+        addToolTags(TinkersReforgedItems.LONGSWORD.get(), MULTIPART_TOOL, DURABILITY, HARVEST, MELEE_PRIMARY, INTERACTABLE_RIGHT, SWORD, SMALL_TOOLS, BONUS_SLOTS, AOE);
         tag(TinkerTags.Items.MODIFIABLE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.MELEE_WEAPON).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.MELEE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
@@ -53,6 +59,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(TinkerTags.Items.BROAD_TOOLS).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
         tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LONG_BLADE.get());
         tag(TinkerTags.Items.INTERACTABLE_RIGHT).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LONG_BLADE.get());
+
 
         // gem tags
         for(EnumGem gem: EnumGem.values()) {
@@ -157,5 +164,13 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         red_sand.add(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(castType).get());
         multi_use.addTag(multiUseTag);
        single_use.addTag(singleUseTag);
+    }
+
+    @SafeVarargs
+    private void addToolTags(ItemLike tool, TagKey<Item>... tags) {
+        Item item = tool.asItem();
+        for (TagKey<Item> tag : tags) {
+            this.tag(tag).add(item);
+        }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "color": "6DB156",
+  "color": "FF6DB156",
   "fallbacks": [
     "metal"
   ],
@@ -11,7 +11,7 @@
       "tconstruct:repair_kit",
       "tconstruct:head",
       "tconstruct:handle",
-      "tconstruct:extra"
+      "tconstruct:binding"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

@@ -33,8 +33,6 @@ public class TinkersReforgedTags {
     public static class Entities {
         public static void init() {}
 
-        public static TagKey<EntityType<?>> NETHER_MOBS = create("tinkers_reforged:nether_mobs");
-
         public static TagKey<EntityType<?>> create(String p_203849_) {
             return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(p_203849_));
         }

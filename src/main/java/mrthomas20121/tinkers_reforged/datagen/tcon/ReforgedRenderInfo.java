@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import mrthomas20121.tinkers_reforged.api.material.EnumMaterial;
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRenderInfoProvider;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 
@@ -9,8 +10,8 @@ import javax.annotation.Nonnull;
 
 public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
 
-    public ReforgedRenderInfo(DataGenerator gen, AbstractMaterialSpriteProvider spriteProvider) {
-        super(gen, spriteProvider);
+    public ReforgedRenderInfo(DataGenerator gen, AbstractMaterialSpriteProvider spriteProvider, ExistingFileHelper existingFileHelper) {
+        super(gen, spriteProvider, existingFileHelper);
     }
 
     @Override

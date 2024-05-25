@@ -3,11 +3,11 @@
     "tconstruct:grip": {
       "accuracy": 0.2,
       "durability": 0.8,
-      "meleeAttack": 0.11
+      "melee_damage": 3.1
     },
     "tconstruct:limb": {
       "accuracy": 0.2,
-      "drawSpeed": 0.15,
+      "draw_speed": 0.15,
       "durability": 600,
       "velocity": -0.1
     }

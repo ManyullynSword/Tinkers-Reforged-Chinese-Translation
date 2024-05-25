@@ -101,15 +101,12 @@ public class ReforgedLang extends LanguageProvider {
             addModifier(material.mod, capitalize(material.mod.getId().getPath()),capitalize(material.mod.getId().getPath()), material.modifierDesc);
         }
 
-        addModifier(TinkersReforgedModifiers.long_range, "Long Range", "Long Range.", "Increases Attack and Entity Range.");
+        //addModifier(TinkersReforgedModifiers.long_range, "Long Range", "Long Range.", "Increases Attack and Entity Range.");
 
         // kepu harvest tier
         add("stat.tconstruct.harvest_tier.tinkers_reforged.kepu", "Kepu");
         // modifier bonus texts
-        add("modifier.tinkers_reforged.biome_effect.attack_damage", "Bonus damage in the current biome");
-        add("modifier.tinkers_reforged.biome_effect.mining_speed", "Bonus mining speed in the current biome");
-        add("modifier.tinkers_reforged.excavation.value", "%s/100 excavated block.");
-        add("modifier.tinkers_reforged.excavation.level", "%s Excavating Level.");
+        add("modifier.tinkers_reforged.diffusing.compatible", "Not Compatible with the following traits: Weight Ratio.");
 
         // potion stuff
         add("item.minecraft.potion.effect.frozen", "Frozen Potion");
