@@ -25,7 +25,8 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
     @Override
     protected void addMaterialStats() {
         for(EnumMaterial material: EnumMaterial.values()) {
-            addMaterialStats(material.id, material.stats.stats);
+            addMaterialStats(material.id, material.stats.getStats());
+            addArmorShieldStats(material.id, material.stats.getArmorStats().getStats(), material.stats.getArmorStats().getStatlessMaterialStats());
         }
     }
 }
