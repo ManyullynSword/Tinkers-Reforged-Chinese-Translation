@@ -18,6 +18,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.util.SupplierCreativeTab;
 import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.common.registration.CastItemObject;
+import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
@@ -30,9 +32,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static slimeknights.tconstruct.smeltery.TinkerSmeltery.TAB_SMELTERY;
+
 public class TinkersReforgedItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
+    // extension for sand casts
+    public static final ItemDeferredRegisterExtension EXTENSION = new ItemDeferredRegisterExtension(TinkersReforged.MOD_ID);
 
     public static final CreativeModeTab resourceTab = new SupplierCreativeTab(TinkersReforged.MOD_ID, "resources",
             () -> new ItemStack(TinkersReforgedItems.METALS.get(EnumMetal.ALUMINUM).get(EnumMetal.ItemType.INGOT).get()));
@@ -66,6 +72,7 @@ public class TinkersReforgedItems {
     public static Map<EnumGem, Map<EnumGem.ItemType, RegistryObject<Item>>> GEMS = Helpers.mapOfKeys(EnumGem.class, gem ->
             Helpers.mapOfKeys(EnumGem.ItemType.class, itemType -> ITEMS.register("%s_%s".formatted(gem.getName(), itemType.getName()), () -> new Item(new Item.Properties().tab(resourceTab)))));
 
+    //public static Map<TinkerCastType.Type, CastItemObject> TINKER_CASTS = Helpers.mapOfKeys(TinkerCastType.Type.class, (cast) -> EXTENSION.registerCast(cast.getSerializedName(), new Item.Properties().tab(TAB_SMELTERY)));
     public static Map<TinkerCastType, Map<TinkerCastType.Type, RegistryObject<Item>>> CASTS = Helpers.mapOfKeys(TinkerCastType.class, cast ->
             Helpers.mapOfKeys(TinkerCastType.Type.class, type -> ITEMS.register("%s_%s_cast".formatted(type.getName(), cast.getName()), () -> new Item(new Item.Properties().tab(castTab)))));
 

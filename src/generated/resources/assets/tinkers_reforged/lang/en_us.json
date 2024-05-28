@@ -299,7 +299,7 @@
   "modifier.tinkers_reforged.weight_ratio": "Weight Ratio",
   "modifier.tinkers_reforged.weight_ratio.description": "Add your tool's mining speed to the base damage.",
   "modifier.tinkers_reforged.weight_ratio.flavor": "Weight Ratio",
-  "pattern.tinkers_reforged.great_blade": "Great Blade Pattern",
-  "pattern.tinkers_reforged.long_sword": "Longsword Pattern",
+  "pattern.tinkers_reforged.great_blade": "Great Blade",
+  "pattern.tinkers_reforged.long_blade": "Long Blade",
   "stat.tconstruct.harvest_tier.tinkers_reforged.kepu": "Kepu"
 }

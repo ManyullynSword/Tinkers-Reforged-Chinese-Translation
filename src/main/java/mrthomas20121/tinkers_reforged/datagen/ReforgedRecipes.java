@@ -54,6 +54,7 @@ import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.partbuilder.ItemPartRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
@@ -186,6 +187,10 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         createCast(consumer, CastType.GREAT_BLADE, TinkersReforgedItems.GREAT_BLADE.get(), castFolder);
         createCast(consumer, CastType.LONG_BLADE, TinkersReforgedItems.LONG_BLADE.get(), castFolder);
 
+        goldCastCreation(consumer, Ingredient.of(TinkersReforgedItems.LONG_BLADE.get()), TinkerCastType.Type.LONG_BLADE, castFolder);
+        goldCastCreation(consumer, Ingredient.of(TinkersReforgedItems.GREAT_BLADE.get()), TinkerCastType.Type.GREAT_BLADE, castFolder);
+
+
         for(EnumMetal metal: EnumMetal.values()) {
 
             ShapedRecipeBuilder
@@ -271,6 +276,37 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .setCast(input, true)
                 .setSwitchSlots()
                 .save(consumer, modResource(folder + "/metal/" + name));
+    }
+
+    public void goldCastCreation(Consumer<FinishedRecipe> consumer, Ingredient input, TinkerCastType.Type type, String folder) {
+        String name = type.getSerializedName();
+        ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(type).get())
+                .setFluidAndTime(TinkerFluids.moltenGold, true, FluidValues.INGOT)
+                .setCast(input, true)
+                .setSwitchSlots()
+                .save(consumer, location(folder + "gold/" + name));
+        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(type).get())
+                .setMaterial(TinkerTags.Items.SAND_CASTS)
+                .setPattern(input, false)
+                .save(consumer, location(folder + "sand/molding/" + name));
+        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(type).get())
+                .setMaterial(TinkerTags.Items.RED_SAND_CASTS)
+                .setPattern(input, false)
+                .save(consumer, location(folder + "red_sand/molding/" + name));
+        // make sand casts in the part builder
+        ResourceLocation pattern = new ResourceLocation("tinkers_reforged", type.getName());
+        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(type).get()))
+                .setPatternItem(Ingredient.of(TinkerTags.Items.SAND_CASTS))
+                .save(consumer, location(folder + "sand/builder_cast/" + name));
+        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(type).get()))
+                .setPatternItem(Ingredient.of(TinkerTags.Items.RED_SAND_CASTS))
+                .save(consumer, location(folder + "red_sand/builder_cast/" + name));
+        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(type).get(), 4))
+                .setPatternItem(Ingredient.of(Tags.Items.SAND_COLORLESS))
+                .save(consumer, location(folder + "sand/builder_block/" + name));
+        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(type).get(), 4))
+                .setPatternItem(Ingredient.of(Tags.Items.SAND_RED))
+                .save(consumer, location(folder + "red_sand/builder_block/" + name));
     }
 
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, IMaterialItem part, String folder) {
