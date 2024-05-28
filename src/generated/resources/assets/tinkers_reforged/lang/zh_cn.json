@@ -299,7 +299,7 @@
   "modifier.tinkers_reforged.weight_ratio": "重量比例",
   "modifier.tinkers_reforged.weight_ratio.description": "将采掘速度增加至基础攻击伤害。",
   "modifier.tinkers_reforged.weight_ratio.flavor": "重量比例",
-  "pattern.tinkers_reforged.great_blade": "大剑刃模具",
-  "pattern.tinkers_reforged.long_sword": "长剑模具",
+  "pattern.tinkers_reforged.great_blade": "大剑刃",
+  "pattern.tinkers_reforged.long_blade": "长剑刃",
   "stat.tconstruct.harvest_tier.tinkers_reforged.kepu": "凯普"
 }
