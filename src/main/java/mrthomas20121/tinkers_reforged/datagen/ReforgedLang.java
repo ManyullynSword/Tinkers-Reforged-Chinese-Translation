@@ -18,6 +18,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
 
 public class ReforgedLang extends LanguageProvider {
@@ -132,6 +133,12 @@ public class ReforgedLang extends LanguageProvider {
 
     public void addModifier(LazyModifier modifier, String name, String flavour, String desc) {
         String id = modifier.getId().getPath();
+        add("modifier.tinkers_reforged." + id, name);
+        add("modifier.tinkers_reforged." + id + ".flavor", flavour);
+        add("modifier.tinkers_reforged." + id + ".description", desc);
+    }
+
+    public void addModifier(ModifierId id, String name, String flavour, String desc) {
         add("modifier.tinkers_reforged." + id, name);
         add("modifier.tinkers_reforged." + id + ".flavor", flavour);
         add("modifier.tinkers_reforged." + id + ".description", desc);

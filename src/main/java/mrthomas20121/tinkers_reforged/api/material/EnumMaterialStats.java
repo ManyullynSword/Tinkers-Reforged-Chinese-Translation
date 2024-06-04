@@ -4,6 +4,8 @@ import mrthomas20121.tinkers_reforged.util.ReforgedTiers;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.tools.stats.*;
 
+import java.util.Locale;
+
 import static net.minecraft.world.item.Tiers.DIAMOND;
 import static net.minecraft.world.item.Tiers.NETHERITE;
 
@@ -129,9 +131,19 @@ public enum EnumMaterialStats {
             StatlessMaterialStats.BINDING
     );
 
-    public final IMaterialStats[] stats;
+    private final IMaterialStats[] stats;
+    private final EnumArmorMaterialStats armorStats;
 
     EnumMaterialStats(IMaterialStats... stats) {
         this.stats = stats;
+        this.armorStats = EnumArmorMaterialStats.valueOf(this.name().toLowerCase(Locale.ROOT));
+    }
+
+    public IMaterialStats[] getStats() {
+        return stats;
+    }
+
+    public EnumArmorMaterialStats getArmorStats() {
+        return armorStats;
     }
 }

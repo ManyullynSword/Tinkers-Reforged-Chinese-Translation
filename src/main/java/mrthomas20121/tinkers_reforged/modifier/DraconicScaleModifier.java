@@ -39,7 +39,7 @@ public class DraconicScaleModifier extends Modifier implements EntityLootModifie
         if(level > 0) {
             int expDropped = event.getDroppedExperience();
 
-            event.setDroppedExperience(expDropped + tool.getModifierLevel(this) + expDropped/2*level);
+            event.setDroppedExperience((int) (expDropped + 0.5f * (tool.getModifierLevel(this) + level)));
         }
     }
 }

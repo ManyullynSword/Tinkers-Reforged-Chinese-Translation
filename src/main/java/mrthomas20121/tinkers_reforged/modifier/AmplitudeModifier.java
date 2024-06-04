@@ -43,7 +43,8 @@ public class AmplitudeModifier extends Modifier implements ToolStatsModifierHook
     @Override
     public void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
         if(slot == EquipmentSlot.MAINHAND) {
-            consumer.accept(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(ID, "reforged_reach_distance", 1d, AttributeModifier.Operation.ADDITION));
+            double boost = modifier.getLevel() == 1 ? 1d: modifier.getLevel()*0.5d;
+            consumer.accept(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(ID, "reforged_reach_distance", boost, AttributeModifier.Operation.ADDITION));
         }
     }
 }

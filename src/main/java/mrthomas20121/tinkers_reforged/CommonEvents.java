@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged;
 
+import mrthomas20121.tinkers_reforged.effect.EffectTicking;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import mrthomas20121.tinkers_reforged.util.TinkersReforgedHooks;
 import net.minecraft.world.damagesource.DamageSource;
@@ -14,10 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
+import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +28,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = TinkersReforged.MOD_ID)
@@ -40,6 +39,13 @@ public class CommonEvents {
     public static AttributeModifier ATTACK_RANGE_MOD = new AttributeModifier(ATTACK_RANGE, "reforged_attack_range",1.5d, AttributeModifier.Operation.ADDITION);
     public static AttributeModifier ATTACK_SPEED_MOD = new AttributeModifier(ATTACK_SPEED, "reforged_attack_speed",-0.3d, AttributeModifier.Operation.ADDITION);
 
+    @SubscribeEvent
+    public static void effectRemove(MobEffectEvent.Remove event) {
+        if(Objects.requireNonNull(event.getEffectInstance()).getEffect() instanceof EffectTicking) {
+            int level = event.getEffectInstance().getAmplifier();
+            event.getEntity().hurt(new DamageSource("ticking_damage").damageHelmet().setScalesWithDifficulty(), event.getEntity().getHealth()*0.1f*level);
+        }
+    }
     @SubscribeEvent
     public static void itemAttributeEvent(ItemAttributeModifierEvent event) {
         if(event.getSlotType().equals(EquipmentSlot.MAINHAND)) {

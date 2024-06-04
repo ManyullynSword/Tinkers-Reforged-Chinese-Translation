@@ -6,12 +6,10 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.common.ForgeMod;
 import slimeknights.tconstruct.tools.modifiers.effect.NoMilkEffect;
 
-public class EffectToughness extends NoMilkEffect {
+public class EffectTicking extends NoMilkEffect {
 
-    public EffectToughness() {
+    public EffectTicking() {
         super(MobEffectCategory.HARMFUL, 0xC53439, true);
-
-        addAttributeModifier(Attributes.ARMOR_TOUGHNESS, "8322ac4f-ddef-4bdb-9978-b2f8ff4b11f8", 2, AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
 
     @Override
