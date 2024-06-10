@@ -131,9 +131,9 @@ public class ReforgedLang extends LanguageProvider {
     }
 
     public void addModifier(ModifierId id, String name, String flavour, String desc) {
-        add("modifier.tinkers_reforged." + id, name);
-        add("modifier.tinkers_reforged." + id + ".flavor", flavour);
-        add("modifier.tinkers_reforged." + id + ".description", desc);
+        add("modifier.tinkers_reforged." + id.getPath(), name);
+        add("modifier.tinkers_reforged." + id.getPath() + ".flavor", flavour);
+        add("modifier.tinkers_reforged." + id.getPath() + ".description", desc);
     }
 
     public void addFluid(FlowingFluidObject<ForgeFlowingFluid> supplier, String name) {

@@ -9,7 +9,7 @@ import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.data.predicate.entity.MobTypePredicate;
 
-public class ReforgedPredicate {
+public class ReforgedModData {
 
     public static IJsonPredicate<LivingEntity> BOSSES = LivingEntityPredicate.tag(Tags.EntityTypes.BOSSES);
     public static IJsonPredicate<LivingEntity> BABY = LivingEntityPredicate.simple(LivingEntity::isBaby);

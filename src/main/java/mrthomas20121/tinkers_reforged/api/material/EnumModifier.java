@@ -24,7 +24,7 @@ public enum EnumModifier implements StringRepresentable {
     ALL_PROTECTION("Increases protection against ALL entities."),
     GIANT_PROTECTION("Increases protection against bosses."),
     ROCK_SOLID("Increases Durability"),
-    ADAPTABILITY("Deal bonus damage based on the difference between max and current durability."),
+    ADAPTABILITY("The more durability you have, the faster you mine."),
     MALLEABLE("Increases the protection cap."),
     AMPLIFIER("Increases Attack Range and Movement Speed."),
     VORACIOUS("Deal more damage to Witches, Villager, Pillager and Player."),

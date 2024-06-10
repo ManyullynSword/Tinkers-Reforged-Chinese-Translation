@@ -1,9 +1,10 @@
 package mrthomas20121.tinkers_reforged.datagen.tcon;
 
-import mrthomas20121.tinkers_reforged.api.ReforgedPredicate;
+import mrthomas20121.tinkers_reforged.api.ReforgedModData;
 import mrthomas20121.tinkers_reforged.api.material.EnumModifier;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedPotions;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;
@@ -17,6 +18,7 @@ import slimeknights.mantle.data.predicate.entity.MobTypePredicate;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.json.variable.mining.MiningSpeedVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
@@ -37,50 +39,46 @@ public class ReforgedModifiers extends AbstractModifierProvider implements ICond
     @Override
     protected void addModifiers() {
         buildModifier(EnumModifier.RAID_PROTECTION.id())
-                .addModule(ProtectionModule.builder().attacker(ReforgedPredicate.ILLAGER).eachLevel(1.25f));
+                .addModule(ProtectionModule.builder().attacker(ReforgedModData.ILLAGER).eachLevel(1.25f));
         buildModifier(EnumModifier.CHILD_PROTECTION.id())
-                .addModule(ProtectionModule.builder().attacker(ReforgedPredicate.BABY).eachLevel(1.25f));
+                .addModule(ProtectionModule.builder().attacker(ReforgedModData.BABY).eachLevel(1.25f));
         buildModifier(EnumModifier.ARMORED_PROTECTION.id())
-                .addModule(ProtectionModule.builder().attacker(ReforgedPredicate.IS_WEARING_ARMOR).eachLevel(1f));
+                .addModule(ProtectionModule.builder().attacker(ReforgedModData.IS_WEARING_ARMOR).eachLevel(1f));
         buildModifier(EnumModifier.WEAPON_PROTECTION.id())
-                .addModule(ProtectionModule.builder().attacker(ReforgedPredicate.IS_HOLDING_ITEM).eachLevel(1.25f));
+                .addModule(ProtectionModule.builder().attacker(ReforgedModData.IS_HOLDING_ITEM).eachLevel(1.25f));
         buildModifier(EnumModifier.AQUA_PROTECTION.id())
                 .addModule(ProtectionModule.builder().attacker(LivingEntityPredicate.UNDERWATER).eachLevel(1.25f));
         buildModifier(EnumModifier.ALL_PROTECTION.id())
                 .addModule(ProtectionModule.builder().attacker(LivingEntityPredicate.ANY).eachLevel(0.8f));
         buildModifier(EnumModifier.GIANT_PROTECTION.id())
-                .addModule(ProtectionModule.builder().attacker(ReforgedPredicate.BOSSES).eachLevel(1.25f));
+                .addModule(ProtectionModule.builder().attacker(ReforgedModData.BOSSES).eachLevel(1.25f));
         buildModifier(EnumModifier.MYTHOLOGICAL_RESISTANCE.id())
-                .addModule(ProtectionModule.builder().attacker(ReforgedPredicate.BOSSES).eachLevel(1f));
+                .addModule(ProtectionModule.builder().attacker(ReforgedModData.BOSSES).eachLevel(1f));
         buildModifier(EnumModifier.ROCK_SOLID.id())
                 .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(1.3f));
         buildModifier(EnumModifier.ADAPTABILITY.id()).addModule(
                 ConditionalMiningSpeedModule.builder()
-                        .customVariable("current_durability", ToolVariable.CURRENT_DURABILITY) // get the current durability
                         .formula()
-                        .customVariable("durability", ToolVariable.simple(toolStack -> toolStack.getStats().getInt(ToolStats.DURABILITY))) // get the tool max durability
-                        .subtract() // do current durability - durability
-                        .variable(-1).multiply() // multiply the result by -1
-                        .constant(0.01f).multiply() // multiply the result by 0.01
-                        .add() // add the value
+                        .customVariable("current_durability", ToolVariable.CURRENT_DURABILITY) // get the current durability
+                        .constant(0.05f).multiply() // multiply the result by 0.01
                         .build());
 
         buildModifier(EnumModifier.AMPLIFIER.id()).addModules(
-                AttributeModule.builder(ForgeMod.ATTACK_RANGE.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f),
-                AttributeModule.builder(Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADDITION).eachLevel(0.1f)
+                AttributeModule.builder(ForgeMod.ATTACK_RANGE.get(), AttributeModifier.Operation.ADDITION).uniqueFrom(new ResourceLocation("tinkers_reforged:amplifier_range")).eachLevel(0.1f),
+                AttributeModule.builder(Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADDITION).uniqueFrom(new ResourceLocation("tinkers_reforged:amplifier_speed")).eachLevel(0.1f)
         );
 
         buildModifier(EnumModifier.AMPLITUDE.id()).addModules(
-                AttributeModule.builder(ForgeMod.ATTACK_RANGE.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f),
+                AttributeModule.builder(ForgeMod.ATTACK_RANGE.get(), AttributeModifier.Operation.ADDITION).uniqueFrom(EnumModifier.AMPLITUDE.id()).eachLevel(0.1f),
                 StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(1.1f)
         );
 
         buildModifier(EnumModifier.DEFENSIVE.id()).addModules(
-                AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.ADDITION).eachLevel(1f)
+                AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.ADDITION).uniqueFrom(EnumModifier.DEFENSIVE.id()).eachLevel(1f)
         );
 
         buildModifier(EnumModifier.LUCKY_CHARM.id()).addModules(
-                AttributeModule.builder(Attributes.LUCK, AttributeModifier.Operation.ADDITION).eachLevel(1f)
+                AttributeModule.builder(Attributes.LUCK, AttributeModifier.Operation.ADDITION).uniqueFrom(EnumModifier.LUCKY_CHARM.id()).eachLevel(1f)
         );
 
         buildModifier(EnumModifier.DRACONIC.id())

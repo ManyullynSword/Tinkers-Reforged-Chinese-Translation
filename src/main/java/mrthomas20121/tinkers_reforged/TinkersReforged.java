@@ -1,6 +1,6 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.api.ReforgedPredicate;
+import mrthomas20121.tinkers_reforged.api.ReforgedModData;
 import mrthomas20121.tinkers_reforged.client.TinkersReforgedBook;
 import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.datagen.tcon.*;
@@ -28,6 +28,8 @@ import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpri
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.client.model.tools.ToolModel;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.library.json.variable.mining.MiningSpeedVariable;
+import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
@@ -64,10 +66,10 @@ public class TinkersReforged {
 
 	private void register(RegisterEvent event) {
 		if(event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY) {
-			LivingEntityPredicate.LOADER.register(getResource("is_baby"), ReforgedPredicate.BABY.getLoader());
-			LivingEntityPredicate.LOADER.register(getResource("non_minecraft_mob"), ReforgedPredicate.NON_MINECRAFT_MOB.getLoader());
-			LivingEntityPredicate.LOADER.register(getResource("is_holding_item"), ReforgedPredicate.IS_HOLDING_ITEM.getLoader());
-			LivingEntityPredicate.LOADER.register(getResource("is_wearing_armor"), ReforgedPredicate.IS_WEARING_ARMOR.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("is_baby"), ReforgedModData.BABY.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("non_minecraft_mob"), ReforgedModData.NON_MINECRAFT_MOB.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("is_holding_item"), ReforgedModData.IS_HOLDING_ITEM.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("is_wearing_armor"), ReforgedModData.IS_WEARING_ARMOR.getLoader());
 		}
 	}
 
@@ -82,13 +84,13 @@ public class TinkersReforged {
 		gen.addProvider(event.includeServer(), new ReforgedToolDefinitionDataProvider(gen));
 		gen.addProvider(event.includeServer(), new ReforgedToolSlotLayout(gen));
 		gen.addProvider(event.includeServer(), new ReforgedRecipes(gen));
+		gen.addProvider(event.includeServer(), new ReforgedModifiers(gen));
 		ReforgedBlocksTags tags = new ReforgedBlocksTags(gen, fileHelper);
 		gen.addProvider(event.includeServer(), tags);
 		gen.addProvider(event.includeServer(), new ReforgedFluidTags(gen, fileHelper));
 		gen.addProvider(event.includeServer(), new ReforgedItemsTags(gen, tags, fileHelper));
 		gen.addProvider(event.includeServer(), new ReforgedEntityTags(gen, fileHelper));
 		gen.addProvider(event.includeServer(), new ReforgedWorldgenRegistryProvider(gen, fileHelper));
-		//gen.addProvider(new ReforgedModifiers(gen));
 		gen.addProvider(event.includeClient(), new ReforgedColorDataProvider(gen));
 		gen.addProvider(event.includeClient(), new ReforgedItemModels(gen, fileHelper));
 		gen.addProvider(event.includeClient(), new ReforgedBlockStates(gen, fileHelper));
