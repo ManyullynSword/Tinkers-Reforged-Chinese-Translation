@@ -1,7 +1,6 @@
 package mrthomas20121.tinkers_reforged.modifier;
 
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedDamageSources;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
@@ -17,9 +16,9 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
-public class RadiantBeamModifier extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
+public class RadiantModifier extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
 
-    public RadiantBeamModifier() {
+    public RadiantModifier() {
         super();
     }
 

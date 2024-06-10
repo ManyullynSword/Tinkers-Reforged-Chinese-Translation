@@ -184,12 +184,10 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         createCast(consumer, CastType.TOOL_HANDLE, TinkerToolParts.toolHandle.get(), castFolder);
         createCast(consumer, CastType.TOUGH_HANDLE, TinkerToolParts.toughHandle.get(), castFolder);
 
-        createCast(consumer, CastType.GREAT_BLADE, TinkersReforgedItems.GREAT_BLADE.get(), castFolder);
-        createCast(consumer, CastType.LONG_BLADE, TinkersReforgedItems.LONG_BLADE.get(), castFolder);
-
-        goldCastCreation(consumer, Ingredient.of(TinkersReforgedItems.LONG_BLADE.get()), TinkerCastType.Type.LONG_BLADE, castFolder);
-        goldCastCreation(consumer, Ingredient.of(TinkersReforgedItems.GREAT_BLADE.get()), TinkerCastType.Type.GREAT_BLADE, castFolder);
-
+        castCreation(consumer, Ingredient.of(TinkersReforgedItems.GREAT_BLADE.get()), TinkersReforgedItems.GREAT_BLADE_CAST, castFolder, "great_blade");
+        castCreation(consumer, Ingredient.of(TinkersReforgedItems.LONG_BLADE.get()), TinkersReforgedItems.LONG_BLADE_CAST, castFolder, "long_blade");
+        partCasting(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.GREAT_BLADE_CAST, 4, partFolder, castFolder);
+        partCasting(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkersReforgedItems.LONG_BLADE_CAST, 3, partFolder, castFolder);
 
         for(EnumMetal metal: EnumMetal.values()) {
 
@@ -246,8 +244,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         toolBuilding(consumer, TinkersReforgedItems.LONGSWORD, toolFolder);
         toolBuilding(consumer, TinkersReforgedItems.GREATSWORD, toolFolder);
-        partRecipes(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkerCastType.Type.GREAT_BLADE, 4, partFolder, castFolder);
-        partRecipes(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkerCastType.Type.LONG_BLADE, 3, partFolder, castFolder);
     }
 
     @Nonnull
@@ -278,39 +274,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .save(consumer, modResource(folder + "/metal/" + name));
     }
 
-    public void goldCastCreation(Consumer<FinishedRecipe> consumer, Ingredient input, TinkerCastType.Type type, String folder) {
-        String name = type.getSerializedName();
-        ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(type).get())
-                .setFluidAndTime(TinkerFluids.moltenGold, true, FluidValues.INGOT)
-                .setCast(input, true)
-                .setSwitchSlots()
-                .save(consumer, location(folder + "gold/" + name));
-        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(type).get())
-                .setMaterial(TinkerTags.Items.SAND_CASTS)
-                .setPattern(input, false)
-                .save(consumer, location(folder + "sand/molding/" + name));
-        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(type).get())
-                .setMaterial(TinkerTags.Items.RED_SAND_CASTS)
-                .setPattern(input, false)
-                .save(consumer, location(folder + "red_sand/molding/" + name));
-        // make sand casts in the part builder
-        ResourceLocation pattern = new ResourceLocation("tinkers_reforged", type.getName());
-        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(type).get()))
-                .setPatternItem(Ingredient.of(TinkerTags.Items.SAND_CASTS))
-                .save(consumer, location(folder + "sand/builder_cast/" + name));
-        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(type).get()))
-                .setPatternItem(Ingredient.of(TinkerTags.Items.RED_SAND_CASTS))
-                .save(consumer, location(folder + "red_sand/builder_cast/" + name));
-        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(type).get(), 4))
-                .setPatternItem(Ingredient.of(Tags.Items.SAND_COLORLESS))
-                .save(consumer, location(folder + "sand/builder_block/" + name));
-        ItemPartRecipeBuilder.item(pattern, ItemOutput.fromItem(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(type).get(), 4))
-                .setPatternItem(Ingredient.of(Tags.Items.SAND_RED))
-                .save(consumer, location(folder + "red_sand/builder_block/" + name));
-    }
-
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, IMaterialItem part, String folder) {
-        Item cast = TinkersReforgedItems.ALU_CASTS.get(type).get();
+        Item cast = TinkersReforgedItems.ALU_CASTS.get(type);
         this.createCast(consumer, cast, MaterialIngredient.of(part), folder);
     }
 
@@ -319,7 +284,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
     }
 
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, TagKey<Item> input, String folder) {
-        Item cast = TinkersReforgedItems.ALU_CASTS.get(type).get();
+        Item cast = TinkersReforgedItems.ALU_CASTS.get(type);
         this.createCast(consumer,cast, Ingredient.of(input), folder);
     }
 
@@ -395,51 +360,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 )
                 .generateAdvancement()
                 .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(ingot)).getPath() + "_to_nugget"));
-    }
-
-    private void partRecipes(Consumer<FinishedRecipe> consumer, IMaterialItem part, TinkerCastType.Type cast, int cost, String partFolder, String castFolder) {
-        String name = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(part.asItem())).getPath();
-        CastObject object = new CastObject(cast.getName());
-
-        // Part Builder
-        PartRecipeBuilder.partRecipe(part)
-                .setPattern(modResource(name))
-                .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(cast).get())))
-                .setCost(cost)
-                .save(consumer, modResource(partFolder + "builder/" + name));
-
-        // Material Casting
-        String castingFolder = partFolder + "casting/";
-        MaterialCastingRecipeBuilder.tableRecipe(part)
-                .setItemCost(cost)
-                .setCast(object.getMultiUseTag(), false)
-                .save(consumer, modResource(castingFolder + name + "_gold_cast"));
-        MaterialCastingRecipeBuilder.tableRecipe(part)
-                .setItemCost(cost)
-                .setCast(object.getSingleUseTag(), true)
-                .save(consumer, modResource(castingFolder + name + "_sand_cast"));
-        CompositeCastingRecipeBuilder.table(part, cost)
-                .save(consumer, modResource(castingFolder + name + "_composite"));
-
-        // Cast Casting
-        MaterialIngredient ingredient = MaterialIngredient.of(part);
-        castCreation(consumer, ingredient, cast, castFolder, name);
-    }
-
-    private void castCreation(Consumer<FinishedRecipe> consumer, Ingredient input, TinkerCastType.Type cast, String folder, String name) {
-        ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(cast).get())
-                .setFluidAndTime(TinkerFluids.moltenGold, true, FluidValues.INGOT)
-                .setCast(input, true)
-                .setSwitchSlots()
-                .save(consumer, modResource(folder + "gold_casts/" + name));
-        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(cast).get())
-                .setMaterial(TinkerSmeltery.blankSandCast)
-                .setPattern(input, false)
-                .save(consumer, modResource(folder + "sand_casts/" + name));
-        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(cast).get())
-                .setMaterial(TinkerSmeltery.blankRedSandCast)
-                .setPattern(input, false)
-                .save(consumer, modResource(folder + "red_sand_casts/" + name));
     }
 
     /** Adds recipes for a plate armor texture */

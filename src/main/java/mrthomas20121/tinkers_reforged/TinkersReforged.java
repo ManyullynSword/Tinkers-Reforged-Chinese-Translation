@@ -1,23 +1,28 @@
 package mrthomas20121.tinkers_reforged;
 
+import mrthomas20121.tinkers_reforged.api.ReforgedPredicate;
 import mrthomas20121.tinkers_reforged.client.TinkersReforgedBook;
 import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.datagen.tcon.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.client.model.tools.ToolModel;
@@ -49,6 +54,18 @@ public class TinkersReforged {
 
 		// execute this only on the client
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TinkersReforgedBook::initBook);
+		bus.addListener(EventPriority.NORMAL, false, RegisterEvent.class, this::register);
+	}
+
+	private ResourceLocation getResource(String resource) {
+		return new ResourceLocation(MOD_ID, resource);
+	}
+
+	private void register(RegisterEvent event) {
+		LivingEntityPredicate.LOADER.register(getResource("is_baby"), ReforgedPredicate.BABY.getLoader());
+		LivingEntityPredicate.LOADER.register(getResource("non_minecraft_mob"), ReforgedPredicate.NON_MINECRAFT_MOB.getLoader());
+		LivingEntityPredicate.LOADER.register(getResource("is_holding_item"), ReforgedPredicate.IS_HOLDING_ITEM.getLoader());
+		LivingEntityPredicate.LOADER.register(getResource("is_wearing_armor"), ReforgedPredicate.IS_WEARING_ARMOR.getLoader());
 	}
 
 	@SubscribeEvent

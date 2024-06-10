@@ -8,9 +8,9 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class GiganticModifier extends Modifier implements MeleeDamageModifierHook {
+public class ColossalModifier extends Modifier implements MeleeDamageModifierHook {
 
-    public GiganticModifier() {
+    public ColossalModifier() {
         super();
     }
 

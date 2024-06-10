@@ -11,7 +11,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.object.ItemObject;
+import slimeknights.tconstruct.common.registration.CastItemObject;
+
+import java.util.Objects;
 
 public class ReforgedItemModels extends ItemModelProvider {
 
@@ -42,32 +47,52 @@ public class ReforgedItemModels extends ItemModelProvider {
             }
         }
 
-        for(TinkerCastType castType: TinkerCastType.values()) {
-            for(TinkerCastType.Type type: TinkerCastType.Type.values()) {
-                castModel(TinkersReforgedItems.CASTS.get(castType).get(type), castType, type);
-            }
-        }
+        castModels(TinkersReforgedItems.GREAT_BLADE_CAST, "great_blade");
+        castModels(TinkersReforgedItems.LONG_BLADE_CAST, "long_blade");
 
         for(CastType castType: CastType.values()) {
             castModel(TinkersReforgedItems.ALU_CASTS.get(castType), castType);
         }
     }
 
-    public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {
+    public void itemWithModel(ItemObject<? extends Item> registryObject, String model) {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
-    public void castModel(RegistryObject<? extends Item> registryObject, TinkerCastType castType, TinkerCastType.Type type) {
+    public void castModel(ItemObject<? extends Item> registryObject, TinkerCastType castType, TinkerCastType.Type type) {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted(castType.getName(), type.getName()));
         singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 
-    public void castModel(RegistryObject<? extends Item> registryObject, CastType castType) {
+    private ResourceLocation getLoc(Item item) {
+        return Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item), "Cast Item cannot be null");
+    }
+
+    public void castModels(CastItemObject castItemObject, String name) {
+        ResourceLocation goldCast = getLoc(castItemObject.get());
+        ResourceLocation sandCast = getLoc(castItemObject.getSand());
+        ResourceLocation redSandCast = getLoc(castItemObject.getRedSand());
+
+        ResourceLocation goldCastLoc = new ResourceLocation(goldCast.getNamespace(), "item/cast/gold/%s".formatted(name));
+        singleTexture(goldCast.getPath(), new ResourceLocation("item/generated"), "layer0", goldCastLoc);
+        ResourceLocation sandCastLoc = new ResourceLocation(goldCast.getNamespace(), "item/cast/sand/%s".formatted(name));
+        singleTexture(sandCast.getPath(), new ResourceLocation("item/generated"), "layer0", sandCastLoc);
+        ResourceLocation redSandCastLoc = new ResourceLocation(goldCast.getNamespace(), "item/cast/red_sand/%s".formatted(name));
+        singleTexture(redSandCast.getPath(), new ResourceLocation("item/generated"), "layer0", redSandCastLoc);
+    }
+
+    public void castModel(Item item, CastType castType) {
+        ResourceLocation id = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item), "Cast Item cannot be null");
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum", castType.getSerializedName()));
+        singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
+    }
+
+    public void castModel(ItemObject<? extends Item> registryObject, CastType castType) {
         ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum", castType.getName()));
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum", castType.getSerializedName()));
         singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 }

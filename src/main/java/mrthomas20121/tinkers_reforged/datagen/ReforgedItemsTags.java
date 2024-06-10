@@ -2,12 +2,10 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
-import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.api.tag.MetalTags;
 import mrthomas20121.tinkers_reforged.api.tag.RTags;
 import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.init.*;
-import mrthomas20121.tinkers_reforged.item.CastObject;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.data.DataGenerator;
@@ -23,7 +21,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
-import slimeknights.tconstruct.tools.TinkerTools;
+import slimeknights.tconstruct.common.registration.CastItemObject;
 
 import javax.annotation.Nullable;
 
@@ -135,35 +133,23 @@ public class ReforgedItemsTags extends ItemTagsProvider {
 
         TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);
         for(CastType type: CastType.values()) {
-            Item cast = TinkersReforgedItems.ALU_CASTS.get(type).get();
+            Item cast = TinkersReforgedItems.ALU_CASTS.get(type);
             builder.add(cast);
             TagKey<Item> castTag = create("tconstruct:casts/multi_use/%s".formatted(type.name().toLowerCase()));
             tag(castTag).add(cast);
         }
         tag(TinkerTags.Items.CASTS).addTag(ALUMINUM_CASTS);
 
-        TagsProvider.TagAppender<Item> gold_casts = tag(TinkerTags.Items.GOLD_CASTS);
-        TagsProvider.TagAppender<Item> sand_casts = tag(TinkerTags.Items.SAND_CASTS);
-        TagsProvider.TagAppender<Item> red_sand_casts = tag(TinkerTags.Items.RED_SAND_CASTS);
-        TagsProvider.TagAppender<Item> multi_use_casts = tag(TinkerTags.Items.MULTI_USE_CASTS);
-        TagsProvider.TagAppender<Item> single_use_casts = tag(TinkerTags.Items.SINGLE_USE_CASTS);
-
-        addCastTag(TinkerCastType.Type.GREAT_BLADE, gold_casts, sand_casts, red_sand_casts, multi_use_casts, single_use_casts);
-        addCastTag(TinkerCastType.Type.LONG_BLADE, gold_casts, sand_casts, red_sand_casts, multi_use_casts, single_use_casts);
+        addCastTags(TinkersReforgedItems.GREAT_BLADE_CAST);
+        addCastTags(TinkersReforgedItems.LONG_BLADE_CAST);
     }
 
-    public void addCastTag(TinkerCastType.Type castType, TagsProvider.TagAppender<Item> gold, TagsProvider.TagAppender<Item> sand, TagsProvider.TagAppender<Item> red_sand, TagsProvider.TagAppender<Item> multi_use, TagsProvider.TagAppender<Item> single_use) {
-        CastObject object = new CastObject(castType.getName());
-        TagKey<Item> multiUseTag = object.getMultiUseTag();
-        TagKey<Item> singleUseTag = object.getSingleUseTag();
-        tag(multiUseTag).add(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(castType).get());
-        tag(singleUseTag).add(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(castType).get(), TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(castType).get());
-
-        gold.add(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(castType).get());
-        sand.add(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(castType).get());
-        red_sand.add(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(castType).get());
-        multi_use.addTag(multiUseTag);
-       single_use.addTag(singleUseTag);
+    public void addCastTags(CastItemObject cast) {
+        tag(cast.getMultiUseTag()).add(cast.get());
+        tag(cast.getSingleUseTag()).add(cast.getSand(), cast.getRedSand());
+        tag(TinkerTags.Items.GOLD_CASTS).add(cast.get());
+        tag(TinkerTags.Items.SAND_CASTS).add(cast.getSand());
+        tag(TinkerTags.Items.RED_SAND_CASTS).add(cast.getRedSand());
     }
 
     @SafeVarargs

@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.api.material.EnumReforgedModifier;
+import mrthomas20121.tinkers_reforged.api.material.EnumModifier;
 import mrthomas20121.tinkers_reforged.modifier.*;
 import mrthomas20121.tinkers_reforged.util.Helpers;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -16,26 +16,6 @@ public class TinkersReforgedModifiers {
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersReforged.MOD_ID);
 
     // register traits that can't be JSON.
-    public static final Map<EnumReforgedModifier, StaticModifier<Modifier>> TRAITS = Helpers.mapOfKeys(EnumReforgedModifier.class,
-            EnumReforgedModifier::hasModifier, (mod) -> MODIFIERS.register(mod.getSerializedName(), mod.getModifier()));
-
-    // traits
-    public static StaticModifier<AdaptabilityModifier> adaptability = MODIFIERS.register("adaptability", AdaptabilityModifier::new);
-    public static StaticModifier<AmplitudeModifier> amplitude = MODIFIERS.register("amplitude", AmplitudeModifier::new);
-    public static StaticModifier<VitalModifier> vital = MODIFIERS.register("vital", VitalModifier::new);
-    public static StaticModifier<DraconicScaleModifier> draconic_scale = MODIFIERS.register("draconic_scale", DraconicScaleModifier::new);
-    public static StaticModifier<FrozenArrowModifier> frozen_arrow = MODIFIERS.register("frozen_arrow", FrozenArrowModifier::new);
-    public static StaticModifier<GiganticModifier> gigantic = MODIFIERS.register("gigantic", GiganticModifier::new);
-    public static StaticModifier<HeadshotModifier> headshot = MODIFIERS.register("headshot", HeadshotModifier::new);
-    public static StaticModifier<InfernalModifier> infernal = MODIFIERS.register("infernal", InfernalModifier::new);
-    public static StaticModifier<MidasTouchModifier> midas_touch = MODIFIERS.register("midas_touch", MidasTouchModifier::new);
-    public static StaticModifier<MuffledModifier> muffled = MODIFIERS.register("muffled", MuffledModifier::new);
-    public static StaticModifier<DiffusingModifier> diffusing = MODIFIERS.register("diffusing", DiffusingModifier::new);
-    public static StaticModifier<RadiantBeamModifier> radiant_beam = MODIFIERS.register("radiant_beam", RadiantBeamModifier::new);
-    public static StaticModifier<RockSolidModifier> rock_solid = MODIFIERS.register("rock_solid", RockSolidModifier::new);
-    public static StaticModifier<SizzlingModifier> sizzling = MODIFIERS.register("sizzling", SizzlingModifier::new);
-    public static StaticModifier<SlashingModifier> slashing = MODIFIERS.register("slashing", SlashingModifier::new);
-    public static StaticModifier<UnderTheSeaModifier> under_the_sea = MODIFIERS.register("under_the_sea", UnderTheSeaModifier::new);
-    public static StaticModifier<VoraciousModifier> voracious = MODIFIERS.register("voracious", VoraciousModifier::new);
-    public static StaticModifier<WeightRatioModifier> weight_ratio = MODIFIERS.register("weight_ratio", WeightRatioModifier::new);
+    public static final Map<EnumModifier, StaticModifier<Modifier>> TRAITS = Helpers.mapOfKeys(EnumModifier.class,
+            EnumModifier::hasModifier, (mod) -> MODIFIERS.register(mod.getSerializedName(), mod.getModifier()));
 }

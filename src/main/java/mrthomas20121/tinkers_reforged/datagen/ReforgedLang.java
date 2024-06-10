@@ -3,20 +3,17 @@ package mrthomas20121.tinkers_reforged.datagen;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
-import mrthomas20121.tinkers_reforged.api.material.EnumFluid;
-import mrthomas20121.tinkers_reforged.api.material.EnumGem;
-import mrthomas20121.tinkers_reforged.api.material.EnumMaterial;
-import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
+import mrthomas20121.tinkers_reforged.api.material.*;
 import mrthomas20121.tinkers_reforged.block.IOreBlock;
 import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.init.*;
-import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
+import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
@@ -81,26 +78,21 @@ public class ReforgedLang extends LanguageProvider {
             }
         }
 
-        addCast(TinkersReforgedItems.great_blade_cast);
-        addCast(TinkersReforgedItems.long_blade_cast);
+        addCast(TinkersReforgedItems.GREAT_BLADE_CAST);
+        addCast(TinkersReforgedItems.LONG_BLADE_CAST);
 
         addEffect(TinkersReforgedPotions.FROZEN, "Freeze");
 
         for(CastType type: CastType.values()) {
-            Item item = TinkersReforgedItems.ALU_CASTS.get(type).get();
-            add(item, String.format("%s Aluminum Cast", capitalize(type.getName())));
+            Item item = TinkersReforgedItems.ALU_CASTS.get(type);
+            add(item, String.format("%s Aluminum Cast", capitalize(type.getSerializedName())));
         }
 
-        for(TinkerCastType tinkerCastType: TinkerCastType.values()) {
-            for(TinkerCastType.Type type: TinkerCastType.Type.values()) {
-                Item item = TinkersReforgedItems.CASTS.get(tinkerCastType).get(type).get();
-                add(item, String.format("%s %s Cast", capitalize(type.getName()), tinkerCastType.getName()));
-            }
-        }
-
-        for(EnumMaterial material: EnumMaterial.values()) {
+        for(EnumMaterial material: EnumMaterial.VALUES) {
             addMaterial(material.id, capitalize(material.getName()), "", material.materialDesc);
-            addModifier(material.mod, capitalize(material.mod.getId().getPath()),capitalize(material.mod.getId().getPath()), material.modifierDesc);
+        }
+        for(EnumModifier mod: EnumModifier.VALUES) {
+            addModifier(mod.id(), capitalize(mod.getModifierName()),capitalize(mod.id().getPath()), mod.getDescription());
         }
 
         //addModifier(TinkersReforgedModifiers.long_range, "Long Range", "Long Range.", "Increases Attack and Entity Range.");
@@ -116,10 +108,10 @@ public class ReforgedLang extends LanguageProvider {
         add("item.minecraft.lingering_potion.effect.frozen", "Frozen Lingering Potion");
     }
 
-    public void addCast(CastObject object) {
-        //addItem(object.getGoldCast(), capitalize(object.getName().getPath())+ " Gold Cast");
-        //addItem(object.getSandCast(), capitalize(object.getName().getPath())+ " Sand Cast");
-        //addItem(object.getRedSandCast(), capitalize(object.getName().getPath())+ " Red Sand Cast");
+    public void addCast(CastItemObject object) {
+        add(object.get(), capitalize(object.getName().getPath())+ " Gold Cast");
+        add(object.getSand(), capitalize(object.getName().getPath())+ " Sand Cast");
+        add(object.getRedSand(), capitalize(object.getName().getPath())+ " Red Sand Cast");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

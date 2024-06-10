@@ -14,7 +14,7 @@ public class ReforgedColorDataProvider extends MantleColorDataGenerator {
     void addColors() {
         for(EnumMaterial material: EnumMaterial.values()) {
             addMaterial(material.id, material.palette.baseColor);
-            addModifier(material.mod.getId(), material.palette.baseColor);
+            addModifier(material.mod.id(), material.palette.baseColor);
         }
     }
 }

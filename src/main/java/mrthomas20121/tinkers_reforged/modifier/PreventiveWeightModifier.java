@@ -9,9 +9,9 @@ import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public class RockSolidModifier extends Modifier implements ToolStatsModifierHook {
+public class PreventiveWeightModifier extends Modifier implements ToolStatsModifierHook {
 
-    public RockSolidModifier() {
+    public PreventiveWeightModifier() {
         super();
     }
 
@@ -22,7 +22,14 @@ public class RockSolidModifier extends Modifier implements ToolStatsModifierHook
     }
 
     @Override
+    public int getPriority() {
+        return 1;
+    }
+
+    @Override
     public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
-        ToolStats.DURABILITY.multiply(builder, 1.5*modifier.getLevel());
+        float armor = builder.getStat(ToolStats.ARMOR);
+
+        ToolStats.ARMOR_TOUGHNESS.add(builder, armor+modifier.getLevel());
     }
 }
