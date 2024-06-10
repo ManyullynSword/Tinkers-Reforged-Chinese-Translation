@@ -42,6 +42,11 @@ public enum EnumMaterial implements EnumData {
     public final EnumFluid fluid;
     public final String materialDesc;
 
+    EnumMaterial(int tier, boolean craftable, int order, EnumMaterialPalette palette, EnumMaterialStats stats, EnumModifier mod, String materialDesc) {
+        // default fallback is metal
+        this(tier, craftable, order, palette, stats, "metal", mod, materialDesc);
+    }
+
     EnumMaterial(int tier, boolean craftable, int order, EnumMaterialPalette palette, EnumMaterialStats stats, EnumModifier mod, EnumFluid fluid, String materialDesc) {
         // default fallback is metal
         this(tier, craftable, order, palette, stats, "metal", mod, fluid, materialDesc);
@@ -50,6 +55,10 @@ public enum EnumMaterial implements EnumData {
     EnumMaterial(int tier, boolean craftable, int order, EnumMaterialPalette palette, EnumMaterialStats stats, EnumModifier mod, EnumModifier armorMod, EnumFluid fluid, String materialDesc) {
         // default fallback is metal
         this(tier, craftable, order, palette, stats, "metal", mod, armorMod, fluid, materialDesc);
+    }
+
+    EnumMaterial(int tier, boolean craftable, int order, EnumMaterialPalette palette, EnumMaterialStats stats, String fallback, EnumModifier mod, String materialDesc) {
+        this(tier, craftable, order, palette, stats, fallback, mod, mod, null, materialDesc);
     }
 
     EnumMaterial(int tier, boolean craftable, int order, EnumMaterialPalette palette, EnumMaterialStats stats, String fallback, EnumModifier mod, EnumModifier armorMod, String materialDesc) {

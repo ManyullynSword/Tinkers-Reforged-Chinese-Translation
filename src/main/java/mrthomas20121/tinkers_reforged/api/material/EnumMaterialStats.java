@@ -136,7 +136,7 @@ public enum EnumMaterialStats {
 
     EnumMaterialStats(IMaterialStats... stats) {
         this.stats = stats;
-        this.armorStats = EnumArmorMaterialStats.valueOf(this.name().toLowerCase(Locale.ROOT));
+        this.armorStats = EnumArmorMaterialStats.valueOf(this.name());
     }
 
     public IMaterialStats[] getStats() {
