@@ -6,6 +6,7 @@ import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.datagen.tcon.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -62,10 +63,12 @@ public class TinkersReforged {
 	}
 
 	private void register(RegisterEvent event) {
-		LivingEntityPredicate.LOADER.register(getResource("is_baby"), ReforgedPredicate.BABY.getLoader());
-		LivingEntityPredicate.LOADER.register(getResource("non_minecraft_mob"), ReforgedPredicate.NON_MINECRAFT_MOB.getLoader());
-		LivingEntityPredicate.LOADER.register(getResource("is_holding_item"), ReforgedPredicate.IS_HOLDING_ITEM.getLoader());
-		LivingEntityPredicate.LOADER.register(getResource("is_wearing_armor"), ReforgedPredicate.IS_WEARING_ARMOR.getLoader());
+		if(event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY) {
+			LivingEntityPredicate.LOADER.register(getResource("is_baby"), ReforgedPredicate.BABY.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("non_minecraft_mob"), ReforgedPredicate.NON_MINECRAFT_MOB.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("is_holding_item"), ReforgedPredicate.IS_HOLDING_ITEM.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("is_wearing_armor"), ReforgedPredicate.IS_WEARING_ARMOR.getLoader());
+		}
 	}
 
 	@SubscribeEvent
