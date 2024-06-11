@@ -9,7 +9,7 @@ import static slimeknights.tconstruct.library.data.material.AbstractMaterialData
 
 public enum EnumMaterial implements EnumData {
 
-    BLAZIUM(2, false, ORDER_NETHER, EnumMaterialPalette.BLAZIUM, EnumMaterialStats.BLAZIUM, EnumModifier.SIZZLING, EnumModifier.ALL_PROTECTION, EnumFluid.BLAZIUM, "Did you hear that sizzling?"),
+    BLAZIUM(2, false, ORDER_NETHER, EnumMaterialPalette.BLAZIUM, EnumMaterialStats.BLAZIUM, EnumModifier.SIZZLING, EnumModifier.INDIRECT_PROTECTION, EnumFluid.BLAZIUM, "Did you hear that sizzling?"),
     BOMIN(3, false, ORDER_NETHER, EnumMaterialPalette.BOMIN, EnumMaterialStats.BOMIN, EnumModifier.AMPLITUDE, EnumModifier.AMPLIFIER, EnumFluid.BOMIN, "You should crank up the volume."),
     DURALUMIN(2, false, ORDER_GENERAL, EnumMaterialPalette.DURALUMIN, EnumMaterialStats.DURALUMIN, EnumModifier.ROCK_SOLID, EnumFluid.DURALUMIN, "That sounded like a better idea in my head."),
     DURASTEEL(5, false, ORDER_END, EnumMaterialPalette.DURASTEEL, EnumMaterialStats.DURASTEEL, EnumModifier.ADAPTABILITY, EnumModifier.MALLEABLE, EnumFluid.DURASTEEL, "Not very durable."),

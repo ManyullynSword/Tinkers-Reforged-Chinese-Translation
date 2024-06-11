@@ -21,7 +21,7 @@ public enum EnumModifier implements StringRepresentable {
     ARMORED_PROTECTION("Increases protection against entities with armor pieces."),
     ADRENALINE("When you reach 30% of your health, you get regeneration 1 for 30s", AdrenalineModifier::new),
     RAID_PROTECTION("Increases protection against Illager."),
-    ALL_PROTECTION("Increases protection against ALL entities."),
+    INDIRECT_PROTECTION("Increases protection against Indirect entity damage."),
     GIANT_PROTECTION("Increases protection against bosses."),
     ROCK_SOLID("Increases Durability"),
     ADAPTABILITY("The more durability you have, the faster you mine."),

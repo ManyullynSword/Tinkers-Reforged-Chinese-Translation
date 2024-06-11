@@ -4,7 +4,7 @@
   "modules": [
     {
       "type": "tconstruct:protection",
-      "damage_source": "mantle:can_protect",
+      "damage_source": "tinkers_reforged:indirect",
       "each_level": 0.8
     }
   ],

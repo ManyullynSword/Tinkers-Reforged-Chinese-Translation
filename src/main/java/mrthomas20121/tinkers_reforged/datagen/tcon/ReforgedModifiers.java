@@ -18,7 +18,6 @@ import slimeknights.mantle.data.predicate.entity.MobTypePredicate;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
-import slimeknights.tconstruct.library.json.variable.mining.MiningSpeedVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
@@ -48,8 +47,8 @@ public class ReforgedModifiers extends AbstractModifierProvider implements ICond
                 .addModule(ProtectionModule.builder().attacker(ReforgedModData.IS_HOLDING_ITEM).eachLevel(1.25f));
         buildModifier(EnumModifier.AQUA_PROTECTION.id())
                 .addModule(ProtectionModule.builder().attacker(LivingEntityPredicate.UNDERWATER).eachLevel(1.25f));
-        buildModifier(EnumModifier.ALL_PROTECTION.id())
-                .addModule(ProtectionModule.builder().attacker(LivingEntityPredicate.ANY).eachLevel(0.8f));
+        buildModifier(EnumModifier.INDIRECT_PROTECTION.id())
+                .addModule(ProtectionModule.builder().source(ReforgedModData.INDIRECT).eachLevel(0.8f));
         buildModifier(EnumModifier.GIANT_PROTECTION.id())
                 .addModule(ProtectionModule.builder().attacker(ReforgedModData.BOSSES).eachLevel(1.25f));
         buildModifier(EnumModifier.MYTHOLOGICAL_RESISTANCE.id())

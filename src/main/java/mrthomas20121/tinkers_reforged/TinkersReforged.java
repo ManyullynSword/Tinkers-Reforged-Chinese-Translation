@@ -23,6 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
@@ -70,6 +71,7 @@ public class TinkersReforged {
 			LivingEntityPredicate.LOADER.register(getResource("non_minecraft_mob"), ReforgedModData.NON_MINECRAFT_MOB.getLoader());
 			LivingEntityPredicate.LOADER.register(getResource("is_holding_item"), ReforgedModData.IS_HOLDING_ITEM.getLoader());
 			LivingEntityPredicate.LOADER.register(getResource("is_wearing_armor"), ReforgedModData.IS_WEARING_ARMOR.getLoader());
+			DamageSourcePredicate.LOADER.register(getResource("indirect"), ReforgedModData.INDIRECT.getLoader());
 		}
 	}
 
