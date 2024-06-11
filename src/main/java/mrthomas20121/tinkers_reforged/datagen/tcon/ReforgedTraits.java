@@ -5,6 +5,8 @@ import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import net.minecraft.data.DataGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import javax.annotation.Nonnull;
 
@@ -18,7 +20,12 @@ public class ReforgedTraits extends AbstractMaterialTraitDataProvider {
     protected void addMaterialTraits() {
 
         for(EnumMaterial material: EnumMaterial.values()) {
-            this.addDefaultTraits(material.id, material.mod);
+            this.addTraits(material.id, StatlessMaterialStats.MAILLE.getIdentifier(), material.armorMod.id());
+            this.addTraits(material.id, PlatingMaterialStats.HELMET.getId(), material.armorMod.id());
+            this.addTraits(material.id, PlatingMaterialStats.CHESTPLATE.getId(), material.armorMod.id());
+            this.addTraits(material.id, PlatingMaterialStats.LEGGINGS.getId(), material.armorMod.id());
+            this.addTraits(material.id, PlatingMaterialStats.BOOTS.getId(), material.armorMod.id());
+            this.addDefaultTraits(material.id, material.mod.id());
         }
     }
 

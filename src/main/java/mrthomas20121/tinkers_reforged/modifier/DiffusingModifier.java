@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.modifier;
 
+import mrthomas20121.tinkers_reforged.api.material.EnumModifier;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
@@ -39,7 +40,7 @@ public class DiffusingModifier extends Modifier implements ToolStatsModifierHook
     @Nullable
     @Override
     public Component validate(IToolStackView tool, ModifierEntry modifier) {
-        if(modifier.getId().equals(TinkersReforgedModifiers.weight_ratio.getId())) {
+        if(modifier.getId().equals(EnumModifier.WEIGHT_RATIO.id())) {
             return Component.translatable("modifier.tinkers_reforged.diffusing.compatible");
         }
 

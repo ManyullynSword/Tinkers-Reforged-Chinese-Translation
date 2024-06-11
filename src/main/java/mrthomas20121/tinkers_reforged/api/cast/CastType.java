@@ -1,8 +1,12 @@
 package mrthomas20121.tinkers_reforged.api.cast;
 
 import mrthomas20121.tinkers_reforged.util.EnumData;
+import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
-public enum CastType implements EnumData {
+import java.util.Locale;
+
+public enum CastType implements StringRepresentable {
     BOW_LIMB,
     BOW_GRIP,
     BOWSTRING,
@@ -27,5 +31,12 @@ public enum CastType implements EnumData {
     WIRE,
     GREAT_BLADE,
     LONG_BLADE,
-    ROUND_PLATE
+    ROUND_PLATE;
+
+    public static final CastType[] VALUES = CastType.values();
+
+    @Override
+    public @NotNull String getSerializedName() {
+        return this.name().toLowerCase(Locale.ROOT);
+    }
 }

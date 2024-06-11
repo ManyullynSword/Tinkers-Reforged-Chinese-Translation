@@ -1,7 +1,7 @@
 {
   "color": "FF349988",
   "fallbacks": [
-    "metal"
+    "bone"
   ],
   "generator": {
     "ignoreMaterialStats": false,

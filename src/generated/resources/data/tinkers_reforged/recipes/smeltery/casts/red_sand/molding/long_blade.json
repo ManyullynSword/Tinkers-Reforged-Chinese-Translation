@@ -4,6 +4,7 @@
     "tag": "tconstruct:casts/red_sand"
   },
   "pattern": {
+    "type": "tconstruct:material",
     "item": "tinkers_reforged:long_blade"
   },
   "result": "tinkers_reforged:long_blade_red_sand_cast"
