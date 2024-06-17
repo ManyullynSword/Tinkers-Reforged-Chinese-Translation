@@ -41,7 +41,7 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void effectRemove(MobEffectEvent.Remove event) {
-        if(Objects.requireNonNull(event.getEffectInstance()).getEffect() instanceof EffectTicking) {
+        if(event.getEffectInstance() != null && event.getEffectInstance().getEffect() instanceof EffectTicking) {
             int level = event.getEffectInstance().getAmplifier();
             event.getEntity().hurt(new DamageSource("ticking_damage").damageHelmet().setScalesWithDifficulty(), event.getEntity().getHealth()*0.1f*level);
         }

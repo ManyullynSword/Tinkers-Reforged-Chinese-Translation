@@ -186,8 +186,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         castCreation(consumer, Ingredient.of(TinkersReforgedItems.GREAT_BLADE.get()), TinkersReforgedItems.GREAT_BLADE_CAST, castFolder, "great_blade_cast");
         castCreation(consumer, Ingredient.of(TinkersReforgedItems.LONG_BLADE.get()), TinkersReforgedItems.LONG_BLADE_CAST, castFolder, "long_blade_cast");
-        partCasting(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.GREAT_BLADE_CAST, 4, partFolder, castFolder);
-        partCasting(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkersReforgedItems.LONG_BLADE_CAST, 3, partFolder, castFolder);
+        partRecipes(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.GREAT_BLADE_CAST, 4, partFolder, castFolder);
+        partRecipes(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkersReforgedItems.LONG_BLADE_CAST, 3, partFolder, castFolder);
 
         for(EnumMetal metal: EnumMetal.values()) {
 
