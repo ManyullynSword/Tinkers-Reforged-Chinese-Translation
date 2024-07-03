@@ -2,7 +2,6 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
-import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.api.material.*;
 import mrthomas20121.tinkers_reforged.block.IOreBlock;
 import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
@@ -84,8 +83,8 @@ public class ReforgedLang extends LanguageProvider {
         addEffect(TinkersReforgedPotions.FROZEN, "Freeze");
 
         for(CastType type: CastType.values()) {
-            Item item = TinkersReforgedItems.ALU_CASTS.get(type);
-            add(item, String.format("%s Aluminum Cast", capitalize(type.getSerializedName())));
+            Item item = TinkersReforgedItems.ALU_BRASS_CASTS.get(type);
+            add(item, String.format("%s Aluminum Brass Cast", capitalize(type.getSerializedName())));
         }
 
         for(EnumMaterial material: EnumMaterial.VALUES) {
@@ -101,6 +100,7 @@ public class ReforgedLang extends LanguageProvider {
         add("stat.tconstruct.harvest_tier.tinkers_reforged.kepu", "Kepu");
         // modifier bonus texts
         add("modifier.tinkers_reforged.diffusing.compatible", "Not Compatible with the following traits: Weight Ratio.");
+        add("modifier.tinkers_reforged.voracious.attack_damage", "Damage to Witches, Villagers, Pillagers and Players.");
 
         // potion stuff
         add("item.minecraft.potion.effect.frozen", "Frozen Potion");

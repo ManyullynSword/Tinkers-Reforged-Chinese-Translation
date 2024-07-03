@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 public enum EnumFluid implements EnumData {
     PROTO_LAVA(2000, 0xA48538, TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING),
+    ALUMINUM_BRASS(900, 0xC79326, TinkerTags.Fluids.CHEAP_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     BLAZIUM(1700, EnumMaterialPalette.BLAZIUM, TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING),
     BOMIN(1500, EnumMaterialPalette.BOMIN, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     DURALUMIN(1000, EnumMaterialPalette.DURALUMIN, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),

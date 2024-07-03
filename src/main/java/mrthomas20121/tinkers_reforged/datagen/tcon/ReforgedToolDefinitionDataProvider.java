@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import com.google.common.collect.ImmutableMap;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.material.EnumModifier;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedToolDefinitions;
 import net.minecraft.data.DataGenerator;
@@ -10,12 +11,12 @@ import net.minecraftforge.common.ToolActions;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.materials.RandomMaterial;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.modifiers.modules.build.ModifierTraitModule;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.definition.module.ToolModule;
-import slimeknights.tconstruct.library.tools.definition.module.build.MultiplyStatsModule;
-import slimeknights.tconstruct.library.tools.definition.module.build.SetStatsModule;
-import slimeknights.tconstruct.library.tools.definition.module.build.ToolActionsModule;
-import slimeknights.tconstruct.library.tools.definition.module.build.ToolSlotsModule;
+import slimeknights.tconstruct.library.tools.definition.module.build.*;
 import slimeknights.tconstruct.library.tools.definition.module.material.DefaultMaterialsModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.PartStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveModule;
@@ -62,6 +63,7 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                         .set(ToolStats.MINING_SPEED, 0.5f)
                         .set(ToolStats.DURABILITY, 1.1f)
                         .build()))
+                .module(ToolTraitsModule.builder().trait(EnumModifier.GREATSWORD_MOD.id(), 1).build())
                 .module(new ToolSlotsModule(ImmutableMap.of(SlotType.UPGRADE, 2, SlotType.ABILITY, 2)))
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest);
@@ -81,6 +83,7 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                         .set(ToolStats.MINING_SPEED, 0.5f)
                         .set(ToolStats.DURABILITY, 1.1f)
                         .build()))
+                .module(ToolTraitsModule.builder().trait(EnumModifier.LONGSWORD_MOD.id(), 1).build())
                 .module(new ToolSlotsModule(ImmutableMap.of(SlotType.UPGRADE, 2, SlotType.ABILITY, 2)))
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest);
