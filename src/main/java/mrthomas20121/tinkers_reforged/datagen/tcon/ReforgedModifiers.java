@@ -19,6 +19,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
@@ -115,6 +116,18 @@ public class ReforgedModifiers extends AbstractModifierProvider implements ICond
         buildModifier(EnumModifier.TICKING.id())
                 .addModules(
                         MobEffectModule.builder(TinkersReforgedPotions.TICKING.get()).level(RandomLevelingValue.perLevel(0, 1)).time(RandomLevelingValue.flat(3)).build());
+
+        // tools mod
+        buildModifier(EnumModifier.LONGSWORD_MOD.id()).addModules(
+                AttributeModule.builder(ForgeMod.ATTACK_RANGE.get(), AttributeModifier.Operation.ADDITION).uniqueFrom(new ResourceLocation("tinkers_reforged:attack_range_mod")).flat(1.5f),
+                AttributeModule.builder(ForgeMod.REACH_DISTANCE.get(), AttributeModifier.Operation.ADDITION).uniqueFrom(new ResourceLocation("tinkers_reforged:reach_distance_mod")).flat(1.5f),
+                AttributeModule.builder(Attributes.ATTACK_DAMAGE, AttributeModifier.Operation.ADDITION).uniqueFrom(new ResourceLocation("tinkers_reforged:attack_damage_mod")).flat(0.5f)
+        ).tooltipDisplay(BasicModifier.TooltipDisplay.NEVER);
+
+        buildModifier(EnumModifier.GREATSWORD_MOD.id()).addModules(
+                AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.ADDITION).uniqueFrom(new ResourceLocation("tinkers_reforged:attack_damage_mod")).flat(-0.3f),
+                AttributeModule.builder(Attributes.ATTACK_DAMAGE, AttributeModifier.Operation.MULTIPLY_BASE).uniqueFrom(new ResourceLocation("tinkers_reforged:attack_damage_mod")).flat(1.1f)
+        ).tooltipDisplay(BasicModifier.TooltipDisplay.NEVER);
     }
 
     @Override

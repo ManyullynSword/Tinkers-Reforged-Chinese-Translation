@@ -131,14 +131,14 @@ public class ReforgedItemsTags extends ItemTagsProvider {
 
         tag(ItemTags.LECTERN_BOOKS).add(TinkersReforgedItems.book.get());
 
-        TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);
+        TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_BRASS_CASTS);
         for(CastType type: CastType.values()) {
-            Item cast = TinkersReforgedItems.ALU_CASTS.get(type);
+            Item cast = TinkersReforgedItems.ALU_BRASS_CASTS.get(type);
             builder.add(cast);
             TagKey<Item> castTag = create("tconstruct:casts/multi_use/%s".formatted(type.name().toLowerCase()));
             tag(castTag).add(cast);
         }
-        tag(TinkerTags.Items.CASTS).addTag(ALUMINUM_CASTS);
+        tag(TinkerTags.Items.CASTS).addTag(ALUMINUM_BRASS_CASTS);
 
         addCastTags(TinkersReforgedItems.GREAT_BLADE_CAST);
         addCastTags(TinkersReforgedItems.LONG_BLADE_CAST);

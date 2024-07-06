@@ -12,7 +12,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 
@@ -51,7 +50,7 @@ public class ReforgedItemModels extends ItemModelProvider {
         castModels(TinkersReforgedItems.LONG_BLADE_CAST, "long_blade");
 
         for(CastType castType: CastType.values()) {
-            castModel(TinkersReforgedItems.ALU_CASTS.get(castType), castType);
+            castModel(TinkersReforgedItems.ALU_BRASS_CASTS.get(castType), castType);
         }
     }
 
@@ -86,13 +85,13 @@ public class ReforgedItemModels extends ItemModelProvider {
 
     public void castModel(Item item, CastType castType) {
         ResourceLocation id = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item), "Cast Item cannot be null");
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum", castType.getSerializedName()));
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum_brass", castType.getSerializedName()));
         singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 
     public void castModel(ItemObject<? extends Item> registryObject, CastType castType) {
         ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum", castType.getSerializedName()));
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum_brass", castType.getSerializedName()));
         singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 }

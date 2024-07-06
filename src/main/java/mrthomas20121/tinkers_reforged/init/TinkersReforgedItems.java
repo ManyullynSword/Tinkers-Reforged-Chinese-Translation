@@ -2,7 +2,6 @@ package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
-import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.item.book.TinkersReforgedBookItem;
 import mrthomas20121.tinkers_reforged.util.Helpers;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
@@ -34,7 +33,7 @@ public class TinkersReforgedItems {
             () -> new ItemStack(TinkersReforgedItems.METALS.get(EnumMetal.ALUMINUM).get(EnumMetal.ItemType.INGOT).get()));
 
     public static final CreativeModeTab castTab = new SupplierCreativeTab(TinkersReforged.MOD_ID, "casts",
-            () -> new ItemStack(TinkersReforgedItems.ALU_CASTS.get(CastType.GEAR)));
+            () -> new ItemStack(TinkersReforgedItems.ALU_BRASS_CASTS.get(CastType.GEAR)));
 
     public static final CreativeModeTab TAB_TOOL_PARTS = new SupplierCreativeTab(TinkersReforged.MOD_ID, "tool_parts", () -> {
         List<IMaterial> materials = new ArrayList<>(MaterialRegistry.getInstance().getVisibleMaterials());
@@ -62,7 +61,7 @@ public class TinkersReforgedItems {
     public static Map<EnumGem, Map<EnumGem.ItemType, ItemObject<Item>>> GEMS = Helpers.mapOfKeys(EnumGem.class, gem ->
             Helpers.mapOfKeys(EnumGem.ItemType.class, itemType -> ITEMS.register("%s_%s".formatted(gem.getName(), itemType.getName()), () -> new Item(new Item.Properties().tab(resourceTab)))));
 
-    public static EnumObject<CastType, Item> ALU_CASTS = ITEMS.registerEnum("aluminum_cast", CastType.VALUES, (type) -> new Item(new Item.Properties().tab(castTab)));
+    public static EnumObject<CastType, Item> ALU_BRASS_CASTS = ITEMS.registerEnum("aluminum_brass_cast", CastType.VALUES, (type) -> new Item(new Item.Properties().tab(castTab)));
 
     public static final ItemObject<ToolPartItem> GREAT_BLADE = ITEMS.register("great_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
 

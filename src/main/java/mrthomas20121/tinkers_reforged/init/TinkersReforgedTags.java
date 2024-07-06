@@ -72,6 +72,6 @@ public class TinkersReforgedTags {
         public static final Map<EnumMetal, Map<EnumMetal.ItemType, TagKey<Item>>> METALS = Helpers.mapOfKeys(EnumMetal.class, (metal) ->
                 Helpers.mapOfKeys(EnumMetal.ItemType.class, (itemType) -> create("forge:"+itemType.getName() + "s/" + metal.getName())));
 
-        public static final TagKey<Item> ALUMINUM_CASTS = create("tinkers_reforged:casts/aluminum");
+        public static final TagKey<Item> ALUMINUM_BRASS_CASTS = create("tinkers_reforged:casts/aluminum_brass");
     }
 }

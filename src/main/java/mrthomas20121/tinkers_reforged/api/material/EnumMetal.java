@@ -20,6 +20,7 @@ import java.util.function.Supplier;
 
 public enum EnumMetal implements EnumData {
     ALUMINUM(true, BlockTags.NEEDS_STONE_TOOL, BlockTags.NEEDS_IRON_TOOL, TinkerFluids.moltenAluminum),
+    ALUMINUM_BRASS(BlockTags.NEEDS_IRON_TOOL, EnumFluid.ALUMINUM_BRASS),
     BLAZIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.BLAZIUM),
     BOMIN(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.BOMIN),
     DURALUMIN(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.DURALUMIN),

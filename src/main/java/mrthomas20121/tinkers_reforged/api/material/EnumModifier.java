@@ -14,6 +14,8 @@ import java.util.function.Supplier;
 public enum EnumModifier implements StringRepresentable {
 
     // any modifiers with supplier does not have a json modifier
+    GREATSWORD_MOD("Less speed."),
+    LONGSWORD_MOD("Tool get more attack/mining range."),
     ACHILLES_RELIC("Achille's Relic", "While BELOW 50% hp, deal 10% more arrow and weapon damage.", AchillesRelicModifier::new),
     CHILD_PROTECTION("Increases protection against baby entities."),
     AQUA_PROTECTION("Increases protection against underwater entities."),

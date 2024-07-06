@@ -2,13 +2,11 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
-import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.api.material.*;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
-import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +20,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
@@ -35,7 +32,6 @@ import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.mantle.recipe.ingredient.EntityIngredient;
 import slimeknights.mantle.recipe.ingredient.FluidIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
-import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
@@ -46,18 +42,12 @@ import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.casting.material.CompositeCastingRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.casting.material.MaterialCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
 import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.partbuilder.ItemPartRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
-import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.TinkerTools;
@@ -152,7 +142,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .setCast(Items.BONE, false)
                 .save(consumer, modResource(castingFolder + "ender_bone"));
 
-        MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
+        MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_BRASS_CASTS), new FluidStack(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.ALUMINUM_BRASS).get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_brass_from_cast"));
 
         MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.BLAZIUM).get(), 50)), 150, 1800).save(consumer, modResource("smeltery/fuel/blazium"));
 
@@ -275,7 +265,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
     }
 
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, IMaterialItem part, String folder) {
-        Item cast = TinkersReforgedItems.ALU_CASTS.get(type);
+        Item cast = TinkersReforgedItems.ALU_BRASS_CASTS.get(type);
         this.createCast(consumer, cast, MaterialIngredient.of(part), folder);
     }
 
@@ -284,13 +274,13 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
     }
 
     public void createCast(Consumer<FinishedRecipe> consumer, CastType type, TagKey<Item> input, String folder) {
-        Item cast = TinkersReforgedItems.ALU_CASTS.get(type);
+        Item cast = TinkersReforgedItems.ALU_BRASS_CASTS.get(type);
         this.createCast(consumer,cast, Ingredient.of(input), folder);
     }
 
     public void createCast(Consumer<FinishedRecipe> consumer, Item cast, Ingredient input, String folder) {
         ItemCastingRecipeBuilder.tableRecipe(cast)
-                .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
+                .setFluidAndTime(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.ALUMINUM_BRASS), true, FluidValues.INGOT)
                 .setCast(input, true)
                 .setSwitchSlots()
                 .save(consumer, modResource(folder + "aluminum_casts/" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(cast)).getPath()));

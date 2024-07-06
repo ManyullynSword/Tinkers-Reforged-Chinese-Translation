@@ -25,6 +25,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.client.model.tools.ToolModel;
@@ -104,6 +105,7 @@ public class TinkersReforged {
 		gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(gen, fileHelper, new ReforgedPartSprite(), tinkersProvider));
 		gen.addProvider(event.includeClient(), new ReforgedRenderInfo(gen, provider, fileHelper));
 		gen.addProvider(event.includeClient(), new ReforgedLootTables(gen));
+		gen.addProvider(event.includeClient(), new FluidBucketModelProvider(gen, MOD_ID));
 	}
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MOD_ID, value = Dist.CLIENT)
