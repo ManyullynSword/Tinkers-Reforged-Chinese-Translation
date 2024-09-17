@@ -3,6 +3,7 @@
   "cast": {
     "item": "minecraft:bone"
   },
+  "cast_consumed": true,
   "cooling_time": 82,
   "fluid": {
     "amount": 250,
