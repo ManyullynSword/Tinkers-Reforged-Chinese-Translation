@@ -15,7 +15,7 @@ public enum EnumMaterial implements EnumData {
     DURASTEEL(5, false, ORDER_END, EnumMaterialPalette.DURASTEEL, EnumMaterialStats.DURASTEEL, EnumModifier.ADAPTABILITY, EnumModifier.MALLEABLE, EnumFluid.DURASTEEL, "Not very durable."),
     ELECTRIC_COPPER(2, false, ORDER_GENERAL, EnumMaterialPalette.ELECTRIC_COPPER, EnumMaterialStats.ELECTRIC_COPPER, EnumModifier.MIDAS_TOUCH, EnumModifier.MYTHOLOGICAL_RESISTANCE, EnumFluid.ELECTRIC_COPPER, "Have you ever heard of the midas touch?."),
     ENDER_BONE(2, true, ORDER_GENERAL, EnumMaterialPalette.ENDER_BONE, EnumMaterialStats.ENDER_BONE, "bone", EnumModifier.SLASHING, EnumModifier.ADRENALINE, "Drink molten ender for stronger bones."),
-    EPIDOTE(2, false, ORDER_GENERAL, EnumMaterialPalette.EPIDOTE, EnumMaterialStats.EPIDOTE, "crystal", EnumModifier.VITAL, EnumModifier.LUCKY_CHARM, EnumFluid.EPIDOTE, "You better not go to the center of a earthquake."),
+    EPIDOTE(2, false, ORDER_GENERAL, EnumMaterialPalette.EPIDOTE, EnumMaterialStats.EPIDOTE, "crystal", EnumModifier.VITAL, EnumModifier.HEALTH_CHARM, EnumFluid.EPIDOTE, "You better not go to the center of a earthquake."),
     ETRYX(5, false, ORDER_END, EnumMaterialPalette.ETRYX, EnumMaterialStats.ETRYX, EnumModifier.DIFFUSING, EnumModifier.GLINT, EnumFluid.ETRYX, "Spookier than all of the scary movies."),
     FEROBOLT(3, false, ORDER_GENERAL, EnumMaterialPalette.FEROBOLT, EnumMaterialStats.FEROBOLT, EnumModifier.FROSTY, EnumFluid.FEROBOLT, "Faster than a bullet."),
     HORNIUM(5, false, ORDER_GENERAL, EnumMaterialPalette.HORNIUM, EnumMaterialStats.HORNIUM, EnumModifier.MUFFLED, EnumModifier.TICKING, EnumFluid.HORNIUM, "Great for sex."),
@@ -26,7 +26,7 @@ public enum EnumMaterial implements EnumData {
     QIVIUM(3, false, ORDER_NETHER, EnumMaterialPalette.QIVIUM, EnumMaterialStats.QIVIUM, EnumModifier.VORACIOUS, EnumModifier.RAID_PROTECTION,  EnumFluid.QIVIUM, "Witches be gone."),
     RED_BERYL(2, false, ORDER_GENERAL, EnumMaterialPalette.RED_BERYL, EnumMaterialStats.RED_BERYL, "crystal", EnumModifier.HEADSHOT, EnumModifier.ARMORED_PROTECTION, EnumFluid.RED_BERYL, "Try to stick this in someone's helmet."),
     TIBERIUM(5, false, ORDER_END, EnumMaterialPalette.TIBERIUM, EnumMaterialStats.TIBERIUM, EnumModifier.COLOSSAL, EnumModifier.WEAPON_PROTECTION, EnumFluid.TIBERIUM, "Strong enough to keep the titanic afloat."),
-    TITANIUM(4, false, ORDER_END, EnumMaterialPalette.TITANIUM, EnumMaterialStats.TITANIUM, EnumModifier.WEIGHT_RATIO, EnumModifier.PREVENTIVE_WEIGHT, EnumFluid.TITANIUM, "This thing is kinda heavy.");
+    TITANIUM(4, false, ORDER_END, EnumMaterialPalette.TITANIUM, EnumMaterialStats.TITANIUM, EnumModifier.WEIGHT_EXCHANGE, EnumModifier.SHIELDED, EnumFluid.TITANIUM, "This thing is kinda heavy.");
 
     public static final EnumMaterial[] VALUES = values();
 

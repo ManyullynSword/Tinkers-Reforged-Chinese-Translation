@@ -99,7 +99,7 @@ public class ReforgedLang extends LanguageProvider {
         // kepu harvest tier
         add("stat.tconstruct.harvest_tier.tinkers_reforged.kepu", "Kepu");
         // modifier bonus texts
-        add("modifier.tinkers_reforged.diffusing.compatible", "Not Compatible with the following traits: Weight Ratio.");
+        add("modifier.tinkers_reforged.diffusing.compatible", "Not Compatible with the following traits: Weight Exchange.");
         add("modifier.tinkers_reforged.voracious.attack_damage", "Damage to Witches, Villagers, Pillagers and Players.");
 
         // potion stuff
