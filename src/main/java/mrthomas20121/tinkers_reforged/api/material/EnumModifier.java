@@ -32,8 +32,8 @@ public enum EnumModifier implements StringRepresentable {
     VORACIOUS("Deal more damage to Witches, Villager, Pillager and Player."),
     DEFENSIVE("Increases Max Health by 1."),
     DRACONIC("Increases the amount of Experience orbs dropped."),
-    DIFFUSING("Set base attack damage and mining speed to the highest of the two.", DiffusingModifier::new),
-    LUCKY_CHARM("Increases luck."),
+    DIFFUSING("Set base attack damage and mining speed to the highest of the two.", ExposureModifier::new),
+    HEALTH_CHARM("Increases Health by 1 per modifier level."),
     COLOSSAL("Deal more damage to entities with more max health than you.", ColossalModifier::new),
     HEADSHOT("Deal more damage to armored targets.", HeadshotModifier::new),
     INFERNO("Deal more damage to entity based on their current health.", InfernoModifier::new),
@@ -49,9 +49,9 @@ public enum EnumModifier implements StringRepresentable {
     SLASHING("Always land Critical Strike.", SlashingModifier::new),
     UNDER_THE_SEA("Mine faster the lower you are under the sea level.", UnderTheSeaModifier::new),
     RADIANT("Deal bonus radiant damage.", RadiantModifier::new),
-    WEIGHT_RATIO("Add your tool's mining speed to the base damage.", WeightRatioModifier::new),
-    PREVENTIVE_WEIGHT("Add your armor's armor stat to the base damage.", PreventiveWeightModifier::new),
-    SPREAD("Set your mining speed and attack to the highest of the two stats.", DiffusingModifier::new),
+    WEIGHT_EXCHANGE("Increases damage by half of your tool's mining speed.", WeightExchangeModifier::new),
+    SHIELDED("Increases your armor toughness by 1 per modifier level.", ShieldedModifier::new),
+    EXPOSURE("Increases mining speed on non effective blocks and underwater.", ExposureModifier::new),
     BACKSTAB("Deal more damage to entity if you damage them from behind.", BackStabModifier::new),
     TICKING("5s after hitting an entity, they take a percentage of their health as damage.")
     ;

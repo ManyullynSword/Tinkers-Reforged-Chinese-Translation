@@ -77,8 +77,8 @@ public class ReforgedModifiers extends AbstractModifierProvider implements ICond
                 AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.ADDITION).uniqueFrom(EnumModifier.DEFENSIVE.id()).eachLevel(1f)
         );
 
-        buildModifier(EnumModifier.LUCKY_CHARM.id()).addModules(
-                AttributeModule.builder(Attributes.LUCK, AttributeModifier.Operation.ADDITION).uniqueFrom(EnumModifier.LUCKY_CHARM.id()).eachLevel(1f)
+        buildModifier(EnumModifier.HEALTH_CHARM.id()).addModules(
+                AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.ADDITION).uniqueFrom(EnumModifier.HEALTH_CHARM.id()).eachLevel(1f)
         );
 
         buildModifier(EnumModifier.DRACONIC.id())

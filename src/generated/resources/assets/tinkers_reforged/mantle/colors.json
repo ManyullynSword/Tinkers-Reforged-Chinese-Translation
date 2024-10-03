@@ -33,17 +33,17 @@
     "frosty": "#C5A58F",
     "glint": "#6A4B99",
     "headshot": "#DA3A6D",
+    "health_charm": "#A3B157",
     "indirect_protection": "#ED8A4E",
     "inferno": "#6DB156",
-    "lucky_charm": "#A3B157",
     "malleable": "#9A6FAD",
     "midas_touch": "#A46D27",
     "muffled": "#FDC4AF",
     "mythological_resistance": "#A46D27",
-    "preventive_weight": "#A7B4BD",
     "radiant": "#CF7B4B",
     "raid_protection": "#EC5541",
     "rock_solid": "#9BB879",
+    "shielded": "#A7B4BD",
     "sizzling": "#ED8A4E",
     "slashing": "#349988",
     "ticking": "#FDC4AF",
@@ -51,6 +51,6 @@
     "vital": "#A3B157",
     "voracious": "#EC5541",
     "weapon_protection": "#839A26",
-    "weight_ratio": "#A7B4BD"
+    "weight_exchange": "#A7B4BD"
   }
 }

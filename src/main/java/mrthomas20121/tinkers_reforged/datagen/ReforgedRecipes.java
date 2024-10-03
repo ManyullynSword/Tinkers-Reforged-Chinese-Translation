@@ -134,12 +134,12 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.book.get())
                 .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
-                .setCast(Items.BOOK, false)
+                .setCast(Items.BOOK, true)
                 .save(consumer, modResource(castingFolder + "book"));
 
         ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.ender_bone.get())
                 .setFluidAndTime(TinkerFluids.moltenEnder, true, FluidValues.SLIMEBALL)
-                .setCast(Items.BONE, false)
+                .setCast(Items.BONE, true)
                 .save(consumer, modResource(castingFolder + "ender_bone"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_BRASS_CASTS), new FluidStack(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.ALUMINUM_BRASS).get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_brass_from_cast"));

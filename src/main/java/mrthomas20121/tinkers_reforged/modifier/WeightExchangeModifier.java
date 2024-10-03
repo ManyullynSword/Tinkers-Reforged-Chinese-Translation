@@ -9,9 +9,9 @@ import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public class PreventiveWeightModifier extends Modifier implements ToolStatsModifierHook {
+public class WeightExchangeModifier extends Modifier implements ToolStatsModifierHook {
 
-    public PreventiveWeightModifier() {
+    public WeightExchangeModifier() {
         super();
     }
 
@@ -28,8 +28,8 @@ public class PreventiveWeightModifier extends Modifier implements ToolStatsModif
 
     @Override
     public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
-        float armor = builder.getStat(ToolStats.ARMOR);
 
-        ToolStats.ARMOR_TOUGHNESS.add(builder, armor+modifier.getLevel());
+        float mining_speed = builder.getStat(ToolStats.MINING_SPEED);
+        ToolStats.ATTACK_DAMAGE.add(builder, mining_speed*0.5f);
     }
 }

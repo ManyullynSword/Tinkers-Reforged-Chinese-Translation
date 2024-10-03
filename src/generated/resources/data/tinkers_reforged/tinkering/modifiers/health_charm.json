@@ -4,7 +4,7 @@
   "modules": [
     {
       "type": "tconstruct:attribute",
-      "attribute": "minecraft:generic.luck",
+      "attribute": "minecraft:generic.max_health",
       "each_level": 1.0,
       "operation": "addition",
       "slots": [
@@ -15,7 +15,7 @@
         "chest",
         "head"
       ],
-      "unique": "tinkers_reforged.modifier.lucky_charm"
+      "unique": "tinkers_reforged.modifier.health_charm"
     }
   ],
   "tooltip_display": "always"

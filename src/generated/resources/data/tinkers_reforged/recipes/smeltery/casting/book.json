@@ -3,6 +3,7 @@
   "cast": {
     "item": "minecraft:book"
   },
+  "cast_consumed": true,
   "cooling_time": 47,
   "fluid": {
     "amount": 90,
