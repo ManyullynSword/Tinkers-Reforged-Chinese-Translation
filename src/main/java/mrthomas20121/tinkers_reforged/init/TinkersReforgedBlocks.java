@@ -29,18 +29,18 @@ public class TinkersReforgedBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TinkersReforged.MOD_ID);
 
     // block properties
-    private static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(5F, 1200f).sound(SoundType.METAL).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties END_ORE = Block.Properties.of(Material.STONE).strength(3F, 5.5f).sound(SoundType.STONE);
-    private static final BlockBehaviour.Properties DEEPSLATE_ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK).requiresCorrectToolForDrops();
+    public static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(3F, 4f).sound(SoundType.METAL).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(3F, 2f).sound(SoundType.STONE).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties END_ORE = Block.Properties.of(Material.STONE).strength(4F, 9f).sound(SoundType.STONE).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties DEEPSLATE_ORE = Block.Properties.of(Material.STONE).strength(3.5F, 5f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 6f).requiresCorrectToolForDrops();
 
     public static Map<EnumMetal, IOreBlock> ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal -> {
             if(metal.isThisOverworldOre()) {
                 return new OverworldOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("deepslate_%s_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab)));
             }
             else {
-                return new EndOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)));
+                return new EndOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(END_ORE), new Item.Properties().tab(resourceTab)));
             }
     });
 

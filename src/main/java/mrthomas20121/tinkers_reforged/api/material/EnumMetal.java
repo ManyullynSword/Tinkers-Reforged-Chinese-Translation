@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
 import mrthomas20121.tinkers_reforged.datagen.ReforgedBlocksLoot;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
 import mrthomas20121.tinkers_reforged.util.EnumData;
@@ -81,8 +82,8 @@ public enum EnumMetal implements EnumData {
     }
 
     public enum BlockType implements EnumData {
-        BLOCK(() -> new Block(BlockBehaviour.Properties.of(Material.METAL))),
-        PLATFORM(() -> new PlatformBlock(BlockBehaviour.Properties.of(Material.METAL)));
+        BLOCK(() -> new Block(TinkersReforgedBlocks.METAL)),
+        PLATFORM(() -> new PlatformBlock(TinkersReforgedBlocks.METAL));
 
         private final Supplier<Block> consumer;
 

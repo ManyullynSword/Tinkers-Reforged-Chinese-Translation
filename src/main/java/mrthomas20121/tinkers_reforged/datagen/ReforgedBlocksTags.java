@@ -66,7 +66,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 if(metal.isThisOverworldOre()) {
                     tag(BlockTags.MINEABLE_WITH_PICKAXE).add(((OverworldOreBlock)TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get());
                 }
-                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                        TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.RAW_ORES.get(metal).get()
+                );
                 TagsProvider.TagAppender<Block> miningTag = tag(metal.getOreMiningTag()).
                         add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.RAW_ORES.get(metal).get());
                 TagsProvider.TagAppender<Block> oresTag = tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
