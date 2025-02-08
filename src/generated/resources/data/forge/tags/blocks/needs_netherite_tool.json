@@ -11,6 +11,7 @@
     "tinkers_reforged:gallium_block",
     "tinkers_reforged:gallium_platform",
     "tinkers_reforged:kepu_ore",
+    "tinkers_reforged:raw_kepu_block",
     "tinkers_reforged:kepu_block",
     "tinkers_reforged:kepu_platform",
     "tinkers_reforged:lavium_block",
@@ -22,6 +23,7 @@
     "tinkers_reforged:tiberium_block",
     "tinkers_reforged:tiberium_platform",
     "tinkers_reforged:titanium_ore",
+    "tinkers_reforged:raw_titanium_block",
     "tinkers_reforged:titanium_block",
     "tinkers_reforged:titanium_platform"
   ]
