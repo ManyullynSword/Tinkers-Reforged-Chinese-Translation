@@ -11,12 +11,17 @@
     "tinkers_reforged:gallium_block",
     "tinkers_reforged:gallium_platform",
     "tinkers_reforged:kepu_ore",
+    "tinkers_reforged:kepu_block",
+    "tinkers_reforged:kepu_platform",
     "tinkers_reforged:lavium_block",
     "tinkers_reforged:lavium_platform",
     "tinkers_reforged:mosite_block",
     "tinkers_reforged:mosite_platform",
     "tinkers_reforged:qivium_block",
     "tinkers_reforged:qivium_platform",
+    "tinkers_reforged:tiberium_block",
+    "tinkers_reforged:tiberium_platform",
+    "tinkers_reforged:titanium_ore",
     "tinkers_reforged:titanium_block",
     "tinkers_reforged:titanium_platform"
   ]

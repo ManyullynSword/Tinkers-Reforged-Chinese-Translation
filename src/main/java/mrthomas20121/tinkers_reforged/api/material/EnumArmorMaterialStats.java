@@ -1,16 +1,12 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
-import mrthomas20121.tinkers_reforged.util.ReforgedTiers;
 import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.NotNull;
-import slimeknights.tconstruct.tools.stats.*;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import java.util.Locale;
-import java.util.function.Consumer;
 import java.util.function.Function;
-
-import static net.minecraft.world.item.Tiers.DIAMOND;
-import static net.minecraft.world.item.Tiers.NETHERITE;
 
 public enum EnumArmorMaterialStats implements StringRepresentable {
 

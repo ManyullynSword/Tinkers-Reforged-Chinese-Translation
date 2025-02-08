@@ -45,8 +45,6 @@ public class TinkersReforgedTags {
         public static TagKey<Block> create(String name) {
             return BlockTags.create(new ResourceLocation(name));
         }
-
-        public static final TagKey<Block> NEED_KEPU_TOOLS = create("tinkers_reforged:need_kepu_tools");
     }
 
     public static class Items {

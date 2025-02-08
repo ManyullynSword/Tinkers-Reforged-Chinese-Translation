@@ -1,10 +1,7 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
-import mrthomas20121.tinkers_reforged.util.ReforgedTiers;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.tools.stats.*;
-
-import java.util.Locale;
 
 import static net.minecraft.world.item.Tiers.DIAMOND;
 import static net.minecraft.world.item.Tiers.NETHERITE;
@@ -84,7 +81,7 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.3f)
     ),
     KEPU(
-            new HeadMaterialStats(333, 6f, ReforgedTiers.KEPU, 2.7f),
+            new HeadMaterialStats(333, 6f, NETHERITE, 2.7f),
             HandleMaterialStats.multipliers().durability(1.1f).attackSpeed(1.1f).build(),
             StatlessMaterialStats.BINDING,
             new LimbMaterialStats(333, -0.15f, 0.2f, 0.2f),
@@ -119,14 +116,14 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.3f)
     ),
     TIBERIUM(
-            new HeadMaterialStats(555, 6.7f, ReforgedTiers.KEPU, 3f),
+            new HeadMaterialStats(555, 6.7f, NETHERITE, 3f),
             HandleMaterialStats.multipliers().attackSpeed(1.2f).build(),
             StatlessMaterialStats.BINDING,
             new LimbMaterialStats(555, 0.15f, 0.15f, -0.2f),
             new GripMaterialStats(0.9f, -0.2f, 1.1f)
     ),
     TITANIUM(
-            new HeadMaterialStats(500, 2.5f, ReforgedTiers.KEPU, 5f),
+            new HeadMaterialStats(500, 2.5f, NETHERITE, 5f),
             HandleMaterialStats.multipliers().attackSpeed(0.9f).build(),
             StatlessMaterialStats.BINDING
     );
