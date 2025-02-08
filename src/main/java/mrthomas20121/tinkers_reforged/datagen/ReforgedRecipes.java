@@ -132,6 +132,15 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         EntityMeltingRecipeBuilder.melting(EntityIngredient.of(EntityType.SHULKER), new FluidStack(TinkerFluids.moltenEnder.get(), FluidValues.INGOT)).save(consumer, modResource(meltingFolder+"/entity/shulker"));
 
+        for(EnumMetal.ItemType itemType: EnumMetal.ItemType.values()) {
+            if(!itemType.equals(EnumMetal.ItemType.DUST)) {
+                ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.METALS.get(EnumMetal.ALUMINUM).get(itemType))
+                        .setFluidAndTime(TinkerFluids.moltenDebris, true, itemType.getValue())
+                        .setCast(TinkersReforgedItems.METALS.get(EnumMetal.GALLIUM).get(itemType), true)
+                        .save(consumer, modResource(castingFolder + "gallium_" + itemType.getName()));
+            }
+        }
+
         ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.book.get())
                 .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
                 .setCast(Items.BOOK, true)

@@ -13,6 +13,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
+import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.shared.block.PlatformBlock;
 
 import java.util.function.BiFunction;
@@ -35,7 +36,7 @@ public enum EnumMetal implements EnumData {
     MOSITE(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.MOSITE),
     QIVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.QIVIUM),
     TIBERIUM(TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TIBERIUM),
-    TITANIUM(true, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TITANIUM);
+    TITANIUM(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TITANIUM);
 
     private final boolean isOre;
 
@@ -109,9 +110,19 @@ public enum EnumMetal implements EnumData {
     }
 
     public enum ItemType implements EnumData {
-        INGOT,
-        NUGGET,
-        DUST,
-        PLATE
+        INGOT(FluidValues.INGOT),
+        NUGGET(FluidValues.NUGGET),
+        DUST(FluidValues.INGOT),
+        PLATE(FluidValues.INGOT);
+
+        private final int value;
+
+        ItemType(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
     }
 }
